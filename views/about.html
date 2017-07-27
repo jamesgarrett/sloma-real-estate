@@ -26,18 +26,15 @@
               {{# cosmic.objects.type.authors }}
 
                 <!-- Team Carousel Item 1 -->
-                <div class="item">
-
-                	
+                <div class="item text-center" style="clear:both;display:flex;flex-direction:column;">
 
                 	<p class="description">
-
-                		<img class="col-md-4 col-sm-12 mb-2" src="{{ metadata.image.imgix_url }}?w=400&fit=crop&crop=entropy&auto=format,enhance" alt="" style="float:left;">
+                		<img class="col-lg-6 offset-lg-3 col-md-4 offset-md-4 col-sm-12  mb-2" src="{{ metadata.image.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format,enhance" alt="" style="float:left;">
                 		<div class="team-caption ">
                         <h3>{{ title }}</h3>
                         <p class="job-title">{{ metadata.title }}</p>
                     </div>
-					<hr class="dark" style="max-width:100%;">
+					<!-- <hr class="dark"> -->
                     <ul class="list-inline list-team-social">
                         {{# metadata.phone }}<li class="list-inline-item"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i>{{ metadata.phone }}</a></li>{{/ metadata.phone }}
                         {{# metadata.email }}<li class="list-inline-item"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i>{{ metadata.email }}</a></li>{{/ metadata.email }}
@@ -46,13 +43,13 @@
                         </li>
                         {{# metadata.instagram }}<li class="list-inline-item"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i>/{{ metadata.instagram }}</a></li>{{/ metadata.instagram }}
                     </ul>
-                    <hr class="dark" style="max-width:100%;">
+                    <!-- <hr class="dark"> -->
                 		{{{ content }}}
                 	</p>
-
-                    
                     
                 </div>
+
+                <div class="col-md-12"><hr class="colored" style="clear:both;margin:5rem auto;"></div>
 
               {{/ cosmic.objects.type.authors }}
               <hr>

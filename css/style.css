@@ -2,6 +2,9 @@ html,
 body {
   height: 100%; }
 
+body {
+  overflow-x: hidden; }
+
 hr {
   max-width: 100px;
   height: 2px;
@@ -776,6 +779,11 @@ button, input, optgroup, select, textarea {
 
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #e1e1e1; }
+
+iframe html {
+  min-height: auto; }
+iframe .homepage {
+  padding: 0; }
 
 footer.footer {
   padding: 50px 0 20px;
