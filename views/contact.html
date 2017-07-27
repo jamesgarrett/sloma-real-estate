@@ -1,0 +1,63 @@
+{{> header }}
+
+      <!-- Background Image Section -->    
+    <div class="bg-image" style="background-image:url('{{ cosmic.object.contact.metadata.hero.imgix_url }}');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+
+      <!-- Header Section -->
+    <div class="overlay"></div>
+    <div class="container h-100" >
+      <div class="row h-100">
+        <div class="col-12 my-auto text-white page-title">
+              <h1><i class="fa fa-envelope"></i>{{ cosmic.object.contact.title }}</h1>
+              <h4>{{ cosmic.object.contact.metadata.headline }}</h4>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section class="page-section bg-default" id="team">
+      <div class="container wow fadeIn mb-40">
+  <!-- Main Content Section -->
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Contact</h1>
+          </div>
+          <div class="col-sm-6 col-xs-12" style="font:menu;">
+            <p>Feel free to fill out the form field on the right to leave us a message. Please provide your contact information and we will respond promptly. Additionally you can contact us by email at imsloma@gmail.com, or by phone at 773-317-0414.</p>
+          </div>
+          <div class="col-sm-6  col-xs-12 pt-40">
+            <form id="contact_form">
+              <div class="form-group form-group--name">
+                <label>Name</label>
+                <input name="full_name" type="text" class="form-control input-lg" placeholder="Enter your full name">
+              </div>
+              <div class="form-group form-group--email">
+                <label>Email</label>
+                <input name="email" type="text" class="form-control input-lg" placeholder="Enter your email address">
+              </div>
+              <div class="form-group form-group--phone">
+                <label>Phone (Optional)</label>
+                <input name="phone" type="text" class="form-control input-lg phone-mask" placeholder="Enter your phone number">
+              </div>
+              <div class="form-group form-group--message">
+                <label>Message</label>
+                <textarea name="message" style="height: 150px" class="form-control input-lg" placeholder="Enter a message"></textarea>
+              </div>
+              <div class="alert alert-success success-message d-none">
+                {{ page.metafield.contact_form_success_message.value }}
+              </div>
+              <div class="alert alert-danger error-message d-none">
+                Error
+              </div>
+              <div class="form-group mt-20">
+                <button class="btn btn-primary btn-lg submit-btn" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{{> footer }}

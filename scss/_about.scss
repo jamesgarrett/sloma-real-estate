@@ -1,0 +1,45 @@
+.bg-image{
+	background-size:cover;
+	height:100vh;
+	width:100%;
+	position:fixed;
+	z-index:-1;
+}
+
+.page-title{
+	h1{
+		margin:auto 15px;
+		i, img{
+			margin: auto 15px;
+		    margin-bottom: 15px;
+		}
+	}
+	h4{
+		margin-left:25px;
+	}
+}
+
+.job-title{
+	@include sans-serif-font;
+	text-transform: uppercase;
+	/*font-weight: bold;*/
+}
+
+.announcement{
+    margin: 5rem 0;
+	.sans{
+		font-size: 3rem;
+	    margin: 0;
+	    line-height: 20px;
+	}
+	.serif {
+	    font-size: 6rem;
+	    margin: 0;
+	    text-transform: capitalize;
+	} 
+	.stat-table{
+		@include serif-font;
+		font-size: 2rem;
+	}
+}
+

@@ -1,0 +1,48 @@
+footer.footer {
+    padding: 50px 0 20px;
+    color: fade-out(white, 0.3);
+    @include background-cover;
+    @include background-fixed;
+    .logo {
+        padding: 50px 0px;
+        width:250px;
+        }
+    a {
+        color: fade-out(white, 0.3);
+        &:hover {
+            color: white;
+        }
+    }
+    p {
+        font-size: 22px;
+    }
+    .footer-contact-details {
+        margin: 75px 0;
+    }
+    .footer-social {
+        margin-bottom: 75px;
+    }
+    .copyright {
+        font-size: 1rem;
+    }
+}
+
+ul.footer.nav.navbar-nav {
+    display: inline-block;
+    float: none;
+    margin:25px 0;
+}
+
+footer.footer 
+
+ul.footer.nav.navbar-nav li{
+  width: 150px;
+  float:left;
+  text-align: center;
+  font-family: 'freight-text-pro',serif;
+  font-size: 1.25rem;
+}
+
+.footer ul.dropdown-menu {
+    background: transparent;
+}

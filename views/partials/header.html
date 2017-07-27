@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sloma Real Estate Group - The Windy City's Best Resource for Real Estate Deals</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom fonts for this theme -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+    <script src="https://use.typekit.net/jox6knn.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="vendor/animate.css/animate.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this theme -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Temporary navbar container fix -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse navbar-expanded" id="mainNav">
+        <div class="container" style="display:flex;">
+            <a class="navbar-brand page-scroll img-fluid" href="/">
+              <img src="{{ cosmic.object.logos.metadata.text_logo.url }}" alt="Sloma">
+            </a>
+            <div class="navbar-collapse collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto mr-auto center">
+                    {{# cosmic.objects.type.pages }}
+                        <li class="nav-item">
+                           <a class="nav-link page-scroll" href="/{{ slug }}"> {{ title }} </a>
+                        </li>
+                    {{/ cosmic.objects.type.pages }}
+                </ul>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-label="Toggle navigation">
+                <span class="hidden-xs-down">Menu</span>
+                <svg class="menu-bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 10">
+                  <rect class="top" x="0" y="1" width="12" height="2" />
+                  <rect class="middle" x="0" y="5" width="12" height="2"/>
+                  <rect class="bottom" x="0" y="9" width="12" height="2" />
+                </svg>
+            </button>
+        </div>
+    </nav>

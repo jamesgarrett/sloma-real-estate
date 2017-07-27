@@ -1,0 +1,219 @@
+#mainNav {
+    border: none;
+    border-bottom: 1px solid fade-out(white, 0.9);
+    background-color: $themeDark;
+    padding: 10px 0;
+    min-height: 68px;
+    .navbar-toggler {
+        font-size: 14px;
+        border:2px solid transparent;
+        color: white;
+        &:hover,
+        &:focus {
+          color: white;
+        }
+    }
+    .navbar-brand {
+        font-size: 24px;
+        text-decoration: none;
+        opacity: 1;
+        color: white;
+        margin-left: 16px;
+        @include transition-all;
+        @include heading-font;
+        img {
+            height: 40px;
+            width:150px;
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            > .nav-item {
+                > .nav-link {
+                    padding: 5px 10px;
+                    color: white;
+                    &:hover,
+                    &:focus {
+                        color: fade-out(white, 0.5);
+                    }
+                    &.active,
+                    &.active:hover,
+                    &.active:focus {
+                      border: 2px solid transparent;
+                      color: white;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 992px) {
+        padding: 30px 0;
+        -webkit-transition: padding .5s;
+        -moz-transition: padding .5s;
+        transition: padding .5s;
+        border: 0;
+        background-color: transparent;
+        &.navbar-shrink {
+            padding: 5px 0;
+            background-color: $themeDark;
+        }
+        .navbar-brand {
+            svg {
+                height: 50px;
+                width:150px;
+                .brand{
+                    fill:white;
+                }
+            }
+        }
+        .navbar-collapse {
+            .navbar-nav {
+                > .nav-item {
+                    margin-right: 5px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    > .nav-link {
+                        &.active,
+                        &.active:hover,
+                        &.active:focus {
+                          border: 2px solid white;
+                          color: white;
+                          background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#mainNav .navbar-collapse .navbar-nav 
+        > .nav-item 
+            > .nav-link {
+                @include serif-font;
+                font-size: 1.125rem;
+                letter-spacing: 0.075rem;
+                font-weight: 600;
+                text-rendering: geometricPrecision;
+            }
+
+            @media (max-width:992px){
+                #mainNav .navbar-collapse .navbar-nav 
+                        > .nav-item 
+                            > .nav-link {
+                    transform: translateY(57px);
+                }
+            }
+
+#mainNav .container .navbar-toggler{
+  border-color:transparent;
+  font-family: serif;
+  font-size: 18px;
+  border:2px solid transparent;
+  position:relative;
+  transform: translateY(7.5px);
+  padding: 10px 15px;
+  svg{
+      float:right;
+      width:18px;
+      height:18px;
+      margin-left:10px;
+  }
+  &:hover{
+    border: 2px solid white;
+    border-radius: 0px;
+    background: transparent;
+    color:white;
+  }
+  &:focus{
+    background: transparent;
+    color: white;
+    outline: none;
+  }
+}
+#mainNav .container{
+    justify-content:center;
+}
+
+@media (max-width: 992px){
+    #mainNav .container{
+        justify-content:space-between;
+    }
+}
+
+@media (max-width: 578px){
+        #mainNav .container .navbar-toggler svg{
+          margin-left:0px;
+        }
+}
+
+/* Nav Bar Toggle Animation */
+
+.navbar-toggler > .menu-bars{
+        fill:white;
+      .top,.bottom{
+        transition:1s ease-in-out;
+        transform:rotate(0deg); 
+      }
+      .middle{
+        transition:2s;
+      }
+    }
+  .clicked .menu-bars{
+      .top{
+       transform-origin:6 center; 
+       transform: translateX(3px) translateY(0px) rotate(45deg);
+        transition:.5s ease-in-out;
+      }
+      .middle{
+        opacity:0;
+        transition:.5s ease-in-out;
+      }
+      .bottom{
+        transform-origin:6 center;
+        transform: translateX(-5.5px) translateY(2.5px) rotate(-45deg);
+        transition:.5s ease-in-out;
+      }
+    }
+
+@media (min-width: 992px){
+  .navbar-toggleable-md .navbar-toggler {
+    display: block !important;
+    min-width: 120px;
+  }
+}
+
+.navbar-toggleable-md .container .collapse{
+  transform:translateY(-150px);
+  transition:1s ease-in-out;
+}
+
+.navbar-brand svg{
+    width:150px;
+    height:50px;
+}
+path.brand{
+    fill:white;
+}
+
+.navbar-collapse{
+  margin-right:25px;
+  transition:1s ease-in-out;
+}
+
+@media (max-width: 992px){
+  .navbar-collapse{
+    transition: 1s ease-in-out;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 45px;
+    text-align: center;
+    background: #222;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,160 @@
+{{> header }}
+
+    <!-- Masthead -->
+    <header class="masthead video">
+        <div class="overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <a class="masthead-img img-fluid mb-3" alt="">
+                        <img style="width:350px;" src="{{ cosmic.object.logos.metadata.full_sloma_logo.imgix_url }}" alt="Sloma Real Estate Group Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <!-- <a class="btn page-scroll" href="#estimate"> -->
+            <a class="btn page-scroll" href="#listings">
+                <i class="fa fa-angle-down fa-fw"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+    <section class="page-section bg-faded" id="listings" style="padding:0px;">
+
+      <!-- Portfolio Carousel -->
+      <div class="portfolio-carousel wow fadeIn owl-carousel owl-theme">
+      {{# cosmic.objects.type.listings }}
+        <div class="item">
+          <h3 class="text-center">Featured Listings</h3>
+          <div class="container-fluid" data-href="/{{ slug }}">
+            <div class="row h-100">
+              <div class="col-md-5 push-md-7 my-auto">
+                <div class="project-details">
+                  <span class="project-name">{{ metadata.listing_status }}</span>
+                  <span class="project-description"><a href="/{{ slug }}">{{ title }}</a></span>
+                  <hr class="colored">
+                  <p>{{# content }} <span class="content">{{{ content }}}</span> {{/ content}}</p>
+                  <div class="meta d-flex flex-row justify-content-around mb-3">
+                    {{# metadata.beds}}<span class="beds">Beds:<strong> {{ metadata.beds}}</strong></span>{{/ metadata.beds}}
+                    {{# metadata.baths}} <span class="baths">Baths:<strong> {{ metadata.baths}}</strong></span> {{/ metadata.baths}}
+                    {{# metadata.price}} <span class="price">Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}
+                  </div>
+                  <a href="/{{ slug }}" data-toggle="modal" class="btn btn-primary">View Details <i class="fa fa-long-arrow-right fa-fw"></i></a>
+                  <a href="/agent/{{ metadata.agent.slug }}" class="btn btn-secondary">Contact An Agent <i class="fa fa-phone fa-fw"></i></a>
+                </div>
+              </div>
+              {{# metadata.hero.imgix_url }}
+              <div class="col-md-7 pull-md-5 hidden-xs my-auto">
+                  <div class="device-container">
+                      <div class="device-mockup macbook portrait black">
+                          <div class="device">
+                              <div class="screen">
+                                  <img class="img-fluid" src="{{ metadata.hero.imgix_url }}?w=1000&fit=crop&crop=entropy&auto=format" alt="">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {{/ metadata.hero.imgix_url }}
+            </div>
+          </div>  
+        </div>
+      {{/ cosmic.objects.type.listings }}
+    </section>
+
+    <!-- Mission Section -->
+    <section class="page-section text-white" id="mission" style="background-color:rgba(0,0,0,0.8);">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Mission</h2>
+            <p class="mb-0">At Sloma Real Estate Group, we believe in delivering an individually-tailored and uncompromisingly thorough experience that is memorable for all of the right reasons. Whether you’re in the market for a new home or looking to sell your current one, we take pride in providing an unmatched service that seamlessly integrates the extensive resources of the Jameson Sotheby’s brand with the accessibly-refined elegance and unparalleled dedication of our knowledgeable team. At Sloma Real Estate Group, we prioritize simplicity and professionalism, and work relentlessly to ensure that each of our clients’ have their expectations not only met, but exceeded.</p>
+            <hr>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="page-section" id="about">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Team</h2>
+            <hr class="colored">
+            <div class="team-carousel owl-carousel owl-theme mt-4">
+
+              {{# cosmic.objects.type.authors }}
+
+                <!-- Team Carousel Item 1 -->
+                <div class="item">
+                    <div class="overlay"></div>
+                    <img class="img-fluid" src="{{ metadata.image.imgix_url }}?w=400&fit=crop&crop=entropy&auto=format,enhance" alt="">
+                    <div class="team-caption">
+                        <h3>{{ title }}</h3>
+                        <hr class="colored">
+                        <p>{{ metadata.title }}</p>
+                        <ul class="list-inline list-team-social">
+                            {{# metadata.phone }}<li class="list-inline-item"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i></a></li>{{/ metadata.phone }}
+                            {{# metadata.email }}<li class="list-inline-item"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i></a></li>{{/ metadata.email }}
+                            {{# metadata.twitter }}<li class="list-inline-item"><a href="http://twitter.com/{{ metadata.twitter }}"><i class="fa fa-twitter fa-fw"></i></a></li>{{/ metadata.twitter }}
+                            {{# metadata.linkedin }}<li class="list-inline-item"><a href="http://linkedin.com/in/{{ metadata.linkedin }}"><i class="fa fa-linkedin fa-fw"></i></a>{{/ metadata.linkedin }}
+                            </li>
+                            {{# metadata.instagram }}<li class="list-inline-item"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i></a></li>{{/ metadata.instagram }}
+                        </ul>
+                    </div>
+                </div>
+
+              {{/ cosmic.objects.type.authors }}
+
+            </div>
+            <hr class="colored">
+            <a href="/about" class="btn btn-primary">Learn More About Our Team</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="page-section testimonials bg-faded" id="testimonials">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="testimonials-carousel">
+
+                      {{# cosmic.objects.type.testimonials }}
+                        <!-- Testimonial Item 1 -->
+                        <div class="item mb-4">
+                            <p class="lead">{{ metadata.headline }}</p>
+                            <hr class="colored">
+                            <p>{{{ content }}}</p>
+                            <div class="testimonial-img">
+                                <img class="rounded-circle img-fluid" src="{{ metadata.profile.imgix_url }}" alt="">
+                            </div>
+                            <div class="testimonial-author">
+                                <span class="name">{{ title }}</span>
+                                <p class="small">{{ metadata.location }}</p>
+                                <div class="stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                      {{/ cosmic.objects.type.testimonials }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    
+
+
+  </main>
+{{> footer }}
+
