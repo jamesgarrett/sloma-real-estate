@@ -25,7 +25,7 @@ app.use('/', (req, res, next) => {
   next()
 })
 // Home
-app.get('/', (req, res) => {
+app.get('/' || '/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     res.locals.cosmic = cosmic

@@ -154,7 +154,8 @@ h6 {
   #mainNav .navbar-collapse .navbar-nav
   > .nav-item
   > .nav-link {
-    transform: translateY(57px); } }
+    transform: translateY(25px);
+    background: #222; } }
 #mainNav .container .navbar-toggler {
   border-color: transparent;
   font-family: serif;
@@ -230,14 +231,12 @@ path.brand {
 @media (max-width: 992px) {
   .navbar-collapse {
     transition: 1s ease-in-out;
-    height: 100vh;
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
     padding-top: 45px;
     text-align: center;
-    background: #222;
     z-index: -1; } }
 header.masthead {
   position: relative;
