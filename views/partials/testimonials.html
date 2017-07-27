@@ -8,15 +8,10 @@
                       {{# cosmic.objects.type.testimonials }}
                         <!-- Testimonial Item 1 -->
                         <div class="item mb-4">
-                            <p class="lead">{{ metadata.headline }}</p>
+                            <p class="lead">{{ metadata.type }} | {{ metadata.neighborhood }} | {{ metadata.building_type }}</p>
                             <hr class="colored">
                             <p>{{{ content }}}</p>
-                            <div class="testimonial-img">
-                                <img class="rounded-circle img-fluid" src="{{ metadata.profile.imgix_url }}" alt="">
-                            </div>
                             <div class="testimonial-author">
-                                <span class="name">{{ title }}</span>
-                                <p class="small">{{ metadata.location }}</p>
                                 <div class="stars">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>

@@ -17,6 +17,18 @@
 
 <main>
 
+    <!-- Mission Section -->
+    <section class="page-section text-white" id="mission" style="background-color:#222;">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Mission</h2>
+            <p class="mb-0" style="border:1px solid white;padding:2.5rem;">At Sloma Real Estate Group, we believe in delivering an individually-tailored and uncompromisingly thorough experience that is memorable for all of the right reasons. Whether you’re in the market for a new home or looking to sell your current one, we take pride in providing an unmatched service that seamlessly integrates the extensive resources of the Jameson Sotheby’s brand with the accessibly-refined elegance and unparalleled dedication of our knowledgeable team. At Sloma Real Estate Group, we prioritize simplicity and professionalism, and work relentlessly to ensure that each of our clients’ have their expectations not only met, but exceeded.</p>
+            <hr>
+            <div class="text-center">
+                <img src="{{ cosmic.object.logos.metadata.sloma_key_white.imgix_url }}" width="50" alt="">
+            </div>
+        </div>
+    </section>
+
 	<!-- Team Section -->
     <section class="page-section bg-default" id="team">
         <div class="container wow fadeIn">
@@ -24,50 +36,53 @@
 			<hr class="colored mb-5">
 
               {{# cosmic.objects.type.authors }}
+                <div class="row brag">
+                    <!-- Team Carousel Item 1 -->
+                    <div class="item col-lg-6 col-sm-12 text-center" style="clear:both;display:flex;flex-direction:column;">
 
-                <!-- Team Carousel Item 1 -->
-                <div class="item text-center" style="clear:both;display:flex;flex-direction:column;">
+                            <div class="team-caption ">
+                                <h3>{{ title }}</h3>
+                                <p class="job-title">{{ metadata.title }}</p>
+                            </div>
 
-                	<p class="description">
-                		<img class="col-lg-6 offset-lg-3 col-md-4 offset-md-4 col-sm-12  mb-2" src="{{ metadata.image.imgix_url }}?w=800&fit=crop&crop=entropy&auto=format,enhance" alt="" style="float:left;">
-                		<div class="team-caption ">
-                        <h3>{{ title }}</h3>
-                        <p class="job-title">{{ metadata.title }}</p>
+                    		<div class="img mx-auto mb-5" style="width:400px;height:600px;background-position:center;background-image:url('{{ metadata.image.imgix_url }}?w=800&fit=crop&crop=entropy&auto=format,enhance');background-size:cover;"></div>
+
+                        <ul class="list-inline list-team-social">
+                            {{# metadata.phone }}<li class="list-inline-item col-md-12 mb-2"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i>{{ metadata.phone }}</a></li>{{/ metadata.phone }}
+                            {{# metadata.email }}<li class="list-inline-item col-md-12 mb-2"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i>{{ metadata.email }}</a></li>{{/ metadata.email }}
+                            {{# metadata.twitter }}<li class="list-inline-item col-md-12 mb-2"><a href="http://twitter.com/{{ metadata.twitter }}"><i class="fa fa-twitter fa-fw"></i>/{{ metadata.twitter }}</a></li>{{/ metadata.twitter }}
+                            {{# metadata.linkedin }}<li class="list-inline-item col-md-12 mb-2"><a href="http://linkedin.com/in/{{ metadata.linkedin }}"><i class="fa fa-linkedin fa-fw"></i>/{{ metadata.linkedin }}</a>{{/ metadata.linkedin }}
+                            </li>
+                            {{# metadata.instagram }}<li class="list-inline-item col-md-12 mb-2"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i>/{{ metadata.instagram }}</a></li>{{/ metadata.instagram }}
+                        </ul>
+
                     </div>
-					<!-- <hr class="dark"> -->
-                    <ul class="list-inline list-team-social">
-                        {{# metadata.phone }}<li class="list-inline-item"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i>{{ metadata.phone }}</a></li>{{/ metadata.phone }}
-                        {{# metadata.email }}<li class="list-inline-item"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i>{{ metadata.email }}</a></li>{{/ metadata.email }}
-                        {{# metadata.twitter }}<li class="list-inline-item"><a href="http://twitter.com/{{ metadata.twitter }}"><i class="fa fa-twitter fa-fw"></i>/{{ metadata.twitter }}</a></li>{{/ metadata.twitter }}
-                        {{# metadata.linkedin }}<li class="list-inline-item"><a href="http://linkedin.com/in/{{ metadata.linkedin }}"><i class="fa fa-linkedin fa-fw"></i>/{{ metadata.linkedin }}</a>{{/ metadata.linkedin }}
-                        </li>
-                        {{# metadata.instagram }}<li class="list-inline-item"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i>/{{ metadata.instagram }}</a></li>{{/ metadata.instagram }}
-                    </ul>
-                    <!-- <hr class="dark"> -->
-                		{{{ content }}}
-                	</p>
-                    
+                    <div class="item col-lg-6 col-sm-12">
+
+                    		{{{ content }}}
+                        
+                    </div>
+
                 </div>
 
-                <div class="col-md-12"><hr class="colored" style="clear:both;margin:5rem auto;"></div>
+                <hr class="colored" style="clear:both;margin:5rem auto;">
 
               {{/ cosmic.objects.type.authors }}
               <hr>
 			<hr class="dark mt-5" style="max-width:100%;clear:both;">
+    
 
-            <ul class="list-inline text-center" style="display:flex;justify-content:center;">
-					<li class="inline-list-item"><img  src="{{ cosmic.object.logos.metadata.clhms_1.imgix_url }}?" width="250" alt=""></li>
-					<li class="inline-list-item"><img src="{{ cosmic.object.logos.metadata.realtor_producer.imgix_url }}" width="250" alt=""></li>
-					<li class="inline-list-item"><img src="{{ cosmic.object.logos.metadata.clhms_2.imgix_url }}" width="250" alt=""></li>
-			</ul>
+            <div class="row">
+                <div class="text-center col-md-4 col-sm-12"><img src="{{ cosmic.object.logos.metadata.clhms_1.imgix_url }}?w=250" alt=""></div>
+                <div class="text-center col-md-4 col-sm-12"><img src="{{ cosmic.object.logos.metadata.realtor_producer.imgix_url }}?w=250" alt=""></div>
+                <div class="text-center col-md-4 col-sm-12"><img src="{{ cosmic.object.logos.metadata.clhms_2.imgix_url }}?w=250" alt=""></div>
+            </div>
 
     </section>
 
-        <!-- Mission Section -->
     <section class="page-section text-white" id="mission" style="background-color:rgba(0,0,0,0.8);">
         <div class="container text-center wow fadeIn">
-            <h2>Our Mission</h2>
-            <p class="mb-0">At Sloma Real Estate Group, we believe in delivering an individually-tailored and uncompromisingly thorough experience that is memorable for all of the right reasons. Whether you’re in the market for a new home or looking to sell your current one, we take pride in providing an unmatched service that seamlessly integrates the extensive resources of the Jameson Sotheby’s brand with the accessibly-refined elegance and unparalleled dedication of our knowledgeable team. At Sloma Real Estate Group, we prioritize simplicity and professionalism, and work relentlessly to ensure that each of our clients’ have their expectations not only met, but exceeded.</p>
+            <p class="mb-0 quote mx-auto"><em>"Whatever the mind of man can concieve and believe, it can achieve."</em><br>- Napoleon Hill</p>
             <hr>
         </div>
     </section>
@@ -77,37 +92,79 @@
         <div class="container text-center wow fadeIn">
             <h2>Our Accomplishments</h2>
             <hr class="dark">
-            <div class="announcement">
-	            <h3>Statistics and Awards</h3>
-				<p>Since 2007, Izabela Sloma has over 400 transactions for a total sales volume of $200 million. Izabela has been consistently been a Top Producer in the Chicago Association of Realtors, earning Silver Status for 2016, 2015 and 2013.</p>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="announcement">
+                        <h3>Statistics and Awards</h3>
+                        <p>Since 2007, Izabela Sloma has over 400 transactions for a total sales volume of $200 million. Izabela has been consistently been a Top Producer in the Chicago Association of Realtors, earning Silver Status for 2016, 2015 and 2013.</p>
+                    </div>
+                    <hr class="dark">
+                    <div class="announcement">
+                        <p class="text-center job-title sans">OVER</p>
+                        <h3 class="text-center serif">30 Million</h3>            
+                        <p class="text-center job-title sans">IN TOTAL SALES</p>
+                        <h1 class="text-center serif">in 2016</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="announcement">
+                        <h3>How Izabela Performs vs. the Rest of the Industry</h3>
+                        <img src="{{ cosmic.object.about.metadata.performance_image.url }}" alt="" class="img-fluid">
+                    </div>
+                    <hr class="dark">
+                    <div class="announcement">
+                        <img class="w-250 mb-5" src="{{ cosmic.object.logos.metadata.realtor_producer.imgix_url }}" width="250" alt="">
+                        <h3 class="mb-5">outstanding sales achievement awards top residential producer</h3>
+                        <ul class="list-inline">
+                            <li class="inline-list-item stat-table">2016 Sales Volume $23-39.9 Million</li>
+                            <li class="inline-list-item stat-table">2015 Sales Volume $26-39.9. Million</li>
+                            <li class="inline-list-item stat-table">2014 Sales Volume $19+ Million</li>
+                            <li class="inline-list-item stat-table">2013 Sales Volume $26-39.9. Million</li>
+                            <li class="inline-list-item stat-table">2012 Sales Volume $15-20 Million</li>
+                            <li class="inline-list-item stat-table">2011 Sales Volume $12-16 Million</li>
+                            <li class="inline-list-item stat-table">2010 Sales Volume $7+ Million</li>
+                        </ul>
+                    </div>
+                </div>
+                
             </div>
+
 			<hr class="dark">
-			<div class="announcement">
-				<p class="text-center job-title sans">OVER</p>
-				<h3 class="text-center serif">30 Million</h3>            
-				<p class="text-center job-title sans">IN TOTAL SALES</p>
-				<h1 class="text-center serif">in 2016</h1>
-			</div>
-			<hr class="dark">
-			<div class="announcement">
-				<h3>How Izabela Performs vs. the Rest of the Industry</h3>
-				<img src="{{ cosmic.object.about.metadata.performance_image.url }}" alt="" class="img-fluid">
-			</div>
-			<hr class="dark">
-			<div class="announcement">
-				<img class="w-250 mb-5" src="{{ cosmic.object.logos.metadata.realtor_producer.imgix_url }}" width="250" alt="">
-				<h3 class="mb-5">outstanding sales achievement awards top residential producer</h3>
-				<ul class="list-inline">
-					<li class="inline-list-item stat-table">2016 Sales Volume $23-39.9 Million</li>
-					<li class="inline-list-item stat-table">2015 Sales Volume $26-39.9. Million</li>
-					<li class="inline-list-item stat-table">2014 Sales Volume $19+ Million</li>
-					<li class="inline-list-item stat-table">2013 Sales Volume $26-39.9. Million</li>
-					<li class="inline-list-item stat-table">2012 Sales Volume $15-20 Million</li>
-					<li class="inline-list-item stat-table">2011 Sales Volume $12-16 Million</li>
-					<li class="inline-list-item stat-table">2010 Sales Volume $7+ Million</li>
-				</ul>
-			</div>
-			<hr class="dark">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+   <!-- Testimonials Section -->
+    <section class="page-section testimonials bg-faded" id="testimonials">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="testimonials-carousel">
+
+                      {{# cosmic.objects.type.testimonials }}
+                        <!-- Testimonial Item 1 -->
+                        <div class="item mb-4">
+                            <p class="lead">{{ metadata.type }} | {{ metadata.neighborhood }} | {{ metadata.building_type }}</p>
+                            <hr class="colored">
+                            <p>{{{ content }}}</p>
+                            <hr class="colored">
+                            <div class="testimonial-author">
+                                <p class="small">{{ metadata.location }}</p>
+                                <div class="stars">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                      {{/ cosmic.objects.type.testimonials }}
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
