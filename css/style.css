@@ -732,6 +732,15 @@ button, input, optgroup, select, textarea {
   .announcement .stat-table {
     font-family: 'freight-text-pro', 'baskerville', times new roman, serif;
     font-size: 2rem; }
+  .announcement .sans.alt {
+    font-family: 'freight-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .announcement .serif.alt {
+    font-family: freight-text-pro;
+    font-size: 4rem;
+    line-height: 5.5rem; }
 
 .brag .item p:first-child:first-letter {
   color: #EF4035;
@@ -835,9 +844,8 @@ ul.footer.nav.navbar-nav {
   float: none;
   margin: 25px 0; }
 
-footer.footer
 ul.footer.nav.navbar-nav li {
-  width: 150px;
+  padding: 10px 15px;
   float: left;
   text-align: center;
   font-family: 'freight-text-pro',serif;
