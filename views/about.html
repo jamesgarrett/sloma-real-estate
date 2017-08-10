@@ -21,7 +21,7 @@
     <section class="page-section bg-faded" id="mission" style="padding:0;">
         <div class="container-fluid text-center wow fadeIn">
             <div class="row">
-                <div class="item col-lg-6 col-sm-12  hidden-md-down text-center" style="width:100%;">
+                <div class="item col-lg-6 col-sm-12  hidden-md-down text-center" style="width:100%;list-style-type:none;padding:0px;">
                     <li style="background-image:url('{{ cosmic.object.about.metadata.4028_harding.imgix_url }}');background-size:cover;background-position:center;height:100%;"></li>
                 </div>
                 <div class="item col-xl-4 col-lg-6 col-md-6 col-sm-12 mission my-auto mx-auto" style="padding:5rem 10px;">
@@ -154,6 +154,8 @@
    <!-- Testimonials Section -->
     <section class="page-section testimonials bg-inverse text-white" id="testimonials">
         <div class="container wow fadeIn">
+            <h2>Testimonials</h2>
+            <hr>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonials-carousel">
@@ -185,34 +187,19 @@
         </div>
     </section>
 
-    <!-- Recent Transactions -->
-    <section class="page-section transactions">
+        <!-- Recent Transactions -->
+    <section class="page-section transactions bg-faded text-center">
         <div class="container wow fadeIN">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" width="100" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" alt="">
-                    </div>
-                    <div class="col-lg-3">
-                        <img src="{{ cosmic.object.about.metadata.2208_ohio.imgix_url }}" width="100" alt="">
-                    </div>
+            <h2>Recent Transactions</h2>
+            <hr class="dark">
+            <div class="row mb-3">
+            {{# cosmic.objects.type.listings }}
+                <div class="col-lg-6 listing">
+                    <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" width="" alt="">
+                    <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
+                    <h5 class="text-center" style="margin-bottom:1.5rem;margin-top:1rem;">{{# metadata.price}} <span class="price" style="text-transform:capitalize;">Selling Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}</h5>
                 </div>
-                <div class="col-lg-6">
-                    
-                </div>
-
+            {{/ cosmic.objects.type.listings }}
             </div>
         </div>
     </section>

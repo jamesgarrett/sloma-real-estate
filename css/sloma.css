@@ -220,7 +220,7 @@ header.video {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: #000; }
+    background: lightslategrey; }
   header.video .container,
   header.video .scroll-down {
     z-index: 999; }

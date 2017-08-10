@@ -107,3 +107,4 @@ app.get('/listings/:slug', (req, res) => {
 http.listen(app.get('port'), () => {
   console.info('==> 🌎  Go to http://localhost:%s', app.get('port'));
 })
+

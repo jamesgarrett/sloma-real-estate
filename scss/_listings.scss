@@ -1,0 +1,55 @@
+ul.neighborhoods{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 25px;
+    .hood {
+	    display: inline-flex;
+	    a {
+		    border: 2px solid white;
+		    padding: 10px 15px;
+		    color: white;
+		    font-family: 'freight-sans-pro';
+		    &:hover{
+			    background:white;
+			    color:#222;
+			    transition:.5s ease-in-out;
+		    }
+		}
+	}
+}
+
+
+.listing{
+	img{
+	    width:100%;
+	}
+	h4{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translateY(-50%) translateX(-50%);
+	    background: rgba(255,255,255,0.8);
+	    padding: 10px 15px;
+	    a{
+	    	color:#222;
+	    	&:hover{
+	    		color:$themePrimary;
+	    	}
+	    }
+	}
+} 
+
+
+.meta.d-flex > span {
+    border-right: 1px solid white;
+    width: 100%;
+    font-family:initial;
+    font-weight:600;
+    font-size:1.5rem;
+}
+
+.meta.d-flex > span:last-child {
+    border: none;
+}

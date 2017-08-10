@@ -1,0 +1,76 @@
+{{> header }}
+
+	
+<div class="bg-image" id="background-slider"></div>
+<header class="h-100" style="background:rgba(0,0,0,0.6);">
+	<!--  -->
+    <div class="overlay"></div>
+        <div class="container h-100" >
+			<div class="row h-100">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 my-auto text-white page-title text-center">
+                    <h1>{{ page.title }}</h1>
+	                  <div class="meta d-flex flex-row justify-content-around mb-3">
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.price}} <span class="price">Price:<strong> {{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
+			          </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</header>
+
+<!-- Listing Information Section -->
+    <section class="page-section bg-default" style="padding:0px;">
+        <div class="container-fluid text-center wow fadeIn">	
+	 		<div class="row">
+                <div class="item col-lg-6 col-sm-12  hidden-md-down text-center" style="width:100%;list-style-type:none;padding:0px;">
+                    <li style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000');background-size:cover;background-position:center;height:100%;"></li>
+                </div>
+                <div class="item col-xl-4 col-lg-6 col-md-6 col-sm-12 mission my-auto mx-auto" style="padding:2rem 3rem;">
+                    <h2 class="mb-3 text-center">{{ page.metadata.category.title }}</h2>
+                    <hr class="dark">
+                    <span class="mb-0" style="border:1px solid #222;padding:2.5rem; text-align:justify;display:block;"> {{# page.content }} {{{ page.content }}}{{/ page.content}}</span>
+                    <hr class="dark">
+                    <div class="text-center">
+                        <img src="{{ cosmic.object.logos.metadata.keyhole.imgix_url }}" width="50" alt="">
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section>
+
+<!-- Other Listings -->
+
+<style>
+	.related{
+	    display: flex;
+	    justify-content: center;
+	    visibility: visible;
+	    animation-name: fadeIn;
+	    width: 100%;
+	    overflow-x: scroll;
+	}
+</style>
+
+	<section class="page-section bg-dark">
+		<div class="container-fluid text-center wow fadeIn related">
+				{{# listings }}
+					<a href="/listings/{{ slug }}" class="thumb col-md-2 col-sm-4 col-xs-6 col-xxs-12">
+						<img src="{{ metadata.hero.imgix_url }}?w=250" style="width:100%;" alt="">
+					</a>
+				{{/ listings }}
+		</div>
+	</section>
+
+<script>
+	$(document).ready(function(){
+	var image = $('#background-slider');
+
+	// background slider
+	image.css("background-image","url(https://cosmicjs.imgix.net/4b159f40-6e40-11e7-b262-b55cd8567838-0005-2.jpg?w=1000)");
+});
+</script>
+
+
+{{> footer}}

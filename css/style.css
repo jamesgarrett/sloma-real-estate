@@ -312,7 +312,7 @@ header.video {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: #000; }
+    background: lightslategrey; }
   header.video .container,
   header.video .scroll-down {
     z-index: 999; }
@@ -757,6 +757,51 @@ button, input, optgroup, select, textarea {
   padding: 2.5rem;
   font-family: 'Niconne',cursive;
   font-size: 2.5rem; }
+
+.mission {
+  padding: 5vh; }
+
+ul.neighborhoods {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 25px; }
+  ul.neighborhoods .hood {
+    display: inline-flex; }
+    ul.neighborhoods .hood a {
+      border: 2px solid white;
+      padding: 10px 15px;
+      color: white;
+      font-family: 'freight-sans-pro'; }
+      ul.neighborhoods .hood a:hover {
+        background: white;
+        color: #222;
+        transition: .5s ease-in-out; }
+
+.listing img {
+  width: 100%; }
+.listing h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 15px; }
+  .listing h4 a {
+    color: #222; }
+    .listing h4 a:hover {
+      color: #EF4035; }
+
+.meta.d-flex > span {
+  border-right: 1px solid white;
+  width: 100%;
+  font-family: initial;
+  font-weight: 600;
+  font-size: 1.5rem; }
+
+.meta.d-flex > span:last-child {
+  border: none; }
 
 .floating-label-form-group {
   position: relative;
