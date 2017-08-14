@@ -810,6 +810,7 @@ ul.neighborhoods {
   visibility: visible;
   animation-name: fadeIn;
   width: 100%;
+  margin: 0 auto;
   overflow-x: scroll; }
   .related .thumb img {
     width: inherit; }
