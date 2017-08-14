@@ -53,3 +53,12 @@ ul.neighborhoods{
 .meta.d-flex > span:last-child {
     border: none;
 }
+
+.related{
+    display: flex;
+    justify-content: center;
+    visibility: visible;
+    animation-name: fadeIn;
+    width: 100%;
+    overflow-x: scroll;
+}
