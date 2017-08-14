@@ -56,9 +56,14 @@ ul.neighborhoods{
 
 .related{
     display: flex;
-    justify-content: center;
+    flex-wrap:nowrap;
+    justify-content: left;
     visibility: visible;
     animation-name: fadeIn;
     width: 100%;
     overflow-x: scroll;
+    .thumb img{
+    width:inherit;
+    }
+
 }

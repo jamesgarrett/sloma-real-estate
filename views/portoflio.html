@@ -1,0 +1,42 @@
+     <section class="page-section bg-faded" id="listings" style="padding:0px;">
+
+ <!-- Portfolio Carousel -->
+      <div class="portfolio-carousel wow fadeIn owl-carousel owl-theme">
+      {{# cosmic.objects.type.listings }}
+        <div class="item">
+          <h3 class="text-center"><a href="/listings">Featured Listings</a></h3>
+          <div class="container-fluid" data-href="/listings/{{ slug }}">
+            <div class="row h-100">
+              <div class="col-md-5 push-md-7 my-auto">
+                <div class="project-details">
+                  <span class="project-name">{{ metadata.category.title }}</span>
+                  <span class="project-description"><a href="/listings/{{ slug }}">{{ title }}</a></span>
+                  <hr class="colored">
+                  <p>{{# content }} <span class="content">{{{ content }}}</span> {{/ content}}</p>
+                  <div class="meta d-flex flex-row justify-content-around mb-3">
+                    {{# metadata.beds}}<span class="beds">Beds:<strong> {{ metadata.beds}}</strong></span>{{/ metadata.beds}}
+                    {{# metadata.baths}} <span class="baths">Baths:<strong> {{ metadata.baths}}</strong></span> {{/ metadata.baths}}
+                    {{# metadata.price}} <span class="price">Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}
+                  </div>
+                  <a href="/listings/{{ slug }}" class="btn btn-primary">View Details <i class="fa fa-long-arrow-right fa-fw"></i></a>
+                  <a href="/agent/{{ metadata.agent.slug }}" class="btn btn-secondary">Contact An Agent <i class="fa fa-phone fa-fw"></i></a>
+                </div>
+              </div>
+              {{# metadata.hero.imgix_url }}
+              <div class="col-md-7 pull-md-5 hidden-xs my-auto">
+                  <div class="device-container">
+                      <div class="device-mockup macbook portrait black">
+                          <div class="device">
+                              <div class="screen">
+                                  <img class="img-fluid" src="{{ metadata.hero.imgix_url }}?w=1000&fit=crop&crop=entropy&auto=format" alt="">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {{/ metadata.hero.imgix_url }}
+            </div>
+          </div>  
+        </div>
+      {{/ cosmic.objects.type.listings }}
+    </section>

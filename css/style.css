@@ -805,11 +805,14 @@ ul.neighborhoods {
 
 .related {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: left;
   visibility: visible;
   animation-name: fadeIn;
   width: 100%;
   overflow-x: scroll; }
+  .related .thumb img {
+    width: inherit; }
 
 .floating-label-form-group {
   position: relative;
