@@ -13,14 +13,6 @@
                   <li>
                     <a href="/listings">Listings</a>
                   </li>
-                  <!-- <li class="dropdown">
-                    <a href="/listings" class="dropdown-toggle" data-toggle="dropdown">Listings <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Coming Soon</a></li>
-                      <li><a href="#">Active</a></li>
-                      <li><a href="#">Sold</a></li>
-                    </ul>
-                  </li> -->
                   <li>
                     <a href="/contact">Contact</a>
                   </li>
@@ -89,7 +81,21 @@
     <script src="/js/background-slide.js"></script>
     <script src="/js/mylist-player.js"></script>
 
+    <!-- Swiper JS -->
+    <script src="/node_modules/swiper/dist/js/swiper.min.js"></script>
 
+        <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 3,
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        loop:true
+    });
+    </script>
 
 
     <script

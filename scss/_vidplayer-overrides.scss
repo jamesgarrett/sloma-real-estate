@@ -104,18 +104,17 @@ each thumbnail image in the playlist */
 	-webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
-}
+    .thumb {
+		overflow:hidden;
+		height: 84px;
+	}
 
-.thumb {
-	overflow:hidden;
-	height: 84px;
-}
-
-.thumb img {
-	width: 100%;
-	position: relative;
-	top: -13px;
-	opacity: 0.6;
+	.thumb img {
+		width: 100%;
+		position: relative;
+		top: -13px;
+		opacity: 0.6;
+	}
 }
 
 .vid-item .desc {
