@@ -714,6 +714,21 @@ button, input, optgroup, select, textarea {
 .page-title h4 {
   margin-left: 25px; }
 
+.team-caption h3 a {
+  color: white;
+  opacity: 0.9;
+  transition: 1s ease-in-out; }
+  .team-caption h3 a:hover {
+    opacity: 1; }
+
+.team-carousel .item .overlay {
+  transition: 1s ease-in-out; }
+  .team-carousel .item .overlay:hover {
+    opacity: 0.1;
+    transition: 1s ease-in-out; }
+    .team-carousel .item .overlay:hover .team-caption h3 a {
+      color: #EF4035; }
+
 .job-title {
   font-family: 'freight-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -741,6 +756,11 @@ button, input, optgroup, select, textarea {
     font-family: freight-text-pro;
     font-size: 4rem;
     line-height: 5.5rem; }
+
+.anchor {
+  margin-top: -85px;
+  padding-bottom: 85px;
+  display: block; }
 
 .brag .item p:first-child:first-letter {
   color: #EF4035;

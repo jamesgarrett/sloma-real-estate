@@ -19,6 +19,30 @@
 	}
 }
 
+.team-caption{
+	h3{
+		a{
+			color:white;
+			opacity:0.9;
+			transition:1s ease-in-out;
+			&:hover{
+				opacity:1;
+			}
+		}
+	}
+}
+
+.team-carousel .item .overlay{
+	transition:1s ease-in-out;
+	&:hover{
+		opacity:0.1;
+		transition:1s ease-in-out;
+		.team-caption h3 a{
+			color:$themePrimary;
+		}
+	}
+}
+
 .job-title{
 	@include sans-serif-font;
 	text-transform: uppercase;
@@ -53,6 +77,14 @@
 		line-height: 5.5rem;
 	}
 }
+
+
+.anchor{ 
+	margin-top: -85px; 
+	padding-bottom: 85px; 
+	display: block;
+}
+
 
 .brag .item{
 	p:first-child:first-letter {
