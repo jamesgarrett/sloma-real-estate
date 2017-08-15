@@ -88,3 +88,18 @@ header.video {
 .masthead-img svg {
     height: 450px;
 }
+
+.scroll-jump{
+    background: rgba(255, 255, 255, 0.83);
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-family: 'freight-sans-pro';
+    color: #222;
+    transition:1s ease-in-out;
+    &:hover{
+        transition:1s ease-in-out;
+        background:#222;
+        color:white;
+    }
+}

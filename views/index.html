@@ -5,11 +5,13 @@
         <div class="overlay"></div>
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-12 my-auto text-center text-white">
+                <a class="col-md-2 hidden-md-down page-scroll my-auto text-center scroll-jump" href="#estimate">How much is your home worth?</a>
+                <div class="col-md-8 my-auto text-center mx-auto text-white">
                     <a class="masthead-img img-fluid mb-3" alt="">
                         <img style="width:350px;" src="{{ cosmic.object.logos.metadata.full_sloma_logo.imgix_url }}?w=700" alt="Sloma Real Estate Group Logo">
                     </a>
                 </div>
+                <a class="col-md-2 hidden-md-down page-scroll my-auto text-center scroll-jump" href="#search">Find your new home.</a>
             </div>
         </div>
         <div class="scroll-down">
@@ -23,7 +25,7 @@
     <main>
 
      <!-- Slider -->
-     
+
       <section class="page-section bg-faded wow fadeIn">
             <h2 class="text-center">Featured Listings</h2>
             <hr class="dark">
@@ -63,11 +65,6 @@
 
     </section>
 
-    <!-- Estimate -->
-    <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
-        <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
-    </section>
-
     <!-- Team Section -->
     <section class="page-section" id="about">
         <div class="container text-center wow fadeIn">
@@ -104,18 +101,16 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="page-section text-white" id="mission" style="background-color:rgba(0,0,0,0.8);">
-        <div class="container text-center wow fadeIn">
-            <h2>Our Mission</h2>
-            <p class="mb-0">At Sloma Real Estate Group, we believe in delivering an individually-tailored and uncompromisingly thorough experience that is memorable for all of the right reasons. Whether you’re in the market for a new home or looking to sell your current one, we take pride in providing an unmatched service that seamlessly integrates the extensive resources of the Jameson Sotheby’s brand with the accessibly-refined elegance and unparalleled dedication of our knowledgeable team. At Sloma Real Estate Group, we prioritize simplicity and professionalism, and work relentlessly to ensure that each of our clients’ have their expectations not only met, but exceeded.</p>
-            <hr>
-        </div>
+    <!-- Estimate -->
+    <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
+        <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
     </section>
 
     <!-- Testimonials Section -->
     <section class="page-section testimonials bg-faded" id="testimonials">
         <div class="container wow fadeIn">
+            <h2>Testimonials</h2>
+            <hr class="colored">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonials-carousel">
@@ -151,6 +146,17 @@
             </div>
         </div>
     </section>
+
+    <!-- Mission Section -->
+    <section class="page-section text-white" id="mission" style="background-color:rgba(0,0,0,0.8);">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Mission</h2>
+            <p class="mb-0">At Sloma Real Estate Group, we believe in delivering an individually-tailored and uncompromisingly thorough experience that is memorable for all of the right reasons. Whether you’re in the market for a new home or looking to sell your current one, we take pride in providing an unmatched service that seamlessly integrates the extensive resources of the Jameson Sotheby’s brand with the accessibly-refined elegance and unparalleled dedication of our knowledgeable team. At Sloma Real Estate Group, we prioritize simplicity and professionalism, and work relentlessly to ensure that each of our clients’ have their expectations not only met, but exceeded.</p>
+            <hr>
+        </div>
+    </section>
+
+    
 
   </main>
 {{> footer }}
