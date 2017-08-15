@@ -50,6 +50,14 @@ app.get('/about', (req, res) => {
   })
 })
 
+app.get('/videos', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    res.locals.cosmic = cosmic
+    res.render('videos.html', { partials })
+  })
+})
+
 app.get('/contact', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
@@ -103,6 +111,23 @@ app.get('/listings/:slug', (req, res) => {
     return res.render('listings-single.html', { partials })
   })
 })
+
+app.get('/:slug', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+  const cosmic = response
+  const all_pages = response.objects.type.pages
+  const slug = req.params.slug
+  res.locals.cosmic = cosmic
+  all_pages.forEach(page => {
+    if (page.slug === slug)
+      res.locals.page = page
+    })
+    if(!res.locals.page) {
+      return res.status(404).render('404.html', { partials })  
+    }
+    return res.render('page.html', { partials })
+  })
+});
 
 http.listen(app.get('port'), () => {
   console.info('==> 🌎  Go to http://localhost:%s', app.get('port'));
