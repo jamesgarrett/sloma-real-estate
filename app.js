@@ -13,13 +13,10 @@ const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
 const read_key = process.env.COSMIC_READ_KEY
 const partials = {
   header: 'partials/header',
-  footer: 'partials/footer',
+  footer: 'partials/footer'
 }
-const modules = {
-  team: 'partials/team',
-  portfolio: 'partials/portfolio',
-  testimonials: 'partials/testimonials',
-}
+
+// Create global variables for the lifespan of the app
 
 Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const logos = response.object.logos
@@ -36,7 +33,10 @@ app.use('/', (req, res, next) => {
   res.locals.year = new Date().getFullYear()
   next()
 })
-// Home
+
+
+// Unique Templates
+
 app.get('/' || '/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
@@ -80,6 +80,8 @@ app.get('/listings', (req, res) => {
   })
 })
 
+// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
+
 app.get('/listings/:slug', (req, res) => {
   const slug = req.params.slug
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
@@ -99,6 +101,8 @@ app.get('/listings/:slug', (req, res) => {
     return res.render('listings-single.html', { partials })
   })
 })
+
+// Serve generic template if pages exists but does not have unique template. Serve 404 if it does not exist
 
 app.get('/:slug', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
