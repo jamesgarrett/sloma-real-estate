@@ -21,14 +21,7 @@ const modules = {
   testimonials: 'partials/testimonials',
 }
 
-app.use('/', (req, res, next) => {
-  res.locals.year = new Date().getFullYear()
-  next()
-})
-// Home
-app.get('/' || '/home', (req, res) => {
-  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
-    const cosmic = response
+Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const logos = response.object.logos
     const footer = response.object.footer
     const header = response.object.header
@@ -37,6 +30,16 @@ app.get('/' || '/home', (req, res) => {
     app.locals.icons = icons
     app.locals.logos = logos
     app.locals.footer = footer
+})
+
+app.use('/', (req, res, next) => {
+  res.locals.year = new Date().getFullYear()
+  next()
+})
+// Home
+app.get('/' || '/home', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })
   })
@@ -53,6 +56,7 @@ app.get('/about', (req, res) => {
 app.get('/videos', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
+    const page = response.object.videos
     res.locals.cosmic = cosmic
     res.render('videos.html', { partials })
   })
@@ -75,22 +79,6 @@ app.get('/listings', (req, res) => {
     res.render('listings.html', { partials })
   })
 })
-
-// app.get('/listings', (req, res) => {
-//     Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
-//       const cosmic = response
-//       const page = response.object.listings
-//       const listings = response.objects.type.listings
-
-// if (req.query.filter && req.query.filter === 'active') {
-//   ... do some filtering here then
-//   res.locals.listings = filtered_listings
-
-//       return res.render('listings.html', {
-//         partials
-//       })
-//     })
-//   })
 
 app.get('/listings/:slug', (req, res) => {
   const slug = req.params.slug
