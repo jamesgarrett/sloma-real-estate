@@ -103,7 +103,7 @@
                 #mainNav .navbar-collapse .navbar-nav 
                         > .nav-item 
                             > .nav-link {
-                    transform: translateY(25px);
+                    /*transform: translateY(25px);*/
                     background: #222;
                 }
             }
@@ -246,11 +246,14 @@ path.brand{
 
 .navbar-shrink .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu{
   background-color:#222 !important;
+  transition: 1s ease-in-out;
 }
 
 @media (max-width: 992px){
   .dropdown-menu{
     text-align: center;
     background-color: #222;
+    margin:0px;
+    background:#444;
   }
 }
