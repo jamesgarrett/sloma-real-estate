@@ -223,7 +223,7 @@ h6 {
 
 @media (max-width: 992px) {
   .navbar-toggleable-md .container .collapse {
-    transform: translateY(-150px);
+    /*transform:translateY(-150px);*/
     transition: 1s ease-in-out; } }
 
 .navbar-brand svg {
@@ -247,6 +247,32 @@ path.brand {
     padding-top: 45px;
     text-align: center;
     z-index: -1; } }
+
+.dropdown-menu {
+  margin: 15px 0 0 0;
+  color: white;
+  background-color: transparent;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: left; }
+  .dropdown-menu .dropdown-item {
+    color: white;
+    font-family: 'freight-text-pro', 'baskerville', times new roman, serif;
+    letter-spacing: 0.05rem;
+    font-weight: 600; }
+    .dropdown-menu .dropdown-item:hover {
+      color: #222; }
+
+.navbar-shrink .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
+  background-color: #222 !important; }
+
+@media (max-width: 992px) {
+  .dropdown-menu {
+    text-align: center;
+    background-color: #222; } }
 
 header.masthead {
   position: relative;
