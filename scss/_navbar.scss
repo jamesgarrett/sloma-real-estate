@@ -154,7 +154,7 @@
 
 .navbar-toggler > .menu-bars{
         fill:white;
-      .top,.bottom{
+        .top, .bottom{
         transition:1s ease-in-out;
         transform:rotate(0deg); 
       }
@@ -181,14 +181,16 @@
 
 @media (min-width: 992px){
   .navbar-toggleable-md .navbar-toggler {
-    display: block !important;
+    /*display: block !important;*/
     min-width: 120px;
   }
 }
 
-.navbar-toggleable-md .container .collapse{
-  transform:translateY(-150px);
-  transition:1s ease-in-out;
+@media (max-width: 992px){
+  .navbar-toggleable-md .container .collapse{
+    transform:translateY(-150px);
+    transition:1s ease-in-out;
+  }
 }
 
 .navbar-brand svg{
