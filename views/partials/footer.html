@@ -93,12 +93,12 @@
 
         <!-- Initialize Swiper -->
     <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
+    var swiper = new Swiper('.swiper-container-1', {
+        pagination: '.swiper-pagination-1',
         slidesPerView: 3,
         paginationClickable: true,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next-1',
+        prevButton: '.swiper-button-prev-1',
         spaceBetween: 30,
         loop:true,
         breakpoints: {
@@ -119,7 +119,33 @@
                 spaceBetween: 10
             }
         }
-
+    });
+    var swiper = new Swiper('.swiper-container-2', {
+        pagination: '.swiper-pagination-2',
+        slidesPerView: 3,
+        paginationClickable: true,
+        nextButton: '.swiper-button-next-2',
+        prevButton: '.swiper-button-prev-2',
+        spaceBetween: 30,
+        loop:true,
+        breakpoints: {
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
     });
     </script>
 
