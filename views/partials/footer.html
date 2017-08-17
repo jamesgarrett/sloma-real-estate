@@ -100,7 +100,26 @@
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 30,
-        loop:true
+        loop:true,
+        breakpoints: {
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+
     });
     </script>
 
