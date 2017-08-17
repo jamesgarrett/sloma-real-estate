@@ -24,30 +24,13 @@
 
     <main>
 
-     <!-- Slider -->
+     <!-- Featured Listings -->
 
-      <section class="page-section bg-faded wow fadeIn">
-            <h2 class="text-center">Featured Listings</h2>
-            <hr class="dark">
-        <div class="container-fluid text-center wow fadeIn" style="padding:0px !important;">
-          <div class="row related col-md-10 col-xs-12">
-            {{# cosmic.objects.type.listings }}
-              <a href="/listings/{{ slug }}" class="thumb col-md-3 col-sm-6">
-                <img src="{{ metadata.hero.imgix_url }}?w=450" alt="">
-                <h6 class="mt-2">{{ title }}</h6>
-              </a>
-            {{/ cosmic.objects.type.listings }}
-          </div>
-        </div>
-      </section>
-
-    <!-- Coming Soon -->
-
-    <section class="page-section bg-inverse text-white wow fadeIn" style="position:relative;">
-        <h2 class="text-center">Coming Soon</h2>
-        <hr class="">
+      <section class="page-section wow fadeIn" style="position:relative;">
+        <h2 class="text-center">Featured Listings</h2>
+        <hr class="colored">
         <!-- Swiper -->
-        <div class="swiper-container col-md-9 col-md-10 col-sm-12">
+        <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12">
             <div class="swiper-wrapper no-gutter " style="height:50vh;">
             {{# cosmic.objects.type.listings }}
                 <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
@@ -55,12 +38,36 @@
             </div>
         </div>
         <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination text-center mx-auto"></div>
+        <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div>
 
         <!-- Add Arrows -->
-        <div class="col-md-12 swiper-navigation hidden-sm-down">
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
+            <div class="swiper-button-next swiper-button-next-1"></div>
+            <div class="swiper-button-prev swiper-button-next-1"></div>
+        </div>
+
+    </section>
+
+    <!-- Coming Soon -->
+
+    <section class="page-section bg-inverse text-white wow fadeIn" style="position:relative;">
+        <h2 class="text-center">Coming Soon</h2>
+        <hr class="">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-container-2 col-md-9 col-md-10 col-sm-12">
+            <div class="swiper-wrapper no-gutter " style="height:50vh;">
+            {{# cosmic.objects.type.listings }}
+                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
+            {{/ cosmic.objects.type.listings }}
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="col-md-12 swiper-pagination swiper-pagination-2 text-center mx-auto"></div>
+
+        <!-- Add Arrows -->
+        <div class="col-md-12 swiper-navigation swiper-navigation-2 hidden-sm-down">
+            <div class="swiper-button-next swiper-button-next-2"></div>
+            <div class="swiper-button-prev swiper-button-prev-2"></div>
         </div>
 
     </section>
