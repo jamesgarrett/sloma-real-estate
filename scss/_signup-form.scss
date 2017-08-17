@@ -11,9 +11,10 @@
                 margin-left: 5px;
                 background-color: transparent;
                 font-size: 1rem;
+                color:white;
                 &:hover {
-                    color: white;
-                    background-color: darken($themePrimary, 10%);
+                    color: #222;
+                    background-color: white;
                 }
             }
         }
