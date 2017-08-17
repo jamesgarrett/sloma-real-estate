@@ -734,10 +734,11 @@ header.video {
   border: 4px solid white;
   margin-left: 5px;
   background-color: transparent;
-  font-size: 1rem; }
+  font-size: 1rem;
+  color: white; }
   .signup-form .input-group .input-group-btn .btn-primary:hover {
-    color: white;
-    background-color: #df1e12; }
+    color: #222;
+    background-color: white; }
 
 button, input, optgroup, select, textarea {
   border-radius: 0px;
