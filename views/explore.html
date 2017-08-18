@@ -1,0 +1,65 @@
+{{> header }}
+
+<!-- Background Image Section -->
+<div class="bg-image" style="background:#222 cover center; background-image:url('{{ page.metadata.hero.imgix_url }}?w1000');"></div>
+    <!-- Header Section -->
+  <div class="overlay"></div>
+  <div class="container h-100" >
+    <div class="row h-100">
+      <div class="col-12 my-auto text-white page-title">
+            <h1>{{ page.title }}</h1>
+            <h4>{{ page.metadata.headline }}</h4>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-section bg-default" id="search">
+	<div class="container text-center">
+		search		
+	</div>
+</section>
+
+<!-- Estimate -->
+    <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
+        <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
+    </section>
+
+
+	<section class="page-section bg-default" id="open-houses">
+		<div class="container text-center">
+			open houses
+		</div>
+	</section>
+
+<!-- Newsletter Signup Call to Action -->
+    <section class="page-section signup-form bg-inverse text-white" id="subscribe">
+        <div class="container text-center">
+            <h3 class="m0">Subscribe to our newsletter!</h3>
+            <hr class="colored">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <!-- MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <!-- Replace the form action in the line below with your MailChimp embed action! Visit the documentation for additional instructions! -->
+                        <form role="form" action="//slomarealestate.us16.list-manage.com/subscribe/post?u=a10aaa522ce52c84af182514c&amp;id=843aa288de" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                            <div class="input-group input-group-lg">
+                                <input type="email" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email address...">
+                                <span class="input-group-btn">
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Subscribe!</button>
+                                </span>
+                            </div>
+                            <div id="mce-responses">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- End MailChimp Signup Form -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{{> footer }}

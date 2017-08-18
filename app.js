@@ -70,6 +70,16 @@ app.get('/contact', (req, res) => {
   })
 })
 
+app.get('/explore', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    res.locals.cosmic = cosmic
+    const page = response.object.explore
+    res.locals.page = page
+    res.render('explore.html', { partials })
+  })
+})
+
 app.get('/listings', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const page = response.object.listings
