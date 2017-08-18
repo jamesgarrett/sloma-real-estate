@@ -35,11 +35,30 @@ ul.neighborhoods{
 	    a{
 	    	color:#222;
 	    	&:hover{
-	    		color:$themePrimary;
+	    		color: $themePrimary;
 	    	}
 	    }
 	}
 } 
+
+.mix-button{
+    padding:15px;
+    margin:15px 5px;
+}
+
+button.mixitup-control-active {
+    background: dodgerblue;
+    color: white;
+    border-color: dodgerblue;
+}
+
+button.btn-primary:hover, button.btn-primary:focus {
+    color: white;
+    border-color: dodgerblue;
+    background-color: dodgerblue;
+    box-shadow:none;
+    outline:0px;
+}
 
 
 .meta.d-flex > span {

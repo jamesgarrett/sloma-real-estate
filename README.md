@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/cosmicjs/simple-blog
 cd simple-blog
-npm
+npm install
 ```
 #### Run in development
 ```
