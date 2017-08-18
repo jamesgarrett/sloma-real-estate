@@ -1,10 +1,9 @@
 {{> header }}
 
 <!-- Background Image Section -->
- {{# page.metadata.hero }}
-<div class="bg-image" id="background-slider" style="background:#222;background-image:url('{{ image.imgix_url }}?w1000');"></div>
+{{# page.metadata.hero }}
+<div class="bg-image" style="background:#222 cover center; background-image:url('{{ imgix_url }}?w1000');"></div>
 {{/ page.metadata.hero }}
-
     <!-- Header Section -->
   <div class="overlay"></div>
   <div class="container h-100" >
@@ -21,7 +20,7 @@
 
   <section class="page-section bg-default">
     <div class="container wow fadeIn mb-40">
-	<!-- Main Content Section -->
+  <!-- Main Content Section -->
       <div class="row">
         <div class="col-md-12">
           <h1>{{ content }}</h1>

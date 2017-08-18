@@ -109,6 +109,8 @@ app.get('/:slug', (req, res) => {
   const cosmic = response
   const all_pages = response.objects.type.pages
   const slug = req.params.slug
+  const page = response.object.slug
+  res.locals.page = page
   res.locals.cosmic = cosmic
   all_pages.forEach(page => {
     if (page.slug === slug)
