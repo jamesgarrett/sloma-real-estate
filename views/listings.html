@@ -17,31 +17,14 @@
     </header>
 
 <main>
-    
-    <style>
-        .mix-button{
-            padding:15px;
-            margin:15px;
-        }
-        .btn-primary:hover, .btn-primary:focus {
-            color: white;
-            border-color: dodgerblue;
-            background-color: dodgerblue;
-            box-shadow:none;
-            outline:0px;
-        }
-        button.active-listings{
-            background-color:kellygreen;
-        }
-    </style>
 
     <section class="page-controller container-fluid bg-inverse">
         <div class="container text-center text-white">
             <row class="col-md-12">
                  <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
-                <button type="button" class="mix-button btn-primary active-listings" data-filter=".active-listings">Current Listings</button>
-                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".coming-soon">Coming Soon</button>
-                <button type="button" class="mix-button btn-primary sold-listings" data-filter=".sold-listings">Recent Transactions</button>
+                <button type="button" class="mix-button btn-primary active-listings" data-filter=".active-listings" id="#listings">Current Listings</button>
+                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".coming-soon" id="#coming-soon">Coming Soon</button>
+                <button type="button" class="mix-button btn-primary sold-listings" data-filter=".sold-listings" id="sold">Recent Transactions</button>
             </row>
         </div>
     </section>
