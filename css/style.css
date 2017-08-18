@@ -873,7 +873,12 @@ ul.neighborhoods {
   padding: 15px;
   margin: 15px 5px; }
 
-.btn-primary:hover, .btn-primary:focus {
+button.mixitup-control-active {
+  background: dodgerblue;
+  color: white;
+  border-color: dodgerblue; }
+
+button.btn-primary:hover, button.btn-primary:focus {
   color: white;
   border-color: dodgerblue;
   background-color: dodgerblue;
