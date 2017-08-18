@@ -17,62 +17,41 @@
     </header>
 
 <main>
+    
+    <style>
+        .mix-button{
+            padding:15px;
+            margin:15px;
+        }
+        .btn-primary:hover, .btn-primary:focus {
+            color: white;
+            border-color: dodgerblue;
+            background-color: dodgerblue;
+            box-shadow:none;
+            outline:0px;
+        }
+        button.active-listings{
+            background-color:kellygreen;
+        }
+    </style>
 
-     <!-- Featured Listings -->
-
-      <section class="page-section wow fadeIn" style="position:relative;">
-        <h2 class="text-center">Featured Listings</h2>
-        <hr class="colored">
-        <!-- Swiper -->
-        <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12">
-            <div class="swiper-wrapper no-gutter " style="height:50vh;">
-            {{# cosmic.objects.type.listings }}
-                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ cosmic.objects.type.listings }}
-            </div>
+    <section class="page-controller container-fluid bg-inverse">
+        <div class="container text-center text-white">
+            <row class="col-md-12">
+                 <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
+                <button type="button" class="mix-button btn-primary active-listings" data-filter=".active-listings">Current Listings</button>
+                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".coming-soon">Coming Soon</button>
+                <button type="button" class="mix-button btn-primary sold-listings" data-filter=".sold-listings">Recent Transactions</button>
+            </row>
         </div>
-        <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div>
-
-        <!-- Add Arrows -->
-        <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
-            <div class="swiper-button-next swiper-button-next-1"></div>
-            <div class="swiper-button-prev swiper-button-next-1"></div>
-        </div>
-
     </section>
-
-    <!-- Coming Soon -->
-
-    <section class="page-section bg-inverse text-white wow fadeIn" style="position:relative;">
-        <h2 class="text-center">Coming Soon</h2>
-        <hr class="">
-        <!-- Swiper -->
-        <div class="swiper-container swiper-container-2 col-md-9 col-md-10 col-sm-12">
-            <div class="swiper-wrapper no-gutter " style="height:50vh;">
-            {{# cosmic.objects.type.listings }}
-                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ cosmic.objects.type.listings }}
-            </div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination swiper-pagination-2 text-center mx-auto"></div>
-
-        <!-- Add Arrows -->
-        <div class="col-md-12 swiper-navigation swiper-navigation-2 hidden-sm-down">
-            <div class="swiper-button-next swiper-button-next-2"></div>
-            <div class="swiper-button-prev swiper-button-prev-2"></div>
-        </div>
-
-    </section>
-
 
     <!-- Recent Transactions -->
     <section class="page-section transactions bg-faded">
-        <div class="container wow fadeIN">
+        <div class="container mixer-container wow fadeIN">
             <div class="row">
             {{# listings }}
-                            <div class="col-lg-6 listing">
+                            <div class="col-lg-6 listing mix {{ metadata.category.slug }}">
                                 <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" width="" alt="">
                                 <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
                                 <div class="meta d-flex flex-row justify-content-around mb-3">
@@ -87,6 +66,10 @@
     </section>
 
 </main>
+
+    <script>
+        var mixer = mixitup('.mixer-container');
+    </script>
 
 
 {{> footer}}

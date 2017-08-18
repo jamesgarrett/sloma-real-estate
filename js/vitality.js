@@ -134,9 +134,8 @@ $(document).ready(function() {
 
     // Vide - Video Background Settings
     $('header.video').vide({
-        mp4: "https://cosmicjs.com/uploads/edd1ff50-6d85-11e7-a91e-510a8fff38c6-chicago.mp4",
-        // mp4: "mp4/chicago.mp4",
-        poster: "https://cosmicjs.com/uploads/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png"
+        mp4: "https://cosmicjs.imgix.net/edd1ff50-6d85-11e7-a91e-510a8fff38c6-chicago.mp4",
+        poster: "https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png"
     }, {
         posterType: 'png'
     });
