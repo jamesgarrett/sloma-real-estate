@@ -27,7 +27,7 @@ ul.neighborhoods{
 	}
 	h4{
 	    position: absolute;
-	    top: 50%;
+	    top: 45%;
 	    left: 50%;
 	    transform: translateY(-50%) translateX(-50%);
 	    background: rgba(255,255,255,0.8);
@@ -39,6 +39,33 @@ ul.neighborhoods{
 	    	}
 	    }
 	}
+	.category{
+	    position: absolute;
+	    top: 10px;
+	    left: 25px;
+	    padding: 5px 10px;
+	    background: #222;
+	    color: white;
+	    h6{
+			margin:0;
+	    }
+	}
+	.image-holder{
+		height:350px;
+		background:#666;
+		background-size: cover;
+		background-repeat:no-repeat;
+		background-position: center;
+	}
+	.meta.d-flex > span {
+	    width: 100%;
+	    font-family: 'freight-sans-pro';
+	    font-size: 1rem;
+	    padding:15px 10px;
+	    strong{
+	    	font-weight: 600;
+	    }
+	}
 } 
 
 .mix-button{
@@ -47,27 +74,19 @@ ul.neighborhoods{
 }
 
 button.mixitup-control-active {
-    background: dodgerblue;
-    color: white;
-    border-color: dodgerblue;
+    background: white;
+    color: #222;
+    border-color: white;
 }
 
 button.btn-primary:hover, button.btn-primary:focus {
     color: white;
-    border-color: dodgerblue;
-    background-color: dodgerblue;
+    border-color: white;
+    background-color: #222;
     box-shadow:none;
     outline:0px;
 }
 
-
-.meta.d-flex > span {
-    border-right: 1px solid white;
-    width: 100%;
-    font-family:initial;
-    font-weight:600;
-    font-size:1.5rem;
-}
 
 .meta.d-flex > span:last-child {
     border: none;
@@ -85,5 +104,4 @@ button.btn-primary:hover, button.btn-primary:focus {
     .thumb img{
     width:inherit;
     }
-
 }
