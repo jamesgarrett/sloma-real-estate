@@ -1397,6 +1397,12 @@
 		"oAP": "\/views\/contact.html",
 		"oF": 0
 		},
+	"\/views\/explore.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/explore.html",
+		"oF": 0
+		},
 	"\/views\/home-nav.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1483,7 +1489,7 @@
 "projectAttributes": {
 	"creationDate": 524593212,
 	"displayValue": "real-estate-extended",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-archer"
 	},
 "projectSettings": {

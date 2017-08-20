@@ -859,7 +859,7 @@ ul.neighborhoods {
 
 .listing h4 {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   background: rgba(255, 255, 255, 0.8);
@@ -869,28 +869,52 @@ ul.neighborhoods {
     .listing h4 a:hover {
       color: #EF4035; }
 
+.listing .category {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  padding: 5px 10px;
+  background: #222;
+  color: white; }
+  .listing .category h6 {
+    margin: 0; }
+
+.listing .image-holder {
+  height: 350px;
+  background: #666;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.listing .meta.d-flex > span {
+  width: 100%;
+  font-family: 'freight-sans-pro';
+  font-size: 1rem;
+  padding: 15px 10px; }
+  .listing .meta.d-flex > span strong {
+    font-weight: 600; }
+
+.upcoming .category {
+  background-color: #EF4035; }
+
+.sold-listings .category {
+  background-color: #666; }
+
 .mix-button {
   padding: 15px;
   margin: 15px 5px; }
 
 button.mixitup-control-active {
-  background: dodgerblue;
-  color: white;
-  border-color: dodgerblue; }
+  background: white;
+  color: #222;
+  border-color: white; }
 
 button.btn-primary:hover, button.btn-primary:focus {
   color: white;
-  border-color: dodgerblue;
-  background-color: dodgerblue;
+  border-color: white;
+  background-color: #222;
   box-shadow: none;
   outline: 0px; }
-
-.meta.d-flex > span {
-  border-right: 1px solid white;
-  width: 100%;
-  font-family: initial;
-  font-weight: 600;
-  font-size: 1.5rem; }
 
 .meta.d-flex > span:last-child {
   border: none; }
@@ -1003,6 +1027,12 @@ ul.footer.nav.navbar-nav li {
 
 .footer ul.dropdown-menu {
   background: transparent; }
+
+footer.footer .navbar-nav {
+  max-width: 550px;
+  margin-bottom: 2rem;
+  justify-content: space-evenly;
+  flex-direction: row; }
 
 .btn {
   font-weight: 900;

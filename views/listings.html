@@ -18,16 +18,17 @@
 
 <main>
 
-    <section class="page-controller container-fluid bg-inverse">
+    <section class="page-controller container-fluid bg-default">
         <div class="container text-center text-white">
             <row class="col-md-12">
                  <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
                 <button type="button" class="mix-button btn-primary active-listings" data-filter=".active-listings" id="#listings">Current Listings</button>
-                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".coming-soon" id="#coming-soon">Coming Soon</button>
+                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".upcoming" id="#coming-soon">Coming Soon</button>
                 <button type="button" class="mix-button btn-primary sold-listings" data-filter=".sold-listings" id="sold">Recent Transactions</button>
             </row>
         </div>
     </section>
+
 
     <!-- Recent Transactions -->
     <section class="page-section transactions bg-faded">
@@ -35,12 +36,17 @@
             <div class="row">
             {{# listings }}
                             <div class="col-lg-6 listing mix {{ metadata.category.slug }}">
-                                <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" width="" alt="">
-                                <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
+                                <a href="/listings/{{ slug }}">
+                                {{# metadata.category }}<span class="category"><h6>{{ title }}</h6></span>{{/ metadata.category}}
+                                </a>
+                                <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                                    <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
+                                </div>
                                 <div class="meta d-flex flex-row justify-content-around mb-3">
-                                    {{# metadata.beds}}<span class="beds">Beds:<strong> {{ metadata.beds}}</strong></span>{{/ metadata.beds}}
-                                    {{# metadata.baths}} <span class="baths">Baths:<strong> {{ metadata.baths}}</strong></span> {{/ metadata.baths}}
-                                    {{# metadata.price}} <span class="price">Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}
+                                    {{# metadata.beds}}<span class="beds"><strong><i class="fa fa-bed"></i> Beds:</strong><br> {{ metadata.beds}}</span>{{/ metadata.beds}}
+                                    {{# metadata.baths}} <span class="baths"><strong><i class="fa fa-bath"></i> Baths:</strong><br> {{ metadata.baths}}</span> {{/ metadata.baths}}
+                                    {{# metadata.property_type}} <span class="property_type"><strong><i class="fa fa-home"></i> Type:</strong><br> {{ metadata.property_type}}</span> {{/ metadata.property_type}}
+                                    {{# metadata.price}} <span class="price"><strong><i class="fa fa-money"></i> Price:</strong><br> {{ metadata.price}}</span> {{/ metadata.price}}
                                 </div>
                             </div>
             {{/ listings }}
