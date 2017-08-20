@@ -126,6 +126,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/vitality-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/vitality-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/vitality-mixitup.js": {
 		"ft": 64,
 		"mi": 1,
@@ -340,9 +349,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/scss\/_footer.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -379,9 +388,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/scss\/_listings.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1489,7 +1498,7 @@
 "projectAttributes": {
 	"creationDate": 524593212,
 	"displayValue": "real-estate-extended",
-	"displayValueWasSetByUser": 1,
+	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-archer"
 	},
 "projectSettings": {
