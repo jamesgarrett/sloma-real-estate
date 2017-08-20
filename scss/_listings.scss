@@ -68,6 +68,14 @@ ul.neighborhoods{
 	}
 } 
 
+.upcoming .category{
+	background-color: $themePrimary;
+}
+
+.sold-listings .category{
+	background-color: #666;
+}
+
 .mix-button{
     padding:15px;
     margin:15px 5px;

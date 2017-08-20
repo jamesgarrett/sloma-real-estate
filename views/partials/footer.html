@@ -5,17 +5,44 @@
             <img class="img-fluid logo" src="{{ logos.metadata.text_logo.url }}" alt="">
         </div>
         <div class="text-center">
-                <ul class="footer nav navbar-nav">
-                  <li><a href="/">Home</a></li>
-                  <li>
-                    <a href="/about">About</a>
-                  </li>
-                  <li>
-                    <a href="/listings">Listings</a>
-                  </li>
-                  <li>
-                    <a href="/contact">Contact</a>
-                  </li>
+               <ul class="footer navbar-nav">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/about" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/about">Welcome</a>
+                          <a class="dropdown-item" href="/about#mission">Mission</a>
+                          <a class="dropdown-item" href="/about#team">Team</a>
+                          <a class="dropdown-item" href="/about#accomplishments">Accomplishments</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/listings" role="button" aria-haspopup="true" aria-expanded="false">Our Properties</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/listings">All Listings</a>
+                          <a class="dropdown-item" href="/listings#coming-soon">Coming Soon</a>
+                          <a class="dropdown-item" href="/listings#featured">Featured</a>
+                          <a class="dropdown-item" href="/listings#sold">Sold</a>
+                        </div>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/explore" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="/explore">Explore</a>
+                          <a class="dropdown-item" href="/explore#search">Search</a>
+                          <a class="dropdown-item" href="/explore#open-houses">Open Houses</a>
+                          <a class="dropdown-item" href="/explore#subscribe">Subscribe</a>
+                        </div>
+                      </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/contact">Contact</a>
+                    </li>
                 </ul>
         </div>
             <div class="row footer-social text-center">
@@ -67,11 +94,6 @@
         </div>
     </footer>
 
-        <!-- Bootstrap core JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/tether/tether.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Plugin JavaScript -->
     <script src="/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="/vendor/owl-carousel/owl.carousel.js"></script>
@@ -85,8 +107,6 @@
     <!-- Custom scripts for this theme -->
     <script src="/js/vitality.js"></script>
     <script src="/js/background-slide.js"></script>
-    <script src="/js/mylist-player.js"></script>
-
     <!-- Swiper JS -->
     <script src="/node_modules/swiper/dist/js/swiper.min.js"></script>
 

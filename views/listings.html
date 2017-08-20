@@ -23,7 +23,7 @@
             <row class="col-md-12">
                  <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
                 <button type="button" class="mix-button btn-primary active-listings" data-filter=".active-listings" id="#listings">Current Listings</button>
-                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".coming-soon" id="#coming-soon">Coming Soon</button>
+                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".upcoming" id="#coming-soon">Coming Soon</button>
                 <button type="button" class="mix-button btn-primary sold-listings" data-filter=".sold-listings" id="sold">Recent Transactions</button>
             </row>
         </div>
@@ -36,7 +36,9 @@
             <div class="row">
             {{# listings }}
                             <div class="col-lg-6 listing mix {{ metadata.category.slug }}">
+                                <a href="/listings/{{ slug }}">
                                 {{# metadata.category }}<span class="category"><h6>{{ title }}</h6></span>{{/ metadata.category}}
+                                </a>
                                 <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
                                     <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
                                 </div>
