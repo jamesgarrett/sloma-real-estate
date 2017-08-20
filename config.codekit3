@@ -20,8 +20,8 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/app-min.js",
-		"oF": 0,
-		"sC": 1,
+		"oF": 1,
+		"sC": 2,
 		"tS": 0
 		},
 	"\/css\/sloma.css": {
@@ -1388,6 +1388,12 @@
 		"oAP": "\/views\/about.html",
 		"oF": 0
 		},
+	"\/views\/active-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/active-listings.html",
+		"oF": 0
+		},
 	"\/views\/author.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1476,6 +1482,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/search.html",
+		"oF": 0
+		},
+	"\/views\/sold-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/sold-listings.html",
+		"oF": 0
+		},
+	"\/views\/upcoming-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/upcoming-listings.html",
 		"oF": 0
 		},
 	"\/views\/videos.html": {

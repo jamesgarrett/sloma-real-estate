@@ -29,6 +29,8 @@ Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, r
     app.locals.footer = footer
 })
 
+// Get the Date
+
 app.use('/', (req, res, next) => {
   res.locals.year = new Date().getFullYear()
   next()
@@ -99,16 +101,24 @@ app.get('/listings/:slug', (req, res) => {
     const listings = response.objects.type.listings
     res.locals.listings = listings
     listings.forEach(page => {
-      if (page.slug === slug)
-        res.locals.page = page
+    if (page.slug === slug) 
+      res.locals.page = page
     })
     res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
     if (!res.locals.page) {
-      return res.status(404).render('404.html', {
-        partials
-      })  
+      return res.status(404).render('404.html', { partials })  
     }
-    return res.render('listings-single.html', { partials })
+    if (res.locals.page.metadata.category.slug === 'upcoming' ){
+      return res.render('upcoming-listings.html', {partials})
+    }
+    if (res.locals.page.metadata.category.slug === 'active-listings' ){
+        return res.render('active-listings.html', {partials})
+    }
+    if (res.locals.page.metadata.category.slug === 'sold-listings' ){
+        return res.render('sold-listings.html', {partials})
+    }
+    console.log(res.locals.page.metadata.category.slug)
+    // console.log('page.category');
   })
 })
 
