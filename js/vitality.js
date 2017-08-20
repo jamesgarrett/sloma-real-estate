@@ -83,20 +83,6 @@ $(document).ready(function() {
         ],
     });
 
-    $(".portfolio-carousel").owlCarousel({
-        singleItem: true,
-        navigation: true,
-        pagination: false,
-        navigationText: [
-            "<i class='fa fa-angle-left'></i>",
-            "<i class='fa fa-angle-right'></i>"
-        ],
-        autoHeight: true,
-        mouseDrag: false,
-        touchDrag: false,
-        transitionStyle: "fadeUp"
-    });
-
     $(".testimonials-carousel, .mockup-carousel").owlCarousel({
         singleItem: true,
         navigation: true,
@@ -109,28 +95,6 @@ $(document).ready(function() {
         transitionStyle: "backSlide"
     });
 
-    $(".portfolio-gallery").owlCarousel({
-        items: 3,
-    });
-
-    // Magnific Popup jQuery Lightbox Gallery Settings
-    $('.gallery-link').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        },
-        image: {
-            titleSrc: 'title'
-        }
-    });
-
-    // Magnific Popup Settings
-    $('.mix').magnificPopup({
-        type: 'image',
-        image: {
-            titleSrc: 'title'
-        }
-    });
 
     // Vide - Video Background Settings
     $('header.video').vide({

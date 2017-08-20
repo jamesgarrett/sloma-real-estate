@@ -44,3 +44,10 @@ ul.footer.nav.navbar-nav li{
 .footer ul.dropdown-menu {
     background: transparent;
 }
+
+footer.footer .navbar-nav {
+    max-width: 550px;
+    margin-bottom: 2rem;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
