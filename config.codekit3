@@ -9,12 +9,6 @@
 	],
 "creatorBuild": "25849",
 "files": {
-	"\/.gitignore": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.gitignore",
-		"oF": 0
-		},
 	"\/app.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1406,40 +1400,16 @@
 		"oAP": "\/views\/blog-single.html",
 		"oF": 0
 		},
-	"\/views\/contact.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/contact.html",
-		"oF": 0
-		},
-	"\/views\/explore.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/explore.html",
-		"oF": 0
-		},
 	"\/views\/home-nav.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/home-nav.html",
 		"oF": 0
 		},
-	"\/views\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/index.html",
-		"oF": 0
-		},
 	"\/views\/listings-single.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/listings-single.html",
-		"oF": 0
-		},
-	"\/views\/listings.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/listings.html",
 		"oF": 0
 		},
 	"\/views\/page.html": {
@@ -1488,12 +1458,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/upcoming-listings.html",
-		"oF": 0
-		},
-	"\/views\/videos.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/videos.html",
 		"oF": 0
 		},
 	"\/yarn.lock": {
