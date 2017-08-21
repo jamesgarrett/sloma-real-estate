@@ -1,9 +1,25 @@
+{{> header }}
+
+    <div class="bg-image" style="background-image:url('{{ cosmic.object.testimonials.metadata.hero.imgix_url }}');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+        <div class="overlay"></div>
+          <div class="row h-100">
+            <div class="col-12 text-white page-title text-center my-auto">
+                  <h1>{{ page.title }}</h1>
+                  <h4>{{ page.metadata.headline }}</h4>
+            </div>
+        </div>
+    </header>
+
+    <style>header.masthead{background-color:rgba(0,0,0,0.8);</style>
+<main>
+
 <!-- Testimonials Section -->
-    <section class="page-section testimonials bg-faded" id="testimonials">
+    <section class="page-section testimonials bg-faded">
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
-                    <div class="testimonials-carousel">
+                    <div class="testimonials-container">
 
                       {{# cosmic.objects.type.testimonials }}
                         <!-- Testimonial Item 1 -->
@@ -29,3 +45,5 @@
             </div>
         </div>
     </section>
+
+{{> footer }}

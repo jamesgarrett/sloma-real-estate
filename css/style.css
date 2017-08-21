@@ -651,28 +651,28 @@ header.video {
 
 .testimonials {
   text-align: center; }
-  .testimonials .testimonials-carousel .item .testimonial-img {
+  .testimonials .testimonials-carousel .item .testimonial-img, .testimonials .testimonial-container .item .testimonial-img {
     display: inline-block;
     width: 50px;
     height: 50px;
     margin-right: 10px; }
-    .testimonials .testimonials-carousel .item .testimonial-img img {
+    .testimonials .testimonials-carousel .item .testimonial-img img, .testimonials .testimonial-container .item .testimonial-img img {
       vertical-align: baseline; }
-  .testimonials .testimonials-carousel .item .testimonial-author {
+  .testimonials .testimonials-carousel .item .testimonial-author, .testimonials .testimonial-container .item .testimonial-author {
     display: inline-block; }
-    .testimonials .testimonials-carousel .item .testimonial-author .name {
+    .testimonials .testimonials-carousel .item .testimonial-author .name, .testimonials .testimonial-container .item .testimonial-author .name {
       font-family: 'freight-text-pro', 'baskerville', times new roman, serif;
       font-weight: 900;
       text-transform: uppercase; }
-    .testimonials .testimonials-carousel .item .testimonial-author hr.colored {
+    .testimonials .testimonials-carousel .item .testimonial-author hr.colored, .testimonials .testimonial-container .item .testimonial-author hr.colored {
       max-width: 50px;
       margin: 3px auto; }
-    .testimonials .testimonials-carousel .item .testimonial-author p {
+    .testimonials .testimonials-carousel .item .testimonial-author p, .testimonials .testimonial-container .item .testimonial-author p {
       margin: 0; }
-    .testimonials .testimonials-carousel .item .testimonial-author .stars {
+    .testimonials .testimonials-carousel .item .testimonial-author .stars, .testimonials .testimonial-container .item .testimonial-author .stars {
       color: #f1c40f; }
   @media (min-width: 992px) {
-    .testimonials .testimonials-carousel .item {
+    .testimonials .testimonials-carousel .item, .testimonials .testimonial-container .item {
       padding: 0 100px; } }
 
 .pricing {

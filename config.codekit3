@@ -1460,12 +1460,6 @@
 		"oAP": "\/views\/partials\/header.html",
 		"oF": 0
 		},
-	"\/views\/partials\/testimonials.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/partials\/testimonials.html",
-		"oF": 0
-		},
 	"\/views\/post.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1482,6 +1476,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/sold-listings.html",
+		"oF": 0
+		},
+	"\/views\/testimonials.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/testimonials.html",
 		"oF": 0
 		},
 	"\/views\/upcoming-listings.html": {
