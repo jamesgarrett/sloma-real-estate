@@ -1,7 +1,8 @@
 {{> header }}
 
+<header class="masthead">
 <!-- Background Image Section -->
-<div class="bg-image" style="background:#222 cover center; background-image:url('{{ page.metadata.hero.imgix_url }}?w1000');"></div>
+<div class="bg-image" style="background:rgba(0,0,0,0.6) cover center; background-image:url('{{ page.metadata.hero.imgix_url }}?w1000');"></div>
     <!-- Header Section -->
   <div class="overlay"></div>
   <div class="container h-100" >
@@ -12,11 +13,15 @@
       </div>
     </div>
   </div>
+  <style>header.masthead{background-color:rgba(0,0,0,0.8);</style>
 </header>
 
+<!-- Search -->
 <section class="page-section bg-default" id="search">
 	<div class="container text-center">
-		search		
+        <div class="row h-100">
+    		<iframe src="http://slomagroup.idxhome.com/mapsearch/82710" frameborder="0" style="width:100%;height:100vh;" class="my-auto"></iframe>	
+        </div>
 	</div>
 </section>
 
