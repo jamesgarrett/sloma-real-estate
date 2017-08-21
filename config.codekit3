@@ -9,21 +9,6 @@
 	],
 "creatorBuild": "25849",
 "files": {
-	"\/.gitignore": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.gitignore",
-		"oF": 0
-		},
-	"\/app.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/app-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/css\/sloma.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1412,34 +1397,16 @@
 		"oAP": "\/views\/contact.html",
 		"oF": 0
 		},
-	"\/views\/explore.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/explore.html",
-		"oF": 0
-		},
 	"\/views\/home-nav.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/home-nav.html",
 		"oF": 0
 		},
-	"\/views\/index.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/index.html",
-		"oF": 0
-		},
 	"\/views\/listings-single.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/listings-single.html",
-		"oF": 0
-		},
-	"\/views\/listings.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/listings.html",
 		"oF": 0
 		},
 	"\/views\/page.html": {
@@ -1454,12 +1421,6 @@
 		"oAP": "\/views\/partials\/footer.html",
 		"oF": 0
 		},
-	"\/views\/partials\/header.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/partials\/header.html",
-		"oF": 0
-		},
 	"\/views\/partials\/testimonials.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1472,12 +1433,6 @@
 		"oAP": "\/views\/post.html",
 		"oF": 0
 		},
-	"\/views\/search.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/search.html",
-		"oF": 0
-		},
 	"\/views\/sold-listings.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1488,12 +1443,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/upcoming-listings.html",
-		"oF": 0
-		},
-	"\/views\/videos.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/videos.html",
 		"oF": 0
 		},
 	"\/yarn.lock": {
