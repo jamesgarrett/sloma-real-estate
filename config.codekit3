@@ -126,6 +126,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/vitality-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/vitality-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/vitality-mixitup.js": {
 		"ft": 64,
 		"mi": 1,
