@@ -1,17 +1,16 @@
 {{> header }}
 
-    <!-- Header Section -->
-<section class="bg-inverse page-section">  
-  <div class="container h-75" >
-    <div class="row h-100">
-      <div class="col-12 text-white page-title text-center">
-            <h1>{{ cosmic.object.videos.title }}</h1>
-            <h4>{{ cosmic.object.videos.metadata.headline }}</h4>
-      </div>
-    </div>
-  </div>
-</section>
+   <header class="masthead videos-bg" data-vide-bg="https://cosmicjs.com/uploads/77f294f0-867d-11e7-881a-4751ca963f35-1503%20N%20North%20Park.mp4" data-vide-options="loop: true, muted: true, position: 0% 0%">
+        <div class="overlay"></div>
+          <div class="row h-100">
+            <div class="col-12 text-white page-title text-center my-auto">
+                  <h1>{{ cosmic.object.videos.title }}</h1>
+                  <h4>{{ cosmic.object.videos.metadata.headline }}</h4>
+            </div>
+        </div>
+    </header>
 
+    <style>header.masthead{background-color:rgba(0,0,0,0.8);</style>
 <main>
 
   <section class="page-section bg-default">

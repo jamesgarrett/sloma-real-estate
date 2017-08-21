@@ -20,8 +20,8 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/app-min.js",
-		"oF": 0,
-		"sC": 1,
+		"oF": 1,
+		"sC": 2,
 		"tS": 0
 		},
 	"\/css\/sloma.css": {
@@ -148,8 +148,8 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/vitality-min.js",
-		"oF": 0,
+		"oAP": "\/js\/min\/vitality-min.js",
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -1388,6 +1388,12 @@
 		"oAP": "\/views\/about.html",
 		"oF": 0
 		},
+	"\/views\/active-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/active-listings.html",
+		"oF": 0
+		},
 	"\/views\/author.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1460,12 +1466,6 @@
 		"oAP": "\/views\/partials\/testimonials.html",
 		"oF": 0
 		},
-	"\/views\/portoflio.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/portoflio.html",
-		"oF": 0
-		},
 	"\/views\/post.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1476,6 +1476,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/search.html",
+		"oF": 0
+		},
+	"\/views\/sold-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/sold-listings.html",
+		"oF": 0
+		},
+	"\/views\/upcoming-listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/upcoming-listings.html",
 		"oF": 0
 		},
 	"\/views\/videos.html": {
