@@ -1,6 +1,6 @@
 .testimonials {
     text-align: center;
-    .testimonials-carousel {
+    .testimonials-carousel, .testimonial-container {
         .item {
             .testimonial-img {
                 display: inline-block;
@@ -30,7 +30,7 @@
         }
     }
     @media (min-width: 992px) {
-        .testimonials-carousel {
+        .testimonials-carousel, .testimonial-container {
             .item {
                 padding: 0 100px;
             }
