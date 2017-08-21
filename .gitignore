@@ -7,6 +7,7 @@
 *.exe
 *.o
 *.so
+*.codekit3
 *.codekit
 
 # Packages #
