@@ -1,36 +1,24 @@
 {{> header }}
-  <main id="main">
-    <div class="container mb-40">
-      <h1>{{ page.title }}</h1>
-      <div>
-        <form class="relative">
-          <input name="q" type="text" class="form-control" value="{{ q }}" placeholder="Enter search terms">
-          <i style="right: 12px; top: 8px; color: #ccc" class="fa fa-search absolute font-24 pointer"></i>
-        </form>
-      </div>
-      {{# q }}
-        <div>Search results for <b>{{ q }}</b></div>
-      {{/ q }}
-      {{{ page.content }}}
-      <div>
-        {{# search_results }}
-          <div class="mb-40">
-            <div class="mb-20">
-              <a href="{{ permalink }}">
-                <h3>{{ title }}</h3>
-              </a>
-            </div>
-            <div>
-              {{ teaser }}...
-            </div>
-            <div>
-              <a href="{{ permalink }}">
-                Read more
-              </a>
-            </div>
+
+ <header class="masthead videos-bg" data-vide-bg="https://cosmicjs.com/uploads/7712f440-8686-11e7-bba3-ab282c32bd6c-001070726-chicago-skyline_H264_420.mp4" data-vide-options="loop: false, muted: true, position: 0% 0%">
+      <div class="overlay"></div>
+        <div class="row h-100">
+          <div class="col-12 text-white page-title text-center my-auto">
+                <h1>{{ cosmic.object.search-mls.title }}</h1>
+                <h4>{{ cosmic.object.search-mls.metadata.headline }}</h4>
           </div>
-        {{/ search_results }}
       </div>
-    </div>
-  </main>
+  </header>
+
+  <style>header.masthead{background-color:rgba(0,0,0,0.8);</style>
+
+<!-- Search -->
+<section class="page-section bg-default" id="search">
+  <div class="container text-center">
+        <div class="row h-100">
+        <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;height:100vh;" class="my-auto"></iframe>  
+        </div>
+  </div>
+</section>
+
 {{> footer }}
