@@ -148,8 +148,8 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/vitality-min.js",
-		"oF": 0,
+		"oAP": "\/js\/min\/vitality-min.js",
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -1464,12 +1464,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/partials\/testimonials.html",
-		"oF": 0
-		},
-	"\/views\/portoflio.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/portoflio.html",
 		"oF": 0
 		},
 	"\/views\/post.html": {
