@@ -1,0 +1,27 @@
+{{> header }}
+
+{{# page.metadata.hero }}
+<div class="bg-image" style="background-image:url('{{ imgix_url }}?w1000');"></div>
+{{/ page.metadata.hero }}
+
+<header class="h-100" style="background:rgba(0,0,0,0.6);">
+	<!--  -->
+    <div class="overlay"></div>
+        <div class="container h-100">
+			<div class="row h-100">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 my-auto text-white page-title text-center">
+                	<h6>{{ metadata.category.slug }}</h6>
+                    <h1>{{ page.title }}</h1>
+	                  <div class="meta d-flex flex-row justify-content-around mb-3">
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
+			          </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</header>
+
+
+{{> footer}}
