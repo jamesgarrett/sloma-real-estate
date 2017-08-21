@@ -20,8 +20,8 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/app-min.js",
-		"oF": 1,
-		"sC": 2,
+		"oF": 0,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/css\/sloma.css": {
@@ -349,9 +349,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/scss\/_footer.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -388,9 +388,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/scss\/_listings.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1510,7 +1510,7 @@
 "projectAttributes": {
 	"creationDate": 524593212,
 	"displayValue": "real-estate-extended",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-archer"
 	},
 "projectSettings": {
