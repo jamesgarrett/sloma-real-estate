@@ -13,7 +13,7 @@
                     <h1>{{ page.title }}</h1>
 	                  <div class="meta d-flex flex-row justify-content-around mb-3">
 			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
-			            <span class="catgeory">SOLD</span>
+			            <h3 class="text-center">{{ page.metadata.category.title }}</h3>
 			          </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 	        width: 100%;
 	       }
 	    </style>
-	    <h3 class="text-center">{{ page.metadata.category.title }}</h3>
+	    
 	    <div id="map"></div>
 	    <script>
 	      function initMap() {
@@ -54,7 +54,7 @@
 	<section class="page-section bg-faded">
 				<h2 class="text-center">Related Listings</h2>
 				<hr class="dark">
-		<div class="container-fluid text-center wow fadeIn related col-md-10" style="padding:0px !important;">
+		<div class="container-fluid text-center related col-md-10" style="padding:0px !important;">
 				{{# listings }}
 					<a href="/listings/{{ slug }}" class="thumb col-md-2 col-sm-6">
 						<img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
@@ -63,6 +63,11 @@
 				{{/ listings }}
 		</div>
 	</section>
+
+
+	<section class="page-section bg-inverse text-white text-center">
+		<h6><a href="/listings"><i class="fa fa-chevron-left"></i> Return to All Listings</a></h6>
+	</section>	
 
 
 
