@@ -244,6 +244,24 @@ path.brand{
     }
 }
 
+li.nav-item.dropdown {
+    display: flex;
+    i{
+      color:white;
+      transition: 1s ease-in-out;
+    }
+}
+
+.dropdown-toggle::after {
+  margin-left: 0rem;
+}
+
+li.nav-item.dropdown.show i{
+  transform-origin:center;
+  transform:rotate(180deg);
+  transition: 1s ease-in-out;
+}
+
 .navbar-shrink .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu{
   background-color:#222 !important;
   transition: 1s ease-in-out;
