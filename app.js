@@ -34,15 +34,14 @@ app.use('/', (req, res, next) => {
   next()
 })
 
-
 // Unique Templates
 
 app.get('/' || '/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     const testimonials = response.objects.type.testimonials.slice(0,5)
-    const featured = response.objects.type.listings
-    res.locals.featured = featured
+    const listings = response.objects.type.listings
+    res.locals.listings = listings
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })
@@ -86,6 +85,8 @@ app.get('/explore', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     res.locals.cosmic = cosmic
+    const openhouse = response.objects.type.openhouses
+    res.locals.openhouse
     const page = response.object.explore
     res.locals.page = page
     res.render('explore.html', { partials })
@@ -128,16 +129,15 @@ app.get('/listings/:slug', (req, res) => {
     if (!res.locals.page) {
       return res.status(404).render('404.html', { partials })  
     }
-    if (res.locals.page.metadata.category.slug === 'upcoming' ){
+    if (res.locals.page.metadata.category === 'Coming Soon' ){
       return res.render('upcoming-listings.html', {partials})
     }
-    if (res.locals.page.metadata.category === 'active-listings' ){
+    if (res.locals.page.metadata.category === 'Featured' ){
         return res.render('active-listings.html', {partials})
     }
-    if (res.locals.page.metadata.category.slug === 'sold-listings' ){
+    if (res.locals.page.metadata.category === 'Sold' ){
         return res.render('sold-listings.html', {partials})
     }
-    console.log(res.locals.page.metadata.category.slug)
     // console.log('page.category');
   })
 })

@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25849",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
 	"\/app.js": {
 		"ft": 64,
 		"mi": 1,
@@ -362,6 +368,16 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/scss\/_iframe.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_iframe-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/scss\/_iframe.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -369,9 +385,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/scss\/_iframe.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -395,9 +411,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/scss\/_masthead.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -421,9 +437,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/scss\/_navbar.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -1400,16 +1416,46 @@
 		"oAP": "\/views\/blog-single.html",
 		"oF": 0
 		},
+	"\/views\/contact.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/contact.html",
+		"oF": 0
+		},
+	"\/views\/explore.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/explore.html",
+		"oF": 0
+		},
 	"\/views\/home-nav.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/home-nav.html",
 		"oF": 0
 		},
+	"\/views\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/index.html",
+		"oF": 0
+		},
 	"\/views\/listings-single.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/listings-single.html",
+		"oF": 0
+		},
+	"\/views\/listings.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/listings.html",
+		"oF": 0
+		},
+	"\/views\/open-house.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/open-house.html",
 		"oF": 0
 		},
 	"\/views\/page.html": {
@@ -1458,6 +1504,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/upcoming-listings.html",
+		"oF": 0
+		},
+	"\/views\/videos.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/videos.html",
 		"oF": 0
 		},
 	"\/yarn.lock": {

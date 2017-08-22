@@ -39,9 +39,9 @@
         <!-- Swiper -->
         <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
             <div class="swiper-wrapper no-gutter " style="height:50vh;">
-            {{# featured }}
+            {{# listings }}
                 <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ featured }}
+            {{/ listings }}
             </div>
         </div>
         <!-- Add Pagination -->
@@ -63,9 +63,9 @@
         <!-- Swiper -->
         <div class="swiper-container swiper-container-2 col-md-9 col-md-10 col-sm-12 fadeIn">
             <div class="swiper-wrapper no-gutter " style="height:50vh;">
-            {{# cosmic.objects.type.listings }}
+            {{# listings }}
                 <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ cosmic.objects.type.listings }}
+            {{/ listings }}
             </div>
         </div>
         <!-- Add Pagination -->
