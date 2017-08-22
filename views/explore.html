@@ -13,31 +13,40 @@
       </div>
     </div>
   </div>
-  <style>header.masthead{background-color:rgba(0,0,0,0.8);</style>
+  <style>header.masthead{background-color:rgba(0,0,0,0.8);#ihf-main-container .page-header{display:none;}</style>
 </header>
 
-<!-- Search -->
-<section class="page-section bg-default" id="search">
-	<div class="container text-center">
-        <div class="row h-100">
-    		<iframe src="http://slomagroup.idxhome.com/mapsearch/82710" frameborder="0" style="width:100%;height:100vh;" class="my-auto"></iframe>	
-        </div>
-	</div>
-</section>
+    <!-- Home Search -->
+    <section class="page-section bg-faded" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="home-search">
+      <div class="container text-center">
+            <div class="row fluidMedia">
+            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
+            </div>
+      </div>
+    </section>
 
-<!-- Estimate -->
+    <!-- Map Search -->
+    <section class="page-section bg-default" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="map-search">
+      <div class="container text-center">
+            <div class="row fluidMedia">
+            <iframe src="http://slomagroup.idxhome.com/mapsearch/82710" frameborder="0" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
+            </div>
+      </div>
+    </section>
+
+    <!-- Estimate -->
     <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
         <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
     </section>
 
-
+    <!-- Open Houses -->
 	<section class="page-section bg-default" id="open-houses">
 		<div class="container text-center">
 			open houses
 		</div>
 	</section>
 
-<!-- Newsletter Signup Call to Action -->
+    <!-- Newsletter Signup Call to Action -->
     <section class="page-section signup-form bg-inverse text-white" id="subscribe">
         <div class="container text-center">
             <h3 class="m0">Subscribe to our newsletter!</h3>

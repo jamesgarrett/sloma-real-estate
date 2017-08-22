@@ -20,7 +20,16 @@
         </div>
     </header>
 
-    <main>
+<main>
+
+    <!-- Search -->
+    <section class="page-section bg-faded" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
+      <div class="container text-center">
+            <div class="row fluidMedia">
+            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
+            </div>
+      </div>
+    </section> 
 
      <!-- Featured Listings -->
 
@@ -30,9 +39,9 @@
         <!-- Swiper -->
         <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
             <div class="swiper-wrapper no-gutter " style="height:50vh;">
-            {{# cosmic.objects.type.listings }}
+            {{# featured }}
                 <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ cosmic.objects.type.listings }}
+            {{/ featured }}
             </div>
         </div>
         <!-- Add Pagination -->
@@ -133,10 +142,10 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonials-carousel">
 
-                      {{# cosmic.objects.type.testimonials }}
+                      {{# testimonials }}
                         <!-- Testimonial Item 1 -->
                         <div class="item mb-4">
-                            <p class="lead">{{ metadata.type }} | {{ metadata.neighborhood }} | {{ metadata.building_type }}</p>
+                            <p class="lead">{{ metadata.type }} {{# metadata.neighborhood }}| {{ metadata.neighborhood }} {{/ metadata.neighborhood }}{{# metadata.building_type }} | {{ metadata.building_type }}{{/ metadata.building_type }}</p>
                             <hr class="colored">
                             <p>{{{ content }}}</p>
 <!--                             <div class="testimonial-img">
@@ -157,7 +166,7 @@
                             </div>
                         </div>
 
-                      {{/ cosmic.objects.type.testimonials }}
+                      {{/ testimonials }}
 
                     </div>
                 </div>

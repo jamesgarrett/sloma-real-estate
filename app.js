@@ -40,6 +40,10 @@ app.use('/', (req, res, next) => {
 app.get('/' || '/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
+    const testimonials = response.objects.type.testimonials.slice(0,5)
+    const featured = response.objects.type.listings
+    res.locals.featured = featured
+    res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })
   })
@@ -127,7 +131,7 @@ app.get('/listings/:slug', (req, res) => {
     if (res.locals.page.metadata.category.slug === 'upcoming' ){
       return res.render('upcoming-listings.html', {partials})
     }
-    if (res.locals.page.metadata.category.slug === 'active-listings' ){
+    if (res.locals.page.metadata.category === 'active-listings' ){
         return res.render('active-listings.html', {partials})
     }
     if (res.locals.page.metadata.category.slug === 'sold-listings' ){
