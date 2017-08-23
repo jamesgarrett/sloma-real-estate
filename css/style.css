@@ -156,7 +156,6 @@ h6 {
   #mainNav .navbar-collapse .navbar-nav
 > .nav-item
 > .nav-link {
-    /*transform: translateY(25px);*/
     background: #222; } }
 
 #mainNav .container .navbar-toggler {
@@ -216,16 +215,6 @@ h6 {
   transform: translateX(-5.5px) translateY(2.5px) rotate(-45deg);
   transition: .5s ease-in-out; }
 
-@media (min-width: 992px) {
-  .navbar-toggleable-md .navbar-toggler {
-    /*display: block !important;*/
-    min-width: 120px; } }
-
-@media (max-width: 992px) {
-  .navbar-toggleable-md .container .collapse {
-    /*transform:translateY(-150px);*/
-    transition: 1s ease-in-out; } }
-
 .navbar-brand svg {
   width: 150px;
   height: 50px; }
@@ -237,7 +226,17 @@ path.brand {
   margin-right: 25px;
   transition: 1s ease-in-out; }
 
+@media (min-width: 992px) {
+  .navbar-toggleable-md .navbar-toggler {
+    min-width: 120px; }
+  a.nav-link {
+    display: inline-block; }
+  .dropdown-menu a.dropdown-item {
+    text-align: left; } }
+
 @media (max-width: 992px) {
+  .navbar-toggleable-md .container .collapse {
+    transition: 1s ease-in-out; }
   .navbar-collapse {
     transition: 1s ease-in-out;
     position: fixed;
@@ -246,7 +245,15 @@ path.brand {
     top: 0;
     padding-top: 45px;
     text-align: center;
-    z-index: -1; } }
+    z-index: -1; }
+  .dropdown-menu {
+    text-align: center;
+    background-color: #222;
+    margin: 0px;
+    background: #444; }
+  li.nav-item.dropdown {
+    background: #222;
+    width: 100%; } }
 
 .dropdown-menu {
   margin: 15px 0 0 0;
@@ -262,15 +269,15 @@ path.brand {
     color: white;
     font-family: 'freight-text-pro', 'baskerville', times new roman, serif;
     letter-spacing: 0.05rem;
-    font-weight: 600; }
+    font-weight: 600;
+    text-align: center; }
     .dropdown-menu .dropdown-item:hover {
       color: #222; }
 
-li.nav-item.dropdown {
-  display: flex; }
-  li.nav-item.dropdown i {
-    color: white;
-    transition: 1s ease-in-out; }
+li.nav-item.dropdown i, li.nav-item.dropdown a {
+  color: white;
+  transition: 1s ease-in-out;
+  display: inline-block; }
 
 .dropdown-toggle::after {
   margin-left: 0rem; }
@@ -283,13 +290,6 @@ li.nav-item.dropdown.show i {
 .navbar-shrink .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
   background-color: #222 !important;
   transition: 1s ease-in-out; }
-
-@media (max-width: 992px) {
-  .dropdown-menu {
-    text-align: center;
-    background-color: #222;
-    margin: 0px;
-    background: #444; } }
 
 header.masthead {
   position: relative;

@@ -1398,12 +1398,6 @@
 		"oAP": "\/views\/about.html",
 		"oF": 0
 		},
-	"\/views\/active-listings.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/active-listings.html",
-		"oF": 0
-		},
 	"\/views\/author.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1416,6 +1410,12 @@
 		"oAP": "\/views\/blog-single.html",
 		"oF": 0
 		},
+	"\/views\/construction.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/construction.html",
+		"oF": 0
+		},
 	"\/views\/contact.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1426,6 +1426,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/explore.html",
+		"oF": 0
+		},
+	"\/views\/featured.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/featured.html",
 		"oF": 0
 		},
 	"\/views\/home-nav.html": {
@@ -1488,10 +1494,10 @@
 		"oAP": "\/views\/search.html",
 		"oF": 0
 		},
-	"\/views\/sold-listings.html": {
+	"\/views\/sold.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/views\/sold-listings.html",
+		"oAP": "\/views\/sold.html",
 		"oF": 0
 		},
 	"\/views\/testimonials.html": {
@@ -1500,10 +1506,10 @@
 		"oAP": "\/views\/testimonials.html",
 		"oF": 0
 		},
-	"\/views\/upcoming-listings.html": {
+	"\/views\/upcoming.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/views\/upcoming-listings.html",
+		"oAP": "\/views\/upcoming.html",
 		"oF": 0
 		},
 	"\/views\/videos.html": {
