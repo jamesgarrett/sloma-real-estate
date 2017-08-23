@@ -57,7 +57,7 @@ $(document).ready(function() {
         $('.navbar-collapse').collapse('hide');
     });
 
-    $( 'button' ).click(function() {
+    $( 'button.navbar-toggler' ).click(function() {
       $('.navbar-collapse').toggleClass('collapse');
       $('.navbar-toggler').toggleClass('clicked');
     });
