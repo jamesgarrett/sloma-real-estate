@@ -32,20 +32,19 @@
     </section> 
 
      <!-- Featured Listings -->
-
       <section class="page-section wow" style="position:relative;">
         <h2 class="text-center"><a href="/listings">Featured Listings</a></h2>
         <hr class="colored">
         <!-- Swiper -->
         <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
-            <div class="swiper-wrapper no-gutter " style="height:50vh;">
+            <div class="swiper-wrapper no-gutter featured-carousel" style="height:50vh;">
             {{# listings }}
-                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
+                <div class="swiper-slide listing text-center col-xs-12 {{ metadata.category }}" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
             {{/ listings }}
             </div>
         </div>
         <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div>
+        <!-- <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div> -->
 
         <!-- Add Arrows -->
         <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
@@ -62,14 +61,14 @@
         <hr class="">
         <!-- Swiper -->
         <div class="swiper-container swiper-container-2 col-md-9 col-md-10 col-sm-12 fadeIn">
-            <div class="swiper-wrapper no-gutter " style="height:50vh;">
+            <div class="swiper-wrapper no-gutter upcoming-carousel" style="height:50vh;">
             {{# listings }}
-                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
+                <div class="swiper-slide listing text-center col-xs-12 {{ metadata.category }}" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
             {{/ listings }}
             </div>
         </div>
         <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination swiper-pagination-2 text-center mx-auto"></div>
+        <!-- <div class="col-md-12 swiper-pagination swiper-pagination-2 text-center mx-auto"></div> -->
 
         <!-- Add Arrows -->
         <div class="col-md-12 swiper-navigation swiper-navigation-2 hidden-sm-down">
@@ -130,7 +129,8 @@
 
     <!-- Estimate -->
     <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
-        <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" ></iframe>
+        <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" >
+        </iframe>
     </section>
 
     <!-- Testimonials Section -->
