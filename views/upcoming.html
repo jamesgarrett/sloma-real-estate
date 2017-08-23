@@ -23,5 +23,117 @@
 	</div>
 </header>
 
+	<!-- Listing Information Section -->
+    <section class="page-section bg-inverse" style="padding:0px;">
+        <div class="container-fluid text-center text-white wow fadeIn">	
+	 		<div class="row">
+                <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;padding:2.5rem;">
+                    <h3 class="mb-3 text-center my-auto">{{ page.title }}</h3>
+                    <hr class="dark">
+                    {{# page.content }} 
+	                    <span class="mb-0" style="text-align:justify;display:block;"> {{{ page.content }}}</span>
+                        <hr class="dark">
+                    {{/ page.content}}
+                    <div class="meta d-flex flex-row justify-content-around mb-3">
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
+			          </div>
+                </div>
+            	<!-- Swiper -->
+	           	<div class="swiper col-md-12 col-lg-8">
+			        <div class="swiper-container swiper-container-4 fadeIn">
+			            <div class="swiper-wrapper no-gutter" style="height:75vh;">
+			            {{# page.metadata.gallery }}
+			                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ image.url }}'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
+			            {{/ page.metadata.gallery }}
+			            </div>
+					</div>
+			        <!-- Add Pagination -->
+			        <div class="col-md-12 swiper-pagination swiper-pagination-4  text-center mx-auto"></div>      		
+	           	</div>
+
+            </div>
+		</div>
+	</section>
+
+	<!--  Map -->
+	<div class="container-fluid bg-default" style="padding:2.5rem;">
+	   <div class="col-md-10 offset-1 col-sm-12" style="height:75vh;" id="map"></div>
+       <div id="floating-panel">
+	      <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
+	      <input style="display:none;" id="submit" type="button" value="Geocode">
+	    </div>
+	</div>
+
+	       <script>
+
+		      function initMap() {
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 12,
+		          center: {lat: 41.8333925, lng: -88.0121478}
+		        });
+		        var geocoder = new google.maps.Geocoder();
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+		          geocodeAddress(geocoder, map);
+		        });
+		      }
+
+                var infowindow = new google.maps.InfoWindow();
+                var service = new google.maps.places.PlacesService(map);
+
+                service.getDetails({
+                  placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+                }, function(place, status) {
+                  if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                      map: map,
+                      position: place.geometry.location
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
+                      infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                        'Place ID: ' + place.place_id + '<br>' +
+                        place.formatted_address + '</div>');
+                      infowindow.open(map, this);
+                    });
+                  }
+                });
+
+		      function geocodeAddress(geocoder, resultsMap) {
+		        var address = document.getElementById('address').value;
+		        geocoder.geocode({'address': address}, function(results, status) {
+		          if (status === 'OK') {
+		            resultsMap.setCenter(results[0].geometry.location);
+		            var marker = new google.maps.Marker({
+		              map: resultsMap,
+		              position: results[0].geometry.location
+		            });
+		          } else {
+		            alert('Geocode was not successful for the following reason: ' + status);
+		          }
+		        });
+		      }
+
+
+		    </script>
+	    <script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjaAA8Kmim1iwYJ2b67y_zObptpIKTD6g&callback=initMap">
+	    </script>
+
+
+	<style>
+	.container-fluid.wow.fadeIn.text-center{
+		overflow-x:scroll;
+	}
+	.row.related.col-md-10.col-xs-12 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: left;
+	}
+	</style>
+
 
 {{> footer}}

@@ -21,33 +21,83 @@
 	</div>
 </header>
 
-<!--  Map -->
-	<section class="page-section bg-faded map">
-	    <style>
-	      #map {
-	        height: 400px;
-	        width: 100%;
-	       }
-	    </style>
-	    
-	    <div id="map"></div>
-	    <script>
-	      function initMap() {
-	        var uluru = {add:};
-	        var map = new google.maps.Map(document.getElementById('map'), {
-	          zoom: 4,
-	          center: uluru
-	        });
-	        var marker = new google.maps.Marker({
-	          position: uluru,
-	          map: map
-	        });
-	      }
-	    </script>
+	<!--  Map -->
+	<div class="container-fluid bg-default" style="padding:2.5rem;">
+	   <div class="col-md-10 offset-1 col-sm-12" style="height:75vh;" id="map"></div>
+       <div id="floating-panel">
+	      <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
+	      <input style="display:none;" id="submit" type="button" value="Geocode">
+	    </div>
+	</div>
+
+	       <script>
+
+		      function initMap() {
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 12,
+		          center: {lat: 41.8333925, lng: -88.0121478}
+		        });
+		        var geocoder = new google.maps.Geocoder();
+
+
+                document.addEventListener("DOMContentLoaded", function() {
+		          geocodeAddress(geocoder, map);
+		        });
+		      }
+
+                var infowindow = new google.maps.InfoWindow();
+                var service = new google.maps.places.PlacesService(map);
+
+                service.getDetails({
+                  placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+                }, function(place, status) {
+                  if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                      map: map,
+                      position: place.geometry.location
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
+                      infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                        'Place ID: ' + place.place_id + '<br>' +
+                        place.formatted_address + '</div>');
+                      infowindow.open(map, this);
+                    });
+                  }
+                });
+
+		      function geocodeAddress(geocoder, resultsMap) {
+		        var address = document.getElementById('address').value;
+		        geocoder.geocode({'address': address}, function(results, status) {
+		          if (status === 'OK') {
+		            resultsMap.setCenter(results[0].geometry.location);
+		            var marker = new google.maps.Marker({
+		              map: resultsMap,
+		              position: results[0].geometry.location
+		            });
+		          } else {
+		            alert('Geocode was not successful for the following reason: ' + status);
+		          }
+		        });
+		      }
+
+
+		    </script>
 	    <script async defer
 	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjaAA8Kmim1iwYJ2b67y_zObptpIKTD6g&callback=initMap">
 	    </script>
-	</section>
+
+
+	<style>
+	.container-fluid.wow.fadeIn.text-center{
+		overflow-x:scroll;
+	}
+	.row.related.col-md-10.col-xs-12 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: left;
+	}
+	</style>
 
 <!-- Other Listings -->
 
