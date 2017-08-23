@@ -36,13 +36,16 @@ app.use('/', (req, res, next) => {
 
 // Unique Templates
 
+app.get('/', (req,res) => {
+  res.render('construction.html', { partials })
+} 
 
-app.get('/' || '/home', (req, res) => {
+
+app.get('/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     const testimonials = response.objects.type.testimonials.slice(0,5)
     const listings = response.objects.type.listings
-    res.locals.listings = listings
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })
