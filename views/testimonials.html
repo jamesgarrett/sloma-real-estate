@@ -25,7 +25,7 @@
                       {{# cosmic.objects.type.testimonials }}
                         <!-- Testimonial Item 1 -->
                         <div class="item mb-4">
-                            <p class="lead">{{ metadata.type }} | {{ metadata.neighborhood }} | {{ metadata.building_type }}</p>
+                            <p class="lead">{{ metadata.type }} {{# metadata.neighborhood }}| {{ metadata.neighborhood }} {{/ metadata.neighborhood }}{{# metadata.building_type }} | {{ metadata.building_type }}{{/ metadata.building_type }}</p>
                             <hr class="colored">
                             <p>{{{ content }}}</p>
                             <div class="testimonial-author">
