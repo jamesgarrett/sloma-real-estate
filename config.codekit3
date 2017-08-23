@@ -368,16 +368,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/scss\/_iframe.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/scss\/_iframe-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/scss\/_iframe.scss": {
 		"aP": 0,
 		"bl": 0,
