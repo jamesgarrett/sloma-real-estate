@@ -5,7 +5,7 @@
 {{/ page.metadata.hero }}
 
 <header class="h-100" style="background:rgba(0,0,0,0.6);">
-	<!--  -->
+	<!-- Masthead -->
     <div class="overlay"></div>
         <div class="container h-100 {{ metadata.category.slug }}">
 			<div class="row h-100">
@@ -33,7 +33,7 @@
     <section class="page-section bg-inverse" style="padding:0px;">
         <div class="container-fluid text-center text-white wow fadeIn">	
 	 		<div class="row">
-                <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;padding:2.5rem;">
+                <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;">
                     <h3 class="mb-3 text-center my-auto">{{ page.title }}</h3>
                     <hr class="dark">
                     {{# page.content }} 
@@ -63,9 +63,9 @@
 		</div>
 	</section>
 
-<!--  Map -->
-	<div class="container-fluid">
-	   <div class="col-md-10 offset-1 col-sm-12 bg-default" style="height:75vh;padding:2.5rem;" id="map"></div>
+	<!--  Map -->
+	<div class="container-fluid bg-default" style="padding:2.5rem;">
+	   <div class="col-md-10 offset-1 col-sm-12" style="height:75vh;" id="map"></div>
        <div id="floating-panel">
 	      <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
 	      <input style="display:none;" id="submit" type="button" value="Geocode">
