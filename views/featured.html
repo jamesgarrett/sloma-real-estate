@@ -22,21 +22,43 @@
 	</div>
 </header>
 
+<style>
+	.swiper-pagination{
+		position: absolute;
+		transform: translateY(-50px);
+	}
+</style>
+
 <!-- Listing Information Section -->
-    <section class="page-section bg-default" style="padding:0px;">
-        <div class="container-fluid text-center wow fadeIn">	
+    <section class="page-section bg-inverse" style="padding:0px;">
+        <div class="container-fluid text-center text-white wow fadeIn">	
 	 		<div class="row">
-                <div class="item col-xl-4 col-lg-6 col-md-6 col-sm-12 mission my-auto mx-auto" style="padding:2rem 3rem;min-height:50vh;">
-                    <h2 class="mb-3 text-center my-auto">{{ page.metadata.category.title }}</h2>
+                <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;padding:2.5rem;">
+                    <h3 class="mb-3 text-center my-auto">{{ page.title }}</h3>
                     <hr class="dark">
                     {{# page.content }} 
-	                    <span class="mb-0" style="border:1px solid #222;padding:2.5rem; text-align:justify;display:block;"> {{{ page.content }}}</span>
+	                    <span class="mb-0" style="text-align:justify;display:block;"> {{{ page.content }}}</span>
                         <hr class="dark">
                     {{/ page.content}}
+                    <div class="meta d-flex flex-row justify-content-around mb-3">
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
+			          </div>
                 </div>
-                <div class="item col-lg-6 col-sm-12  hidden-md-down text-center" style="width:100%;list-style-type:none;padding:0px;">
-                    <li style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000');background-size:cover;background-position:center;height:100%;"></li>
-                </div>
+            	<!-- Swiper -->
+	           	<div class="swiper col-md-12 col-lg-8">
+			        <div class="swiper-container swiper-container-4 fadeIn">
+			            <div class="swiper-wrapper no-gutter" style="height:75vh;">
+			            {{# page.metadata.gallery }}
+			                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ image.url }}'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
+			            {{/ page.metadata.gallery }}
+			            </div>
+					</div>
+			        <!-- Add Pagination -->
+			        <div class="col-md-12 swiper-pagination swiper-pagination-4  text-center mx-auto"></div>      		
+	           	</div>
+
             </div>
 		</div>
 	</section>
@@ -84,10 +106,9 @@
 		</div>
 	</section>
 
-	<section class="page-section bg-inverse text-white text-center">
-		<a href="/listings"><i class="fa fa-chevron-left"></i> Return to All Listings</a>
+	<section class="page-section bg-inverse text-center">
+		<a href="/listings" class="text-white"><h4>Return to All Listings</a></h4>
 	</section>	
-
 
 
 {{> footer}}
