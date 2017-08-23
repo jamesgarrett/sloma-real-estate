@@ -44,7 +44,7 @@ app.get('/' || '/home', (req, res) => {
     res.locals.listings = listings
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
-    res.render('index.html', { partials })
+    res.render('construction.html', { partials })
   })
 })
 
@@ -130,13 +130,13 @@ app.get('/listings/:slug', (req, res) => {
       return res.status(404).render('404.html', { partials })  
     }
     if (res.locals.page.metadata.category === 'Coming Soon' ){
-      return res.render('upcoming-listings.html', {partials})
+      return res.render('upcoming.html', {partials})
     }
     if (res.locals.page.metadata.category === 'Featured' ){
-        return res.render('active-listings.html', {partials})
+        return res.render('featured.html', {partials})
     }
     if (res.locals.page.metadata.category === 'Sold' ){
-        return res.render('sold-listings.html', {partials})
+        return res.render('sold.html', {partials})
     }
     // console.log('page.category');
   })
