@@ -44,7 +44,7 @@ app.get('/' || '/home', (req, res) => {
     res.locals.listings = listings
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
-    res.render('index.html', { partials })
+    res.render('construction.html', { partials })
   })
 })
 
