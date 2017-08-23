@@ -38,7 +38,7 @@ app.use('/', (req, res, next) => {
 
 app.get('/', (req,res) => {
   res.render('construction.html', { partials })
-} 
+})
 
 
 app.get('/home', (req, res) => {
