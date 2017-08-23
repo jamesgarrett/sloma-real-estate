@@ -64,8 +64,7 @@
 	</section>
 
 <!--  Map -->
-	    <h3 class="text-center col-md-12">Address</h3>
-	    <div class="col-md-6 offset-3" style="height:75vh;" id="map"></div>
+	    <div class="col-md-6 offset-3 bg-default" style="height:75vh;padding:2.5rem;" id="map"></div>
        <div id="floating-panel">
 	      <input style="display:none;" id="address" type="textbox" value="720 N Willard #1, Chicago IL">
 	      <input style="display:none;" id="submit" type="button" value="Geocode">
@@ -75,7 +74,7 @@
 
 		      function initMap() {
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 10,
+		          zoom: 12,
 		          center: {lat: 41.8333925, lng: -88.0121478}
 		        });
 		        var geocoder = new google.maps.Geocoder();
