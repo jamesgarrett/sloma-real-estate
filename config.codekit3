@@ -15,15 +15,6 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
-	"\/app.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/app-min.js",
-		"oF": 1,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/css\/sloma.css": {
 		"aP": 1,
 		"bl": 0,
