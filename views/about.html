@@ -1,6 +1,6 @@
 {{> header }}
 
-    <style>ul.navbar-nav{display:none!important;}</style>
+    <!-- <style>ul.navbar-nav{display:none!important;}</style> -->
 	
 	<div class="bg-image" style="background-image:url('{{ cosmic.object.about.metadata.hero.imgix_url }}?auto=format,enhance&q=60');"></div>
     <header class="h-100" style="background:rgba(0,0,0,0.6);">
@@ -8,9 +8,10 @@
         <div class="overlay"></div>
 	        <div class="container h-100" >
 				<div class="row h-100">
-	                <div class="col-12 my-auto text-white page-title">
+	                <div class="col-12 my-auto text-white text-center page-title">
                         <h1><img src="{{ cosmic.object.icons.metadata.keyhole.imgix_url }}" alt="Keyhole" width="25">{{ cosmic.object.about.title }}</h1>
                         <h4>{{ cosmic.object.about.metadata.headline }}</h4>
+                        <hr>
 	                </div>
 	            </div>
 			</div>
@@ -191,6 +192,8 @@
         </div>
     </section>
 
+    <style>.listing.col-lg-6 img{height:300px;}</style>
+
         <!-- Recent Transactions -->
     <section class="page-section transactions bg-faded text-center">
         <div class="container wow fadeIN">
@@ -199,7 +202,7 @@
             <div class="row mb-3">
             {{# cosmic.objects.type.listings }}
                 <div class="col-lg-6 listing">
-                    <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" width="" alt="">
+                    <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" alt="Photo of {{ title }}">
                     <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
                     <h5 class="text-center" style="margin-bottom:1.5rem;margin-top:1rem;">{{# metadata.price}} <span class="price" style="text-transform:capitalize;">Selling Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}</h5>
                 </div>
