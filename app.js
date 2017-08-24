@@ -46,6 +46,7 @@ app.get('/home', (req, res) => {
     const cosmic = response
     const testimonials = response.objects.type.testimonials.slice(0,5)
     const listings = response.objects.type.listings
+    res.locals.listings = listings
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })

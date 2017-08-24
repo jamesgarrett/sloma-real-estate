@@ -8,9 +8,10 @@
     <div class="overlay"></div>
     <div class="container h-100" >
       <div class="row h-100">
-        <div class="col-12 my-auto text-white page-title">
+        <div class="col-12 my-auto text-white text-center page-title">
               <h1><i class="fa fa-envelope"></i>{{ cosmic.object.contact.title }}</h1>
               <h4>{{ cosmic.object.contact.metadata.headline }}</h4>
+              <hr>
         </div>
       </div>
     </div>
@@ -22,10 +23,10 @@
   <!-- Main Content Section -->
         <div class="row">
           <div class="col-md-12">
-            <h1>Contact</h1>
+            <h1>Get In Touch Today</h1>
           </div>
           <div class="col-sm-6 col-xs-12">
-            <p>Feel free to fill out the form field on the right to leave us a message. Please provide your contact information and we will respond promptly. Additionally you can contact us by email at imsloma@gmail.com, or by phone at 773-317-0414.</p>
+            <p>{{{ cosmic.object.contact.content }}}</p>
           </div>
           <div class="col-sm-6  col-xs-12 pt-40">
             <form id="contact_form">
