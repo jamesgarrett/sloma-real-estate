@@ -18,22 +18,13 @@
 
 <main>
 
-    <section class="page-controller text-center text-white container-fluid bg-default">
-            <row class="col-md-12">
-                 <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
-                <button type="button" class="mix-button btn-primary active-listings" data-filter=".Featured" id="featured">Featured</button>
-                <button type="button" class="mix-button btn-primary coming-soon" data-filter=".Coming" id="coming-soon">Coming Soon</button>
-                <button type="button" class="mix-button btn-primary sold-listings" data-filter=".Sold" id="sold">Sold</button>
-                <button type="button" class="mix-button btn-primary"><a href="/search-mls">Search MLS</a></button>
-            </row>
-    </section>
-
-
-    <!-- Recent Transactions -->
-    <section class="page-section transactions bg-faded">
-        <div class="container mixer-container wow fadeIN">
+    <!-- Featured Listings -->
+    <section class="page-section transactions bg-default"  id="featured">
+        <div class="container wow fadeIN">
+            <h1 class="text-center">Featured Listings</h1>
+            <hr class="colored">
             <div class="row">
-            {{# listings }}
+            {{# featured_listings }}
                             <div class="col-lg-6 listing mix {{ metadata.category }}">
                                 <a href="/listings/{{ slug }}">
                                 <span class="category"><h6>{{ metadata.category }}</h6></span>
@@ -48,15 +39,71 @@
                                     {{# metadata.price}} <span class="price"><strong><i class="fa fa-money"></i> Price:</strong><br> {{ metadata.price}}</span> {{/ metadata.price}}
                                 </div>
                             </div>
-            {{/ listings }}
+            {{/ featured_listings }}
             </div>
+            <hr class="colored">
         </div>
     </section>
+
+    <!-- Coming Soon Listings -->
+    <section class="page-section transactions bg-faded" id="coming-soon">
+        <div class="container wow fadeIN">
+            <h1 class="text-center">Coming Soon</h1>
+            <hr class="colored">
+            <div class="row">
+            {{# upcoming_listings }}
+                            <div class="col-lg-6 listing mix {{ metadata.category }}">
+                                <a href="/listings/{{ slug }}">
+                                <span class="category"><h6>{{ metadata.category }}</h6></span>
+                                </a>
+                                <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                                    <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
+                                </div>
+                                <div class="meta d-flex flex-row justify-content-around mb-3">
+                                    {{# metadata.beds}}<span class="beds"><strong><i class="fa fa-bed"></i> Beds:</strong><br> {{ metadata.beds}}</span>{{/ metadata.beds}}
+                                    {{# metadata.baths}} <span class="baths"><strong><i class="fa fa-bath"></i> Baths:</strong><br> {{ metadata.baths}}</span> {{/ metadata.baths}}
+                                    {{# metadata.property_type}} <span class="property_type"><strong><i class="fa fa-home"></i> Type:</strong><br> {{ metadata.property_type}}</span> {{/ metadata.property_type}}
+                                    {{# metadata.price}} <span class="price"><strong><i class="fa fa-money"></i> Price:</strong><br> {{ metadata.price}}</span> {{/ metadata.price}}
+                                </div>
+                            </div>
+            {{/ upcoming_listings }}
+            </div>
+            <hr class="colored">
+        </div>
+    </section>
+
+    <!-- Sold Listings -->
+    <section class="page-section transactions bg-default" id="sold">
+        <div class="container wow fadeIN">
+            <h1 class="text-center">Recent Sales</h1>
+            <hr class="colored">
+            <div class="row">
+            {{# sold_listings }}
+                            <div class="col-lg-6 listing mix {{ metadata.category }}">
+                                <a href="/listings/{{ slug }}">
+                                <span class="category"><h6>{{ metadata.category }}</h6></span>
+                                </a>
+                                <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                                    <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
+                                </div>
+                                <div class="meta d-flex flex-row justify-content-around mb-3">
+                                    {{# metadata.beds}}<span class="beds"><strong><i class="fa fa-bed"></i> Beds:</strong><br> {{ metadata.beds}}</span>{{/ metadata.beds}}
+                                    {{# metadata.baths}} <span class="baths"><strong><i class="fa fa-bath"></i> Baths:</strong><br> {{ metadata.baths}}</span> {{/ metadata.baths}}
+                                    {{# metadata.property_type}} <span class="property_type"><strong><i class="fa fa-home"></i> Type:</strong><br> {{ metadata.property_type}}</span> {{/ metadata.property_type}}
+                                    {{# metadata.price}} <span class="price"><strong><i class="fa fa-money"></i> Price:</strong><br> {{ metadata.price}}</span> {{/ metadata.price}}
+                                </div>
+                            </div>
+            {{/ sold_listings }}
+            </div>
+            <hr class="colored">
+        </div>
+    </section>
+
 
 </main>
 
 <script>
-    var mixer = mixitup('.mixer-container');
+    var mixer = mixitup('');
 </script>
 
 
