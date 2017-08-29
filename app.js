@@ -40,8 +40,27 @@ app.get('/' || '/home', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     const testimonials = response.objects.type.testimonials.slice(0,5)
+    const agents = response.objects.type.authors
     const listings = response.objects.type.listings
+    const sold_listings = []
+    const featured_listings = []
+    const upcoming_listings = []
+
+    listings.forEach(page => {
+      if (page.metafield.category.value === 'Featured')
+        featured_listings.push(page)
+      if (page.metafield.category.value === 'Coming Soon')
+        upcoming_listings.push(page)
+      if (page.metafield.category.value === 'Sold')
+        sold_listings.push(page)
+    })
+
     res.locals.listings = listings
+    res.locals.featured_listings = featured_listings
+    res.locals.upcoming_listings = upcoming_listings
+    res.locals.sold_listings = sold_listings
+
+    res.locals.agents = agents
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
     res.render('index.html', { partials })
@@ -111,17 +130,17 @@ app.get('/listings', (req, res) => {
     const featured_listings = []
     const upcoming_listings = []
     listings.forEach(page => {
-      if (page.metafield.category.value === 'Sold')
-        sold_listings.push(page)
       if (page.metafield.category.value === 'Featured')
         featured_listings.push(page)
       if (page.metafield.category.value === 'Coming Soon')
         upcoming_listings.push(page)
+      if (page.metafield.category.value === 'Sold')
+        sold_listings.push(page)
     })
     res.locals.page = page
     res.locals.listings = listings
-    res.locals.upcoming_listings = upcoming_listings
     res.locals.featured_listings = featured_listings
+    res.locals.upcoming_listings = upcoming_listings
     res.locals.sold_listings = sold_listings
     res.render('listings.html', { partials })
   })
