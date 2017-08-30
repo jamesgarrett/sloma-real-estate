@@ -51,7 +51,9 @@
 			        <div class="swiper-container swiper-container-4 fadeIn">
 			            <div class="swiper-wrapper no-gutter" style="height:75vh;">
 			            {{# page.metadata.gallery }}
-			                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ image.url }}'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
+
+			                <div class="swiper-slide listing text-center col-xs-12 my-auto" style="background-image: url('{{ image.imgix_url }}?w500'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
+			        
 			            {{/ page.metadata.gallery }}
 			            </div>
 					</div>
