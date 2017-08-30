@@ -94,6 +94,8 @@
         prevButton: '.swiper-button-prev-1',
         spaceBetween: 30,
         loop:true,
+        preloadImages: false,
+        lazyLoading: true,
         breakpoints: {
             1200: {
                 slidesPerView: 3,
@@ -120,6 +122,8 @@
         nextButton: '.swiper-button-next-2',
         prevButton: '.swiper-button-prev-2',
         spaceBetween: 30,
+        preloadImages: false,
+        lazyLoading: true,
         loop:true,
         breakpoints: {
             1200: {
@@ -141,13 +145,15 @@
         }
     });
 
-    var swiper = new Swiper('.swiper-container-4', {
-        pagination: '.swiper-pagination-4',
+    var swiper = new Swiper('.swiper-container-3', {
+        pagination: '.swiper-pagination-3',
         slidesPerView: 1,
         paginationClickable: true,
-        nextButton: '.swiper-button-next-4',
-        prevButton: '.swiper-button-prev-4',
+        nextButton: '.swiper-button-next-3',
+        prevButton: '.swiper-button-prev-3',
         spaceBetween: 30,
+        preloadImages: false,
+        lazyLoading: true,
         loop:true,
     });
 
