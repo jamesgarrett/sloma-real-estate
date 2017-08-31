@@ -15,6 +15,15 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/app.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/app-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/css\/sloma.css": {
 		"aP": 1,
 		"bl": 0,
@@ -68,6 +77,15 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/contact_me-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/intercom.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/intercom-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -208,78 +226,6 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
-		},
-	"\/routes\/404.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/404-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/blog.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/blog-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/contact.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/contact-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/faqs.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/faqs-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/home.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/home-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/index.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/index-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/page.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/page-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/routes\/search.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/routes\/search-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/scss\/_about.scss": {
 		"aP": 0,
@@ -1379,18 +1325,6 @@
 		"oAP": "\/views\/about.html",
 		"oF": 0
 		},
-	"\/views\/author.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/author.html",
-		"oF": 0
-		},
-	"\/views\/blog-single.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/blog-single.html",
-		"oF": 0
-		},
 	"\/views\/construction.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1497,12 +1431,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/videos.html",
-		"oF": 0
-		},
-	"\/yarn.lock": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/yarn.lock",
 		"oF": 0
 		}
 	},

@@ -3,11 +3,16 @@
     <div class="bg-image" style="background-image:url('{{ cosmic.object.testimonials.metadata.hero.imgix_url }}');"></div>
     <header class="h-100" style="background:rgba(0,0,0,0.6);">
         <div class="overlay"></div>
-          <div class="row h-100">
+        <div class="row h-100">
             <div class="col-12 text-white page-title text-center my-auto">
                   <h1>{{ page.title }}</h1>
                   <h4>{{ page.metadata.headline }}</h4>
                   <hr>
+            </div>
+            <div class="scroll-down">
+              <a class="btn page-scroll" href="#{{ page.title }}">
+                  <i class="fa fa-angle-down fa-fw"></i>
+              </a>
             </div>
         </div>
     </header>
@@ -16,7 +21,7 @@
 <main>
 
 <!-- Testimonials Section -->
-    <section class="page-section testimonials bg-faded">
+    <section class="page-section testimonials bg-faded" id="{{ page.title }}">
         <div class="container wow fadeIn">
             {{# cosmic.objects.type.testimonials }}
                 <div class="row">
