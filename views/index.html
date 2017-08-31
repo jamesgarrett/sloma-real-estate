@@ -1,19 +1,20 @@
 {{> header }}
 
     <!-- Masthead -->
-    <header class="masthead video">
+    <header class="masthead video" style="max-height:100vh;">
         <div class="overlay"></div>
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-md-8 my-auto text-center mx-auto text-white">
-                    <a class="masthead-img img-fluid mb-3" alt="">
+                    <a class="masthead-img img-fluid" alt="">
                         <img style="width:350px;" src="{{ cosmic.object.logos.metadata.full_sloma_logo.imgix_url }}?w=700" alt="Sloma Real Estate Group Logo">
+                        <h4 class="text-center text-white mt-3">"Realizing Dreams, One Home at a Time"</h4>
                     </a>
                 </div>
             </div>
         </div>
         <div class="scroll-down">
-            <a class="btn page-scroll" href="#listings">
+            <a class="btn page-scroll" href="#search">
                 <i class="fa fa-angle-down fa-fw"></i>
             </a>
         </div>
@@ -29,6 +30,42 @@
             </div>
       </div>
     </section> 
+
+    <!-- Team Section -->
+    <section class="page-section" id="about">
+        <div class="container text-center wow fadeIn">
+            <h2>Our Team</h2>
+            <hr class="colored">
+            <div class="team-carousel owl-carousel owl-theme mt-4">
+
+              {{# agents }}
+
+                <!-- Team Carousel Item 1 -->
+                <div class="item">
+                    <div class="overlay"></div>
+                    <img class="img-fluid" src="{{ metadata.image.imgix_url }}?w=400&fit=crop&crop=entropy&auto=format,enhance" alt="">
+                    <div class="team-caption">
+                        <h3><a href="about#{{ slug }}">{{ title }}</a></h3>
+                        <hr class="colored">
+                        <p>{{ metadata.title }}</p>
+                        <ul class="list-inline list-team-social">
+                            {{# metadata.phone }}<li class="list-inline-item"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i></a></li>{{/ metadata.phone }}
+                            {{# metadata.email }}<li class="list-inline-item"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i></a></li>{{/ metadata.email }}
+                            {{# metadata.twitter }}<li class="list-inline-item"><a href="http://twitter.com/{{ metadata.twitter }}"><i class="fa fa-twitter fa-fw"></i></a></li>{{/ metadata.twitter }}
+                            {{# metadata.linkedin }}<li class="list-inline-item"><a href="http://linkedin.com/in/{{ metadata.linkedin }}"><i class="fa fa-linkedin fa-fw"></i></a>{{/ metadata.linkedin }}
+                            </li>
+                            {{# metadata.instagram }}<li class="list-inline-item"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i></a></li>{{/ metadata.instagram }}
+                        </ul>
+                    </div>
+                </div>
+
+              {{/ agents }}
+
+            </div>
+            <hr class="colored">
+            <a href="/about" class="btn btn-primary">Learn More About Our Team</a>
+        </div>
+    </section>
 
      <!-- Featured Listings -->
       <section class="page-section wow" style="position:relative;">
@@ -87,42 +124,6 @@
             <div class="text-center mx-auto my-auto">
                 <img src="{{ cosmic.object.logos.metadata.sloma_key_black.imgix_url }}" width="50" alt="">
             </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="page-section" id="about">
-        <div class="container text-center wow fadeIn">
-            <h2>Our Team</h2>
-            <hr class="colored">
-            <div class="team-carousel owl-carousel owl-theme mt-4">
-
-              {{# agents }}
-
-                <!-- Team Carousel Item 1 -->
-                <div class="item">
-                    <div class="overlay"></div>
-                    <img class="img-fluid" src="{{ metadata.image.imgix_url }}?w=400&fit=crop&crop=entropy&auto=format,enhance" alt="">
-                    <div class="team-caption">
-                        <h3><a href="about#{{ slug }}">{{ title }}</a></h3>
-                        <hr class="colored">
-                        <p>{{ metadata.title }}</p>
-                        <ul class="list-inline list-team-social">
-                            {{# metadata.phone }}<li class="list-inline-item"><a href="tel:{{ metadata.phone }}"><i class="fa fa-phone fa-fw"></i></a></li>{{/ metadata.phone }}
-                            {{# metadata.email }}<li class="list-inline-item"><a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope fa-fw"></i></a></li>{{/ metadata.email }}
-                            {{# metadata.twitter }}<li class="list-inline-item"><a href="http://twitter.com/{{ metadata.twitter }}"><i class="fa fa-twitter fa-fw"></i></a></li>{{/ metadata.twitter }}
-                            {{# metadata.linkedin }}<li class="list-inline-item"><a href="http://linkedin.com/in/{{ metadata.linkedin }}"><i class="fa fa-linkedin fa-fw"></i></a>{{/ metadata.linkedin }}
-                            </li>
-                            {{# metadata.instagram }}<li class="list-inline-item"><a href="http://instagram.com/{{ metadata.instagram }}"><i class="fa fa-instagram fa-fw"></i></a></li>{{/ metadata.instagram }}
-                        </ul>
-                    </div>
-                </div>
-
-              {{/ agents }}
-
-            </div>
-            <hr class="colored">
-            <a href="/about" class="btn btn-primary">Learn More About Our Team</a>
         </div>
     </section>
 
