@@ -26,7 +26,7 @@
     <section class="page-section bg-faded" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="home-search">
       <div class="container text-center">
             <div class="row fluidMedia">
-            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
+            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" onload="resizeIframe(this)" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
             </div>
       </div>
     </section>
@@ -35,7 +35,7 @@
     <section class="page-section bg-default" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="map-search">
       <div class="container text-center">
             <div class="row fluidMedia">
-            <iframe src="http://slomagroup.idxhome.com/mapsearch/82710" frameborder="0" style="width:100%;" class="my-auto"></iframe>  
+            <iframe src="http://slomagroup.idxhome.com/mapsearch/82710" frameborder="0" style="width:100%;" onload="resizeIframe(this)" class="my-auto"></iframe>  
             </div>
       </div>
     </section>
@@ -49,30 +49,10 @@
     <section class="page-section bg-default" id="open-houses">
           <div class="container text-center">
             <div class="row fluidMedia">
-                <iframe class="my-auto col-md-8 offset-md-2" src="http://slomagroup.idxhome.com/openhomes/82710" frameborder="0" style="width:100%;" class="my-auto" id="open-houses"></iframe>
+                <iframe class="my-auto col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12" src="http://slomagroup.idxhome.com/openhomes/82710" onload="resizeIframe(this)" frameborder="0" style="width:100%;" class="my-auto" id="open-houses"></iframe>
             </div>
         </div>
     </section>
-
-    <!-- Open Houses -->
-	<!-- <section class="page-section bg-default" id="open-houses">
-		<div class="container text-center">
-        <h2>Open Houses</h2>
-        <hr class="dark">
-            <ul class="lists"> -->
-    			<!-- {{# cosmic.objects.type.openhouses }}  -->
-                        <!-- <div class="col-lg-6 listing">
-                            <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w600');">
-                                <h4 class="text-center"><a href="/openhouses/{{ slug }}"></a>{{ metadata.address }}</h4>
-                            </div>
-                            <div class="meta d-flex flex-row justify-content-around mb-3">
-                                <span class="date"><strong>Date:</strong><br> {{ metadata.date }}</span>
-                            </div>
-                        </div> -->
-                <!-- {{/ cosmic.objects.type.openhouses }}  -->
-            <!-- </ul>
-		</div>
-	</section> -->
 
     <!-- Newsletter Signup Call to Action -->
     <section class="page-section signup-form bg-inverse text-white" id="subscribe">

@@ -1015,7 +1015,7 @@ iframe .homepage {
   height: 100%; }
 
 footer.footer {
-  padding: 50px 0 20px;
+  padding: 0px;
   color: rgba(255, 255, 255, 0.7);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1028,6 +1028,8 @@ footer.footer {
   @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
     footer.footer {
       background-attachment: scroll; } }
+  footer.footer .overlay {
+    padding: 50px 0 20px; }
   footer.footer .logo {
     padding: 50px 0px;
     width: 250px; }

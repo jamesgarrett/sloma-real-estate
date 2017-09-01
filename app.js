@@ -163,7 +163,6 @@ app.get('/listings/:slug', (req, res) => {
       return res.status(404).render('404.html', { partials })  
     }
     if (res.locals.page.metadata.category === 'Coming Soon' ){
-      console.log(req.filter)
       return res.render('upcoming.html', {partials})
     }
     if (res.locals.page.metadata.category === 'Featured' ){

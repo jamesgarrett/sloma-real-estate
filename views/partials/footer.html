@@ -1,6 +1,7 @@
     
     <!-- Footer -->
-    <footer class="footer" style="background-image: url('{{ footer.metadata.footer_bg.url }}?w=1500&fit=crop&crop=entropy&auto=format,enhance')">
+    <footer class="footer" style="background-image: url('{{ footer.metadata.footer_bg.imgix_url }}?w=1000&fit=crop&crop=entropy&auto=format,enhance')">
+    <div class="h-100 overlay" style="background:rgba(0,0,0,0.6);">
         <div class="text-center">
             <img class="img-fluid logo" src="{{ logos.metadata.text_logo.url }}" alt="">
         </div>
@@ -55,6 +56,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </footer>
 
     <!-- Plugin JavaScript -->
@@ -84,7 +86,12 @@
     <!-- Swiper JS -->
     <script src="/node_modules/swiper/dist/js/swiper.min.js"></script>
 
-        <!-- Init    <script src="/js/background-slide.js"></script>ialize Swiper -->
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
+
     <script>
     var swiper = new Swiper('.swiper-container-1', {
         pagination: '.swiper-pagination-1',
@@ -145,17 +152,20 @@
         }
     });
 
-    var swiper = new Swiper('.swiper-container-3', {
-        pagination: '.swiper-pagination-3',
-        slidesPerView: 1,
-        paginationClickable: true,
+    var galleryTop = new Swiper('.gallery-top', {
         nextButton: '.swiper-button-next-3',
         prevButton: '.swiper-button-prev-3',
-        spaceBetween: 30,
-        preloadImages: false,
-        lazyLoading: true,
-        loop:true,
+        spaceBetween: 10,
     });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
 
 
     // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

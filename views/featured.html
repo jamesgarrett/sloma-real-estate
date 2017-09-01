@@ -22,13 +22,6 @@
 	</div>
 </header>
 
-<style>
-	.swiper-pagination{
-		position: absolute;
-		transform: translateY(-50px);
-	}
-</style>
-
 <!-- Listing Information Section -->
     <section class="page-section bg-inverse" style="padding:0px;">
         <div class="container-fluid text-center text-white wow fadeIn">	
@@ -46,33 +39,52 @@
 			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
 			          </div>
                 </div>
-            	<!-- Swiper -->
-	           	<div class="swiper col-md-12 col-lg-8">
-			        <div class="swiper-container swiper-container-3 fadeIn">
-			            <div class="swiper-wrapper no-gutter" style="height:75vh;">
-			            {{# page.metadata.gallery }}
 
-			                <div class="swiper-slide listing text-center col-xs-12 my-auto" style="background-image: url('{{ image.imgix_url }}?w500'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
-			        
-			            {{/ page.metadata.gallery }}
-			            </div>
-					</div>
-			        <!-- Add Pagination -->
-			        <div class="col-md-12 swiper-pagination swiper-pagination-3  text-center mx-auto"></div>      		
+                <!-- Map -->
+	           	<div class="col-md-12 col-lg-8">
+		           <div class="swiper-wrapper no-gutter h-100" id="map"></div>
+                   <div id="floating-panel">
+				       <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
+				       <input style="display:none;" id="submit" type="button" value="Geocode">
+				    </div>
 	           	</div>
-
             </div>
 		</div>
 	</section>
 
-	<!--  Map -->
-	<div class="container-fluid bg-default" style="padding:2.5rem;">
-	   <div class="col-md-10 offset-1 col-sm-12" style="height:75vh;" id="map"></div>
-       <div id="floating-panel">
-	      <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
-	      <input style="display:none;" id="submit" type="button" value="Geocode">
+	<style>
+	.gallery-thumbs > .swiper-wrapper > .swiper-slide-active{
+		opacity:0.5;
+		border:2px solid #222 !important;
+	}
+	.gallery-thumbs > .swiper-wrapper > .swiper-slide{
+		border:2px transparent;
+	}
+	</style>
+
+
+	<!-- Swiper -->
+
+   	<div class="swiper bg-default" style="padding:2.5vh;">
+	    <div class="swiper-container gallery-top col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-xs-12">
+	        <div class="swiper-wrapper no-gutter" style="height:75vh;">
+	            {{# page.metadata.gallery }}
+	                <div class="swiper-slide listing text-center col-xs-12 my-auto" style="background-image: url('{{ image.imgix_url }}?w500'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>        
+	            {{/ page.metadata.gallery }}
+	        </div>
+	        <!-- Add Arrows -->
+	        <div class="swiper-button-next-3"></div>
+	        <div class="swiper-button-prev-3"></div>
+	    </div>
+	    <div class="swiper-container gallery-thumbs text-center mt-2 col-lg-6 offset-lg-3 col-md-8 offset-md-2 hidden-sm-down">
+	        <div class="swiper-wrapper" style="height:25vh;">
+	            {{# page.metadata.gallery }}
+	                <div class="swiper-slide col-md-4" style="background-image: url('{{ image.imgix_url }}?w100'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>        
+	            {{/ page.metadata.gallery }}
+	        </div>
 	    </div>
 	</div>
+
 
 	       <script>
 
