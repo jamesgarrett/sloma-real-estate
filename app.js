@@ -59,7 +59,6 @@ app.get('/' || '/home', (req, res) => {
     res.locals.featured_listings = featured_listings
     res.locals.upcoming_listings = upcoming_listings
     res.locals.sold_listings = sold_listings
-
     res.locals.agents = agents
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
