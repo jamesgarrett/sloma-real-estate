@@ -1,19 +1,23 @@
 {{> header }}
 
     <!-- Masthead -->
-    <header class="masthead video" style="max-height:100vh;">
+
+    <header class="masthead video" data-vide-bg="mp4: https://cosmicjs.com/uploads/751a4dd0-9024-11e7-b490-61472fdc7161-chicago-skyline-compressed-5.mp4, poster: https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png?w=1000"
+  data-vide-options="posterType: jpg, loop: false, muted: false, position: 0% 0%" style="max-height:100vh;background-image:url('');">
         <div class="overlay"></div>
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-md-8 my-auto text-center mx-auto text-white">
                     <a class="masthead-img img-fluid" alt="">
-                        <img style="width:350px;" src="{{ cosmic.object.logos.metadata.full_sloma_logo.imgix_url }}?w=700" alt="Sloma Real Estate Group Logo">
+                        <img style="width:350px;" src="{{ cosmic.object.logos.metadata.full_sloma_logo.imgix_url }}" alt="Sloma Real Estate Group Logo">
                         <h4 class="text-center text-white mt-3">"Realizing Dreams, One Home at a Time"</h4>
                     </a>
+                    <style>.navbar-brand img, .masthead-img img{shape-rendering:geometricPrecision;-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;text-rendering: optimizeLegibility;}</style>
                 </div>
             </div>
         </div>
-        <div class="scroll-down">
+        <div class="scroll-down hidden-sm-down">
             <a class="btn page-scroll" href="#search">
                 <i class="fa fa-angle-down fa-fw"></i>
             </a>
@@ -26,7 +30,7 @@
     <section class="page-section bg-faded" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
       <div class="container text-center">
             <div class="row fluidMedia">
-            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" onload="resizeIframe(this)" frameborder="0" style="width:100%;" class="my-auto" id="homeSearch"></iframe>  
+            <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto"></iframe>  
             </div>
       </div>
     </section> 
@@ -128,7 +132,7 @@
     </section>
 
     <!-- Estimate -->
-    <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?=1000'); padding-bottom:0px;padding-top:150px;">
+    <section class="page-section" id="estimate" style="background-size:cover;background-image:url('{{ cosmic.object.home.metadata.hero.imgix_url }}?w=1000'); padding-bottom:0px;padding-top:150px;">
         <iframe class="my-auto" src="http://slomagroup.com/pages/widget/theme:15/site:slomarealestate.com/wid:1" height="450" width="100%" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" >
         </iframe>
     </section>

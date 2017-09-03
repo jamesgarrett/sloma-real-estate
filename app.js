@@ -16,18 +16,7 @@ const partials = {
   footer: 'partials/footer'
 }
 
-// Create global variables for the lifespan of the app
 
-Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
-    const logos = response.object.logos
-    const footer = response.object.footer
-    const header = response.object.header
-    const icons = response.object.icons
-    app.locals.header = header
-    app.locals.icons = icons
-    app.locals.logos = logos
-    app.locals.footer = footer
-})
 
 app.use('/', (req, res, next) => {
   res.locals.year = new Date().getFullYear()
@@ -194,6 +183,19 @@ app.get('/:slug', (req, res) => {
     return res.render('page.html', { partials })
   })
 });
+
+// Create global variables for the lifespan of the app
+
+Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const logos = response.object.logos
+    const footer = response.object.footer
+    const header = response.object.header
+    const icons = response.object.icons
+    app.locals.header = header
+    app.locals.icons = icons
+    app.locals.logos = logos
+    app.locals.footer = footer
+})
 
 http.listen(app.get('port'), () => {
   console.info('==> 🌎  Go to http://localhost:%s', app.get('port'));
