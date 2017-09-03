@@ -4,11 +4,14 @@ const app = express()
 const hogan = require('hogan-express')
 const http_module = require('http')
 const http = http_module.Server(app)
+const bodyParser = require('body-parser')
 app.engine('html', hogan)
 app.set('port', (process.env.PORT || 3000))
 app.use('/', express.static(__dirname + '/'))
+app.use(bodyParser.urlencoded({ extended: false }))
 const Cosmic = require('cosmicjs')
 const helpers = require('./helpers')
+const nodemailer = require('nodemailer')
 const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
 const read_key = process.env.COSMIC_READ_KEY
 const partials = {
@@ -86,6 +89,30 @@ app.get('/contact', (req, res) => {
     res.render('contact.html', { partials })
   })
 })
+
+app.post('/contact', function (req, res) {
+  const userName = req.body.userName
+  const body = req.body.body
+  var api_key = 'key-e0ee1bf585745f8061349715233f74a1';
+  var domain = 'mail.slomarealestate.com';
+  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+   
+  var data = {
+    from: 'Test User <postmaster@mail.slomarealestate.com>',
+    to: 'jgsibinga@gmail.com',
+    subject: "Message from: " + req.body.userName,
+    text: req.body.body + "\n" + "\n" + "The easiest way to reach me is: " + req.body.email + "\n" +  req.body.phone + "\n" + "\n" +  "This message was sent from a contact form on slomarealestate.com"
+  };
+   
+  mailgun.messages().send(data, function (error, body) {
+    console.log(body);
+    if(!error)
+      res.render("contact-sent.html", { partials })
+    else
+      res.send("Mail Not Sent")
+  });
+
+});
 
 app.get('/search-mls', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {

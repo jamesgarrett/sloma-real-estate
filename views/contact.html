@@ -21,7 +21,7 @@
       </div>
     </div>
   </header>
-  
+
   <main>
     <section class="page-section bg-default" id="contact">
       <div class="container wow fadeIn mb-40">
@@ -34,14 +34,14 @@
             <p>{{{ cosmic.object.contact.content }}}</p>
           </div>
           <div class="col-sm-6  col-xs-12 pt-40">
-            <form id="contact_form">
+            <form action="/contact" name="contactus" id="contactus" method="POST">
               <div class="form-group form-group--name">
                 <label>Name</label>
-                <input name="full_name" type="text" class="form-control input-lg" placeholder="Enter your full name">
+                <input name="userName" type="text" id="userName" class="form-control input-lg" placeholder="Enter your full name">
               </div>
               <div class="form-group form-group--email">
                 <label>Email</label>
-                <input name="email" type="text" class="form-control input-lg" placeholder="Enter your email address">
+                <input name="email" type="text" id="email" class="form-control input-lg" placeholder="Enter your email address">
               </div>
               <div class="form-group form-group--phone">
                 <label>Phone (Optional)</label>
@@ -49,14 +49,12 @@
               </div>
               <div class="form-group form-group--message">
                 <label>Message</label>
-                <textarea name="message" style="height: 150px" class="form-control input-lg" placeholder="Enter a message"></textarea>
-              </div>
-              <div class="alert alert-success success-message d-none">
-                {{ page.metafield.contact_form_success_message.value }}
+                <textarea name="body" cols="40" rows="10" id="body" style="height: 150px" class="form-control input-lg" placeholder="Enter a message"></textarea>
               </div>
               <div class="alert alert-danger error-message d-none">
                 Error
               </div>
+              <div id="success"></div>
               <div class="form-group mt-20">
                 <button class="btn btn-primary btn-lg submit-btn" type="submit">Submit</button>
               </div>
@@ -66,4 +64,5 @@
       </div>
     </section>
   </main>
+
 {{> footer }}
