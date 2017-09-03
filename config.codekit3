@@ -24,6 +24,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/config.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/config-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/css\/sloma.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1338,6 +1347,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/construction.html",
+		"oF": 0
+		},
+	"\/views\/contact-sent.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/contact-sent.html",
 		"oF": 0
 		},
 	"\/views\/contact.html": {

@@ -1,8 +1,8 @@
 {{> header }}
 
-<header class="masthead">
 <!-- Background Image Section -->
-<div class="bg-image" style="background:rgba(0,0,0,0.6) cover center; background-image:url('{{ page.metadata.hero.imgix_url }}?w1000');"></div>
+<div class="bg-image" style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000,auto=format,enhance&q=60');"></div>
+<header class="h-100" style="background:rgba(0,0,0,0.6);">
     <!-- Header Section -->
   <div class="overlay"></div>
   <div class="container h-100" style="max-height:100vh;">
@@ -12,14 +12,14 @@
             <h4>{{ page.metadata.headline }}</h4>
             <hr>
         </div>
-        <div class="scroll-down">
+        <div class="scroll-down col-12">
           <a class="btn page-scroll" href="#home-search">
               <i class="fa fa-angle-down fa-fw"></i>
           </a>
         </div>
     </div>
   </div>
-  <style>header.masthead{background-color:rgba(0,0,0,0.8);#ihf-main-container .page-header{display:none;}</style>
+  <style>#ihf-main-container .page-header{display:none;}.fluidMedia{padding-bottom:100vh;}</style>
 </header>
 
     <!-- Home Search -->
