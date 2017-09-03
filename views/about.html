@@ -203,13 +203,13 @@
             <h2>Recent Transactions</h2>
             <hr class="dark">
             <div class="row mb-3">
-            {{# cosmic.objects.type.listings }}
+            {{# sold_listings }}
                 <div class="col-lg-6 listing">
                     <img src="{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format" alt="Photo of {{ title }}">
                     <h4 class="text-center"><a href="/listings/{{ slug }}">{{ title }} </a></h4>
                     <h5 class="text-center" style="margin-bottom:1.5rem;margin-top:1rem;">{{# metadata.price}} <span class="price" style="text-transform:capitalize;">Selling Price:<strong> {{ metadata.price}}</strong></span> {{/ metadata.price}}</h5>
                 </div>
-            {{/ cosmic.objects.type.listings }}
+            {{/ sold_listings }}
             </div>
         </div>
     </section>
