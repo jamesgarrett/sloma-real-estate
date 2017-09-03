@@ -10,7 +10,9 @@
         <div class="container h-100">
 			<div class="row h-100">
                 <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 my-auto text-white page-title text-center">
-                	<h6>{{ metadata.category.slug }}</h6>
+	                <div class="meta d-flex flex-row justify-content-center mb-5">
+			            <h3 class="text-center sold" style="border:2px solid white;padding:15px;">{{ page.metadata.category }}</h3>
+		            </div>
                     <h1>{{ page.title }}</h1>
                 </div>
             </div>
@@ -23,7 +25,7 @@
         <div class="container-fluid text-center text-white wow fadeIn">	
 	 		<div class="row">
                 <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;padding:2.5rem;">
-                    <h3 class="mb-3 text-center my-auto">{{ page.title }}</h3>
+                    <h3 class="mb-3 text-left my-auto">{{ page.title }}</h3>
                     <hr class="dark">
                     {{# page.content }} 
 	                    <span class="mb-0" style="text-align:left;display:block;"> {{{ page.content }}}</span>
@@ -35,11 +37,11 @@
 			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
 			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
 			            {{# page.metadata.developer_name}} <span class="developer_name">Developer: {{ page.metadata.developer_name}}</strong></span> {{/ page.metadata.developer_name}}
-			            {{# page.metadata.developer_license}} <span class="developer_license mb-3">Developer License #:{{ page.metadata.developer_license}}</strong></span> {{/ page.metadata.developer_license}}
+			            {{# page.metadata.developer_license}} <span class="developer_license mb-3">Developer License: {{ page.metadata.developer_license}}</strong></span> {{/ page.metadata.developer_license}}
 			            {{# page.metadata.disclaimer}} <span class="disclaimer">{{ page.metadata.disclaimer}}</strong></span> {{/ page.metadata.disclaimer}}
 			          </div>
                 </div>
-            	<!-- Swiper -->
+            	<!-- Map -->
 	           	<div class="col-md-12 col-lg-8">
 		           <div class="swiper-wrapper no-gutter" style="height:75vh;" id="map"></div>
                    <div id="floating-panel">
