@@ -4,6 +4,7 @@ const app = express()
 const hogan = require('hogan-express')
 const http_module = require('http')
 const http = http_module.Server(app)
+const config = require('./config')
 const bodyParser = require('body-parser')
 app.engine('html', hogan)
 app.set('port', (process.env.PORT || 3000))
@@ -98,10 +99,10 @@ app.post('/contact', function (req, res) {
   var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
    
   var data = {
-    from: 'Test User <postmaster@mail.slomarealestate.com>',
+    from: 'Sloma Real Estate Group <postmaster@mail.slomarealestate.com>',
     to: 'jgsibinga@gmail.com',
     subject: "Message from: " + req.body.userName,
-    text: req.body.body + "\n" + "\n" + "The easiest way to reach me is: " + req.body.email + "\n" +  req.body.phone + "\n" + "\n" +  "This message was sent from a contact form on slomarealestate.com"
+    text: req.body.body + "\n" + "\n" + "The easiest way to reach me is: " + "\n" + req.body.email + "\n" +  req.body.phone + "\n" + "\n" +  "This message was sent from a contact form on slomarealestate.com"
   };
    
   mailgun.messages().send(data, function (error, body) {
