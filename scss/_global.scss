@@ -8,6 +8,12 @@ body{
     overflow-x:hidden;
 }
 
+@media (max-width: 767px) {
+    html {
+        overflow-x:hidden;
+    }
+}
+
 hr {
     max-width: 100px;
     height: 2px;
