@@ -24,6 +24,14 @@ $(document).ready(function() {
     }
 });
 
+window.addEventListener("load",function() {
+    // Set a timeout...
+    setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
 (function($) {
     "use strict"; // Start of use strict
 

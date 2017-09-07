@@ -152,6 +152,7 @@
 /* Nav Bar Toggle Animation */
 
 .navbar-toggler > .menu-bars{
+        margin-top:-5px;
         fill:white;
         .top, .bottom{
         transition:1s ease-in-out;

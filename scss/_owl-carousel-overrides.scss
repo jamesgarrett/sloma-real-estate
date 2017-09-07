@@ -19,18 +19,24 @@
             &:hover {
                 opacity: 1;
             }
-        }
-        .owl-prev {
-            left: 15px;
-        }
-        .owl-next {
-            right: 15px;
-        }
-        .owl-page span {
-            background: fade-out($themeDark, 0.5);
-        }
+                @media (max-width: 992px){
+            #mainNav .container{
+                justify-content:space-between;
+        
+
+            }
+            }
+        }  
+            
     }
 }
+
+@media (max-width: 992px){
+    .owl-buttons{
+        display:none;
+    }
+}
+
 
 .owl-carousel.owl-theme.portfolio-carousel {
     .owl-controls {
