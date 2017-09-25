@@ -110,6 +110,26 @@
 	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjaAA8Kmim1iwYJ2b67y_zObptpIKTD6g&callback=initMap">
 	    </script>
 
+	<!-- Other Listings -->
+
+	<section class="page-section bg-faded">
+				<h2 class="text-center">Related Listings</h2>
+				<hr class="dark">
+		<div class="container-fluid text-center related col-md-10" style="padding:0px !important;">
+				{{# listings }}
+					<a href="/listings/{{ slug }}" class="thumb col-md-2 col-sm-6">
+						<img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
+						<h6 class="mt-2">{{ title }}</h6>
+					</a>
+				{{/ listings }}
+		</div>
+	</section>
+
+	<section class="page-section bg-inverse text-center">
+		<a href="/listings" class="text-white"><h4>Return to All Listings</a></h4>
+	</section>	
+
+
 
 	<style>
 	.container-fluid.wow.fadeIn.text-center{

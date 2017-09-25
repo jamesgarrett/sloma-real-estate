@@ -1176,10 +1176,10 @@ a.text-primary {
   .owl-buttons {
     display: none; } }
 
-.owl-carousel.owl-theme.portfolio-carousel .owl-controls .owl-prev {
+.owl-controls .owl-prev {
   left: 0; }
 
-.owl-carousel.owl-theme.portfolio-carousel .owl-controls .owl-next {
+.owl-controls .owl-next {
   right: 0; }
 
 .swiper-pagination-bullet-active, .swiper-pagination-bullet {
