@@ -1,5 +1,24 @@
 {{> header }}
 
+<script type="text/javascript">
+    // browser compatibility: get method for event 
+    // addEventListener(FF, Webkit, Opera, IE9+) and attachEvent(IE5-8)
+    var myEventMethod = 
+        window.addEventListener ? "addEventListener" : "attachEvent";
+    // create event listener
+    var myEventListener = window[myEventMethod];
+    // browser compatibility: attach event uses onmessage
+    var myEventMessage = 
+        myEventMethod == "attachEvent" ? "onmessage" : "message";
+    // register callback function on incoming message
+    myEventListener(myEventMessage, function (e) {
+        // we will get a string (better browser support) and validate
+        // if it is an int - set the height of the iframe #my-iframe-id
+        if (e.data === parseInt(e.data)) 
+            document.getElementById('iFrame1').height = e.data + "px";
+    }, false);
+</script>
+
     <!-- Masthead -->
 
     <header class="masthead video" data-vide-bg="mp4: https://cosmicjs.com/uploads/751a4dd0-9024-11e7-b490-61472fdc7161-chicago-skyline-compressed-5.mp4, poster: https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png?w=1000"
@@ -72,27 +91,43 @@
     </section>
 
      <!-- Featured Listings -->
-      <section class="page-section wow" style="position:relative;">
+     <!--  <section class="page-section wow" style="position:relative;">
         <h2 class="text-center"><a href="/listings" id="listings">Featured Listings</a></h2>
-        <hr class="colored">
+        <hr class="colored"> -->
         <!-- Swiper -->
-        <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
+        <!-- <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
             <div class="swiper-wrapper no-gutter featured-carousel" style="height:50vh;">
             {{# featured_listings }}
                 <div class="swiper-slide listing text-center col-xs-12 {{ metadata.category }}" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
             {{/ featured_listings }}
             </div>
-        </div>
+        </div> -->
         <!-- Add Pagination -->
-        <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div>
+        <!-- <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div> -->
 
         <!-- Add Arrows -->
-        <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
+       <!--  <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
             <div class="swiper-button-next swiper-button-next-1"></div>
             <div class="swiper-button-prev swiper-button-prev-1"></div>
         </div>
 
-    </section>
+    </section> -->
+
+    <style>
+        iframe {
+          width: 100%;
+        }
+        .aspect-ratio {
+          position: relative;
+          width: 100%;
+          background: white;
+        }
+    </style>
+
+    <div class="aspect-ratio">
+        <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0">
+        </iframe>        
+    </div>
 
     <!-- Coming Soon -->
 
@@ -253,7 +288,9 @@
         </div>
     </section>
 
-    
+
+
+
 
   </main>
 {{> footer }}

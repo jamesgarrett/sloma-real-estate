@@ -62,27 +62,15 @@
 	}
 	</style>
 
-
-	<!-- Swiper -->
-
-   	<div class="swiper bg-default" style="padding:2.5vh;">
-	    <div class="swiper-container gallery-top col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-xs-12">
-	        <div class="swiper-wrapper no-gutter" style="height:75vh;">
-	            {{# page.metadata.gallery }}
-	                <div class="swiper-slide listing text-center col-xs-12 my-auto" style="background-image: url('{{ image.imgix_url }}?w500'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>        
-	            {{/ page.metadata.gallery }}
+	<div class="container-fluid" style="background:white;width:100%;">
+		<div class="row text-center text-lg-left">
+			{{# page.metadata.gallery }}
+			 <div class="thumbnail col-lg-3 col-md-4 col-xs-6 my-4" style="height:250px;">
+	          <a href="#" class="d-block h-100" style="background-image: url('{{ image.imgix_url }}?w500'); background-repeat:no-repeat; background-size:cover; background-position: center;">
+	          </a>
 	        </div>
-	        <!-- Add Arrows -->
-	        <div class="swiper-button-next-3"></div>
-	        <div class="swiper-button-prev-3"></div>
-	    </div>
-	    <div class="swiper-container gallery-thumbs text-center mt-2 col-lg-8 offset-lg-2 hidden-sm-down">
-	        <div class="swiper-wrapper" style="height:25vh;">
-	            {{# page.metadata.gallery }}
-	                <div class="swiper-slide col-md-4" style="background-image: url('{{ image.imgix_url }}?w100'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>        
-	            {{/ page.metadata.gallery }}
-	        </div>
-	    </div>
+			{{/ page.metadata.gallery }}
+		</div>
 	</div>
 
 

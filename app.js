@@ -20,12 +20,11 @@ const partials = {
   footer: 'partials/footer'
 }
 
-
-
 app.use('/', (req, res, next) => {
   res.locals.year = new Date().getFullYear()
   next()
 })
+
 
 // Unique Templates
 
@@ -38,6 +37,7 @@ app.get('/' || '/home', (req, res) => {
     const sold_listings = []
     const featured_listings = []
     const upcoming_listings = []
+    const other_listings = []
 
     listings.forEach(page => {
       if (page.metafield.category.value === 'Featured')
@@ -46,6 +46,8 @@ app.get('/' || '/home', (req, res) => {
         upcoming_listings.push(page)
       if (page.metafield.category.value === 'Sold')
         sold_listings.push(page)
+      else 
+        other_listings.push(page)
     })
 
     res.locals.listings = listings
