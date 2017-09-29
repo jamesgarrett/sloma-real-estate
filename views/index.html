@@ -19,6 +19,8 @@
     }, false);
 </script>
 
+
+
     <!-- Masthead -->
 
     <header class="masthead video" data-vide-bg="mp4: https://cosmicjs.com/uploads/751a4dd0-9024-11e7-b490-61472fdc7161-chicago-skyline-compressed-5.mp4, poster: https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png?w=1000"
@@ -46,7 +48,7 @@
 <main>
 
     <!-- Search -->
-    <section class="page-section bg-faded hidden-sm-down" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
+    <section class="page-section hidden-sm-down" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
       <div class="container text-center">
             <div class="row fluidMedia">
             <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto"></iframe>  
@@ -55,7 +57,7 @@
     </section> 
 
     <!-- Team Section -->
-    <section class="page-section" id="about">
+    <section class="page-section bg-faded" id="about">
         <div class="container text-center wow fadeIn">
             <h2>Our Team</h2>
             <hr class="colored">
@@ -90,21 +92,22 @@
         </div>
     </section>
 
-    <style>
-        iframe {
-          width: 100%;
-        }
-        .aspect-ratio {
-          position: relative;
-          width: 100%;
-          background: white;
-        }
-    </style>
+    <script>
+        focus();
+        var listener = addEventListener('blur', function() {
+            if(document.activeElement === document.getElementById('iFrame1')) {
+                iFrame1.css("overflow-y", "scroll");
+            }
+            removeEventListener(listener);
+        });
+    </script>
 
-    <div class="aspect-ratio">
+    <!-- Featured Listings -->
+    <div id="message"></div>
+    <section class="page-section aspect-ratio" id="container">
         <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0">
         </iframe>        
-    </div>
+    </section>
 
     <!-- Coming Soon -->
 
