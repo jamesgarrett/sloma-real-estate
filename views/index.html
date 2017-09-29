@@ -1,24 +1,4 @@
 {{> header }}
-
-<script type="text/javascript">
-    // browser compatibility: get method for event 
-    // addEventListener(FF, Webkit, Opera, IE9+) and attachEvent(IE5-8)
-    var myEventMethod = 
-        window.addEventListener ? "addEventListener" : "attachEvent";
-    // create event listener
-    var myEventListener = window[myEventMethod];
-    // browser compatibility: attach event uses onmessage
-    var myEventMessage = 
-        myEventMethod == "attachEvent" ? "onmessage" : "message";
-    // register callback function on incoming message
-    myEventListener(myEventMessage, function (e) {
-        // we will get a string (better browser support) and validate
-        // if it is an int - set the height of the iframe #my-iframe-id
-        if (e.data === parseInt(e.data)) 
-            document.getElementById('iFrame1').height = e.data + "px";
-    }, false);
-</script>
-
     <!-- Masthead -->
 
     <header class="masthead video" data-vide-bg="mp4: https://cosmicjs.com/uploads/751a4dd0-9024-11e7-b490-61472fdc7161-chicago-skyline-compressed-5.mp4, poster: https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png?w=1000"

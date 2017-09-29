@@ -1,32 +1,5 @@
 {{> header }}
 
-<script type="text/javascript">
-    // browser compatibility: get method for event 
-    // addEventListener(FF, Webkit, Opera, IE9+) and attachEvent(IE5-8)
-    var myEventMethod = 
-        window.addEventListener ? "addEventListener" : "attachEvent";
-    // create event listener
-    var myEventListener = window[myEventMethod];
-    // browser compatibility: attach event uses onmessage
-    var myEventMessage = 
-        myEventMethod == "attachEvent" ? "onmessage" : "message";
-    // register callback function on incoming message
-    myEventListener(myEventMessage, function (e) {
-        // we will get a string (better browser support) and validate
-        // if it is an int - set the height of the iframe #my-iframe-id
-        if (e.data === parseInt(e.data)) 
-            document.getElementById('iFrame1').height = e.data + "px";
-    }, false);
-</script>
-    
-    <style>
-    #iFrame1{
-        min-width: 100%; 
-        width: 100px;
-        *width: 100%; 
-    }
-    </style>
-
     <div class="bg-image" style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000,auto=format,enhance&q=60');"></div>
     <header class="h-100" style="background:rgba(0,0,0,0.6);">
         <!--  -->
@@ -51,8 +24,10 @@
 <main>
     
     <!-- Featured Listings -->
-    <section class="aspect-ratio" id="featured" style="overflow: auto;">
-        <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0"></iframe>        
+    <section class="bg-default" id="featured">
+        <div class="aspect-ratio col-xs-12 col-md-10 offset-md-1">
+            <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0"></iframe>    
+        </div>    
     </section>
 
     <!-- Coming Soon Listings -->
