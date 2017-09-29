@@ -172,7 +172,7 @@ h6 {
   font-size: 18px;
   border: 2px solid transparent;
   position: relative;
-  transform: translateY(7.5px);
+  transform: translateY(5px);
   padding: 10px 15px; }
   #mainNav .container .navbar-toggler svg {
     float: right;
