@@ -152,7 +152,6 @@
 /* Nav Bar Toggle Animation */
 
 .navbar-toggler > .menu-bars{
-        margin-top:-5px;
         fill:white;
         .top, .bottom{
         transition:1s ease-in-out;
@@ -214,7 +213,6 @@ path.brand{
     width: 100%;
     left: 0;
     top: 0;
-    padding-top: 45px;
     text-align: center;
     z-index: -1;
   }
@@ -227,6 +225,21 @@ path.brand{
   li.nav-item.dropdown{
     background: #222;
     width: 100%;
+  }
+  ul.navbar-nav {
+    height: 100vh;
+    background: #222;
+    padding:50px;
+    padding-top:65px;
+  }
+
+  li.nav-item {
+      flex-direction: column;
+      flex-grow: 1;
+  }
+
+  a.nav-link {
+      font-size: 1.75rem !important;
   }
 }
 
