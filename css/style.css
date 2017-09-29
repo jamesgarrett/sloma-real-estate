@@ -1050,7 +1050,8 @@ iframe .homepage {
 @media (max-width: 767px) {
   .aspect-ratio {
     width: 1px !important;
-    min-width: 100%; } }
+    min-width: 100%;
+    margin: 0 1rem; } }
 
 footer.footer {
   padding: 0px;
