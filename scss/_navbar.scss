@@ -268,6 +268,14 @@ path.brand{
     }
 }
 
+@media (max-width: 991px){
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    width: 250px;
+    margin: 0 auto;
+  }  
+}
+
+
 li.nav-item.dropdown i, li.nav-item.dropdown a{
     color: white;
     transition: 1s ease-in-out;

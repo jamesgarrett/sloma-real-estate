@@ -291,6 +291,11 @@ path.brand {
     .dropdown-menu .dropdown-item:hover {
       color: #222; }
 
+@media (max-width: 991px) {
+  .navbar-toggleable-md .navbar-nav .dropdown-menu {
+    width: 250px;
+    margin: 0 auto; } }
+
 li.nav-item.dropdown i, li.nav-item.dropdown a {
   color: white;
   transition: 1s ease-in-out;
@@ -833,7 +838,7 @@ button, input, optgroup, select, textarea {
   .announcement .sans {
     font-size: 3rem;
     margin: 0;
-    line-height: 20px; }
+    line-height: 2.5rem; }
   .announcement .serif {
     font-size: 6rem;
     margin: 0;
