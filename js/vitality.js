@@ -9,20 +9,6 @@
  * Purchase a license to use this theme at (https://wrapbootstrap.com)
  */
 
-// Load WOW.js on non-touch devices
-var isPhoneDevice = "ontouchstart" in document.documentElement;
-$(document).ready(function() {
-    if (isPhoneDevice) {
-        //mobile
-    } else {
-        //desktop               
-        // Initialize WOW.js
-        wow = new WOW({
-            offset: 50
-        })
-        wow.init();
-    }
-});
 
 window.addEventListener("load",function() {
     // Set a timeout...
