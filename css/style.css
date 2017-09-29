@@ -1047,13 +1047,10 @@ iframe .homepage {
   width: 100%;
   height: 100%; }
 
-iframe {
-  width: 100%; }
-
-.aspect-ratio {
-  position: relative;
-  width: 100%;
-  background: white; }
+@media (max-width: 767px) {
+  .aspect-ratio {
+    width: 1px !important;
+    min-width: 100%; } }
 
 footer.footer {
   padding: 0px;
