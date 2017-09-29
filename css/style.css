@@ -1,14 +1,17 @@
 html,
 body {
   height: 100%;
-  width: 100%; }
-
-body {
-  overflow-x: hidden; }
+  width: 100%;
+  -webkit-overflow-scrolling: touch; }
 
 @media (max-width: 767px) {
   html {
-    /*overflow-x:hidden;*/ } }
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden !important; }
+  body {
+    overflow-x: hidden !important;
+    overflow: auto; } }
 
 hr {
   max-width: 100px;
@@ -855,11 +858,16 @@ button, input, optgroup, select, textarea {
   padding-right: 8px;
   padding-left: 3px; }
 
+@media (max-width: 767px) {
+  .item .img {
+    max-width: 100%; } }
+
 .quote {
   width: 450px;
   padding: 2.5rem;
   font-family: 'Niconne',cursive;
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  max-width: 100%; }
 
 .mission {
   padding: 5vh; }

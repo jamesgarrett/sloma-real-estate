@@ -20,14 +20,11 @@
 </script>
     
     <style>
-        iframe {
-          width: 100%;
-        }
-        .aspect-ratio {
-          position: relative;
-          width: 100%;
-          background: white;
-        }
+    #iFrame1{
+        min-width: 100%; 
+        width: 100px;
+        *width: 100%; 
+    }
     </style>
 
     <div class="bg-image" style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000,auto=format,enhance&q=60');"></div>
@@ -53,9 +50,10 @@
 
 <main>
     
-    <div class="aspect-ratio" id="featured">
+    <!-- Featured Listings -->
+    <section class="aspect-ratio" id="featured" style="overflow: auto;">
         <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0"></iframe>        
-    </div>
+    </section>
 
     <!-- Coming Soon Listings -->
     <section class="page-section transactions bg-faded" id="coming-soon">

@@ -1,14 +1,24 @@
 /*!
- * Vitality v2.0.0 (http://themes.startbootstrap.com/vitality-v2.0.0)
- * Copyright 2013-2017 Start Bootstrap
- * Purchase a license to use this theme at (https://wrapbootstrap.com)
- */
-/*!
- * Vitality v2.0.0 (http://themes.startbootstrap.com/vitality-v2.0.0)
- * Copyright 2013-2017 Start Bootstrap
- * Purchase a license to use this theme at (https://wrapbootstrap.com)
+ * 
+ * Custom Scripts for Real Estate Extended
+ *
  */
 
+
+// Load WOW.js on non-touch devices
+$(document).ready(function() {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        /* The viewport is less than, or equal to, 700 pixels wide */
+    } else {
+        /* The viewport is greater than 700 pixels wide */
+        //desktop               
+            // Initialize WOW.js
+            wow = new WOW({
+                offset: 50
+            })
+        wow.init();
+    }
+});
 
 window.addEventListener("load",function() {
     // Set a timeout...
