@@ -19,6 +19,8 @@
     }, false);
 </script>
 
+
+
     <!-- Masthead -->
 
     <header class="masthead video" data-vide-bg="mp4: https://cosmicjs.com/uploads/751a4dd0-9024-11e7-b490-61472fdc7161-chicago-skyline-compressed-5.mp4, poster: https://cosmicjs.imgix.net/43525180-6da1-11e7-a91e-510a8fff38c6-bg-mobile-fallback.png?w=1000"
@@ -46,7 +48,7 @@
 <main>
 
     <!-- Search -->
-    <section class="page-section bg-faded hidden-sm-down" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
+    <section class="page-section hidden-sm-down" style="padding:100px 0 0 0;border-bottom:2px solid #222;" id="search">
       <div class="container text-center">
             <div class="row fluidMedia">
             <iframe src="http://slomagroup.idxhome.com/homesearch/82710" frameborder="0" style="width:100%;" class="my-auto"></iframe>  
@@ -55,7 +57,7 @@
     </section> 
 
     <!-- Team Section -->
-    <section class="page-section" id="about">
+    <section class="page-section bg-faded" id="about">
         <div class="container text-center wow fadeIn">
             <h2>Our Team</h2>
             <hr class="colored">
@@ -90,44 +92,22 @@
         </div>
     </section>
 
-     <!-- Featured Listings -->
-     <!--  <section class="page-section wow" style="position:relative;">
-        <h2 class="text-center"><a href="/listings" id="listings">Featured Listings</a></h2>
-        <hr class="colored"> -->
-        <!-- Swiper -->
-        <!-- <div class="swiper-container swiper-container-1 col-md-9 col-md-10 col-sm-12 fadeIn">
-            <div class="swiper-wrapper no-gutter featured-carousel" style="height:50vh;">
-            {{# featured_listings }}
-                <div class="swiper-slide listing text-center col-xs-12 {{ metadata.category }}" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"><h4><a href="/listings/{{ slug }}">{{ title }}</a></h4></div>
-            {{/ featured_listings }}
-            </div>
-        </div> -->
-        <!-- Add Pagination -->
-        <!-- <div class="col-md-12 swiper-pagination swiper-pagination-1  text-center mx-auto"></div> -->
+    <script>
+        focus();
+        var listener = addEventListener('blur', function() {
+            if(document.activeElement === document.getElementById('iFrame1')) {
+                iFrame1.css("overflow-y", "scroll");
+            }
+            removeEventListener(listener);
+        });
+    </script>
 
-        <!-- Add Arrows -->
-       <!--  <div class="col-md-12 swiper-navigation swiper-navigation-1 hidden-sm-down">
-            <div class="swiper-button-next swiper-button-next-1"></div>
-            <div class="swiper-button-prev swiper-button-prev-1"></div>
-        </div>
-
-    </section> -->
-
-    <style>
-        iframe {
-          width: 100%;
-        }
-        .aspect-ratio {
-          position: relative;
-          width: 100%;
-          background: white;
-        }
-    </style>
-
-    <div class="aspect-ratio">
+    <!-- Featured Listings -->
+    <div id="message"></div>
+    <section class="page-section aspect-ratio" id="container">
         <iframe id="iFrame1" src="http://slomagroup.idxhome.com/featured/82710" frameborder="0">
         </iframe>        
-    </div>
+    </section>
 
     <!-- Coming Soon -->
 

@@ -295,7 +295,8 @@ li.nav-item.dropdown.show i {
 
 .navbar-shrink .container .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
   background-color: #222 !important;
-  transition: 1s ease-in-out; }
+  transition: 1s ease-in-out;
+  padding-bottom: 10px; }
 
 header.masthead {
   position: relative;
@@ -348,7 +349,7 @@ header.video {
     top: 0;
     z-index: 998;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     opacity: 0.5;
     background: #222; }
   header.video .container,
@@ -1024,6 +1025,14 @@ iframe .homepage {
   left: 0;
   width: 100%;
   height: 100%; }
+
+iframe {
+  width: 100%; }
+
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  background: white; }
 
 footer.footer {
   padding: 0px;
