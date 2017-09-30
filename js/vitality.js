@@ -9,9 +9,10 @@
 $(document).ready(function() {
     if (window.matchMedia("(max-width: 767px)").matches) {
         /* The viewport is less than, or equal to, 700 pixels wide */
+            // mobile
     } else {
         /* The viewport is greater than 700 pixels wide */
-        //desktop               
+            //desktop               
             // Initialize WOW.js
             wow = new WOW({
                 offset: 50

@@ -198,7 +198,9 @@ h6 {
 
 @media (max-width: 578px) {
   #mainNav .container .navbar-toggler svg {
-    margin-left: 0px; } }
+    margin-left: 0px; }
+  li.nav-item.dropdown i, li.nav-item.dropdown a {
+    padding: 10px; } }
 
 /* Nav Bar Toggle Animation */
 .navbar-toggler > .menu-bars {
