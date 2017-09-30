@@ -23,7 +23,18 @@ iframe{
     height: 100%;
 }
 
-@media (max-width: 767px) {
+    .aspect-ratio {
+        width:1px !important;
+        min-width: 100%;
+    }
+
+@media (min-width: 433px){
+    .aspect-ratio iframe{
+      width:100%;
+    }
+}
+
+@media (max-width: 432px) {
     .aspect-ratio {
         width:1px !important;
         min-width: 100%;
