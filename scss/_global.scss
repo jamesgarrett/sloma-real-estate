@@ -5,6 +5,10 @@ body {
     -webkit-overflow-scrolling:touch;
 }
 
+html{
+    overflow-x:hidden;
+}
+
 @media (max-width: 767px) {
     html {
         width:100%;
