@@ -17,5 +17,3 @@ myEventListener(myEventMessage, function (e) {
 
 
 var frames = window.frames;
-
-console.log(frames);

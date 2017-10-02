@@ -102,3 +102,28 @@ window.addEventListener("load",function() {
 
 
 })(jQuery); // End of use strict
+
+// iframes.js
+// browser compatibility: get method for event 
+// addEventListener(FF, Webkit, Opera, IE9+) and attachEvent(IE5-8)
+var myEventMethod = 
+    window.addEventListener ? "addEventListener" : "attachEvent";
+// create event listener
+var myEventListener = window[myEventMethod];
+// browser compatibility: attach event uses onmessage
+var myEventMessage = 
+    myEventMethod == "attachEvent" ? "onmessage" : "message";
+// register callback function on incoming message
+myEventListener(myEventMessage, function (e) {
+    // we will get a string (better browser support) and validate
+    // if it is an int - set the height of the iframe #my-iframe-id
+    if (e.data === parseInt(e.data)) 
+        document.getElementById('iFrame1').height = e.data + "px";
+}, false);
+
+
+var frames = window.frames;
+
+// intercom.js
+
+!function(){function t(){var t=a.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://widget.intercom.io/widget/jjqdhhz6";var e=a.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=window,n=e.Intercom;if("function"==typeof n)n("reattach_activator"),n("update",intercomSettings);else{var a=document,c=function(){c.c(arguments)};c.q=[],c.c=function(t){c.q.push(t)},e.Intercom=c,e.attachEvent?e.attachEvent("onload",t):e.addEventListener("load",t,!1)}}();

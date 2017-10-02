@@ -276,6 +276,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/scss\/_animate.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_animate.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/scss\/_bootstrap-overrides.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -312,6 +325,19 @@
 		"oA": 0,
 		"oAP": "\/scss\/_contact.css",
 		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_font-awesome.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_font-awesome.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -481,6 +507,19 @@
 		"oA": 0,
 		"oAP": "\/scss\/_swiper-overrides.css",
 		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_swiper.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_swiper.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
