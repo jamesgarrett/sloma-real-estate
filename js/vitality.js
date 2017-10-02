@@ -42,7 +42,7 @@ window.addEventListener("load",function() {
     });
 
     // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
+    $('*').scrollspy({
         target: '#mainNav',
         offset: 68
     });
@@ -51,7 +51,7 @@ window.addEventListener("load",function() {
     // To use this feature, add a link on your page that links to an ID, and add the .page-scroll class to the link itself. See the docs for more details.
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
-        $('html, body').stop().animate({
+        $('*').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 68)
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
