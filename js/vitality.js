@@ -102,6 +102,7 @@ window.addEventListener("load",function() {
 
 
 })(jQuery); // End of use strict
+<<<<<<< HEAD
 
 // iframes.js
 // browser compatibility: get method for event 
@@ -124,3 +125,5 @@ myEventListener(myEventMessage, function (e) {
 
 var frames = window.frames;
 
+=======
+>>>>>>> 1e3441d11eeb7d95af34d567e8074e10a654027c
