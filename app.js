@@ -25,8 +25,6 @@ app.use('/', (req, res, next) => {
   next()
 })
 
-app.use(favicon(path.join(__dirname,'public','favicon.ico')));
-
 // Unique Templates
 
 app.get('/' || '/home', (req, res) => {
