@@ -101,8 +101,8 @@ app.post('/contact', function (req, res) {
    
   var data = {
     from: 'Sloma Real Estate Group <postmaster@mail.slomarealestate.com>',
-    to: 'imsloma@gmail.com',
-    cc: 'mmoran@jamesonsir.com',
+    to: 'jgsibinga@gmail.com',
+    // cc: 'mmoran@jamesonsir.com',
     subject: "Message from: " + req.body.userName,
     text: req.body.body + "\n" + "\n" + "The easiest way to reach me is: " + "\n" + req.body.email + "\n" +  req.body.phone + "\n" + "\n" +  "This message was sent from a contact form on slomarealestate.com"
   };
