@@ -245,6 +245,34 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/public\/favicon-16x16.png": {
+		"ft": 32768,
+		"iS": 616,
+		"oA": 0,
+		"oAP": "\/public\/favicon-16x16.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/public\/favicon-32x32.png": {
+		"ft": 32768,
+		"iS": 936,
+		"oA": 0,
+		"oAP": "\/public\/favicon-32x32.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/public\/favicon.ico": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/public\/favicon.ico",
+		"oF": 0
+		},
 	"\/public\/style.css": {
 		"aP": 1,
 		"bl": 0,
