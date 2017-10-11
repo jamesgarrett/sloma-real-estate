@@ -9,6 +9,13 @@
 $(document).ready(function() {
     if (window.matchMedia("(max-width: 767px)").matches) {
         /* The viewport is less than, or equal to, 700 pixels wide */
+            window.addEventListener("load",function() {
+                // Set a timeout...
+                setTimeout(function(){
+                    // Hide the address bar!
+                    window.scrollTo(0, 1);
+                }, 0);
+            });
             // mobile
     } else {
         /* The viewport is greater than 700 pixels wide */
@@ -19,14 +26,6 @@ $(document).ready(function() {
             })
         wow.init();
     }
-});
-
-window.addEventListener("load",function() {
-    // Set a timeout...
-    setTimeout(function(){
-        // Hide the address bar!
-        window.scrollTo(0, 1);
-    }, 0);
 });
 
 (function($) {
