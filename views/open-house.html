@@ -1,1 +1,89 @@
-open-houses
+{{> header }}
+
+{{# page.metadata.hero }}
+<div class="bg-image" style="background-image:url('{{ imgix_url }}?w1000');"></div>
+{{/ page.metadata.hero }}
+
+<header class="h-100" style="background:rgba(0,0,0,0.6);">
+	<!--  -->
+    <div class="overlay"></div>
+        <div class="container h-100 {{ metadata.category.slug }}">
+			<div class="row h-100">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 my-auto text-white page-title text-center">
+                    <h1>{{ page.title }}</h1>
+	                  <div class="meta d-flex flex-row justify-content-around mb-3">
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths}}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.price}} <span class="price">{{ page.metadata.price}}</strong></span> {{/ page.metadata.price}}
+			          </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</header>
+
+<!-- Listing Information Section -->
+    <section class="page-section bg-default" style="padding:0px;">
+        <div class="container-fluid text-center wow fadeIn">	
+	 		<div class="row">
+                <div class="item col-xl-4 col-lg-6 col-md-6 col-sm-12 mission my-auto mx-auto" style="padding:2rem 3rem;min-height:50vh;">
+                    <h2 class="mb-3 text-center my-auto">{{ page.metadata.category.title }}</h2>
+                    <hr class="dark">
+                    {{# page.content }} 
+	                    <span class="mb-0" style="border:1px solid #222;padding:2.5rem; text-align:justify;display:block;"> {{{ page.content }}}</span>
+                        <hr class="dark">
+                    {{/ page.content}}
+                </div>
+                <div class="item col-lg-6 col-sm-12  hidden-md-down text-center" style="width:100%;list-style-type:none;padding:0px;">
+                    <li style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000');background-size:cover;background-position:center;height:100%;"></li>
+                </div>
+            </div>
+		</div>
+	</section>
+
+<!--  Map -->
+	<section class="page-section bg-faded map">
+	    <style>
+	      #map {
+	        height: 400px;
+	        width: 100%;
+	       }
+	    </style>
+	    <h3 class="text-center">{{ page.metadata.category.title }}</h3>
+	    <div id="map"></div>
+	    <script>
+	      function initMap() {
+	        var uluru = {add:};
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 4,
+	          center: uluru
+	        });
+	        var marker = new google.maps.Marker({
+	          position: uluru,
+	          map: map
+	        });
+	      }
+	    </script>
+	    <script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjaAA8Kmim1iwYJ2b67y_zObptpIKTD6g&callback=initMap">
+	    </script>
+	</section>
+
+<!-- Other Listings -->
+
+	<section class="page-section bg-faded">
+				<h2 class="text-center">Related Listings</h2>
+				<hr class="dark">
+		<div class="container-fluid text-center wow fadeIn related col-md-10" style="padding:0px !important;">
+				{{# listings }}
+					<a href="/listings/{{ slug }}" class="thumb col-md-2 col-sm-6">
+						<img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
+						<h6 class="mt-2">{{ title }}</h6>
+					</a>
+				{{/ listings }}
+		</div>
+	</section>
+
+
+
+{{> footer}}
