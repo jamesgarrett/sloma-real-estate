@@ -1,0 +1,173 @@
+{{> header }}
+
+{{# page.metadata.hero }}
+<div class="bg-image" style="background-image:url('{{ imgix_url }}?w1000');"></div>
+{{/ page.metadata.hero }}
+
+<header class="h-100" style="background:rgba(0,0,0,0.6);">
+	<!-- Coming Soon -->
+    <div class="overlay"></div>
+        <div class="container h-100">
+			<div class="row h-100">
+                <div class="col-lg-10 offset-lg-1 col-sm-10 offset-sm-1 col-xs-10 my-auto text-white page-title text-center">
+	                <div class="meta d-flex flex-row justify-content-center mb-5">
+			            <h3 class="text-center sold" style="border:2px solid white;padding:15px;">Open House</h3>
+		            </div>
+                    <h1>{{ page.title }}</h1>
+                    <h3 class="col-lg-4 offset-lg-4">{{# page.metadata.date }}{{ date }}{{/ page.metadata.date }}</h3>
+                    <h3 class="col-lg-4  offset-lg-4">{{# page.metadata.time }}{{ page.metadata.time }}{{/ page.metadata.time }}</h3>
+                </div>
+            </div>
+		</div>
+	</div>
+</header>
+
+{{# page.metadata.address }}
+<!-- Listing Information Section -->
+    <section class="page-section bg-inverse" style="padding:0px;">
+        <div class="container-fluid text-center text-white wow fadeIn">	
+	 		<div class="row">
+                <div class="item col-md-12 col-lg-4 text-center" style="width:100%;list-style-type:none;padding:2.5rem;font-size: 1.125rem;letter-spacing: 1px;">
+                    <h3 class="mb-3 text-left my-auto">{{ page.title }}</h3>
+                    <hr class="dark">
+                    {{# page.content }} 
+	                    <span class="mb-0" style="text-align:left;display:block;"> {{{ page.content }}}</span>
+                        <hr class="dark">
+                    {{/ page.content}}
+                    <div class="meta mb-3">
+                    <style>.meta > span{width:100%;display:block;text-align:left;}</style>
+						{{# page.metadata.neighborhood}} <span class="neighborhood">Neighborhood: {{ page.metadata.neighborhood}}</strong></span> {{/ page.metadata.neighborhood}}
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths }}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.disclaimer }} <span class="disclaimer">{{ page.metadata.disclaimer}}</strong></span> {{/ page.metadata.disclaimer}}
+			          </div>
+                </div>
+            	<!-- Map -->
+	           	<div class="col-md-12 col-lg-8">
+		           <div class="swiper-wrapper no-gutter" style="height:75vh;" id="map"></div>
+                   <div id="floating-panel">
+				       <input style="display:none;" id="address" type="textbox" value="{{ page.metadata.address }}">
+				       <input style="display:none;" id="submit" type="button" value="Geocode">
+				    </div>
+	           	</div>
+
+            </div>
+		</div>
+	</section>
+{{/ page.metadata.address }}
+{{^ page.metadata.address }}
+<!-- Listing Information Section -->
+    <section class="page-section bg-inverse" style="padding:0px;">
+        <div class="container-fluid text-center text-white wow fadeIn">	
+	 		<div class="row">
+                <div class="item col-md-12 col-lg-8 offset-lg-2 text-center" style="width:100%;list-style-type:none;padding:2.5rem;">
+                    <h3 class="mb-3 text-left my-auto">{{ page.title }}</h3>
+                    <hr class="dark">
+                    {{# page.content }} 
+	                    <span class="mb-0" style="text-align:left;display:block;"> {{{ page.content }}}</span>
+                        <hr class="dark">
+                    {{/ page.content}}
+                    <div class="meta mb-3">
+                    <style>.meta > span{width:100%;display:block;text-align:left;}</style>
+						{{# page.metadata.neighborhood}} <span class="neighborhood">Neighborhood: {{ page.metadata.neighborhood}}</strong></span> {{/ page.metadata.neighborhood}}
+			            {{# page.metadata.beds}}<span class="beds">Beds:<strong> {{ page.metadata.beds}}</strong></span>{{/ page.metadata.beds}}
+			            {{# page.metadata.baths}} <span class="baths">Baths:<strong> {{ page.metadata.baths }}</strong></span> {{/ page.metadata.baths}}
+			            {{# page.metadata.disclaimer }} <span class="disclaimer">{{ page.metadata.disclaimer}}</strong></span> {{/ page.metadata.disclaimer}}
+			          </div>
+                </div>
+            </div>
+		</div>
+	</section>
+{{/ page.metadata.address }}
+
+       <script>
+
+	      function initMap() {
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 12,
+	          center: {lat: 41.8333925, lng: -88.0121478}
+	        });
+	        var geocoder = new google.maps.Geocoder();
+
+
+            document.addEventListener("DOMContentLoaded", function() {
+	          geocodeAddress(geocoder, map);
+	        });
+	      }
+
+            var infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+
+            service.getDetails({
+              placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+            }, function(place, status) {
+              if (status === google.maps.places.PlacesServiceStatus.OK) {
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: place.geometry.location
+                });
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                    'Place ID: ' + place.place_id + '<br>' +
+                    place.formatted_address + '</div>');
+                  infowindow.open(map, this);
+                });
+              }
+            });
+
+	      function geocodeAddress(geocoder, resultsMap) {
+	        var address = document.getElementById('address').value;
+	        geocoder.geocode({'address': address}, function(results, status) {
+	          if (status === 'OK') {
+	            resultsMap.setCenter(results[0].geometry.location);
+	            var marker = new google.maps.Marker({
+	              map: resultsMap,
+	              position: results[0].geometry.location
+	            });
+	          } else {
+	            alert('Geocode was not successful for the following reason: ' + status);
+	          }
+	        });
+	      }
+
+
+	    </script>
+	    <script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjaAA8Kmim1iwYJ2b67y_zObptpIKTD6g&callback=initMap">
+	    </script>
+
+	<!-- Other Listings -->
+
+	<section class="page-section bg-faded">
+				<h2 class="text-center">All Our Open Houses</h2>
+				<hr class="dark">
+		<div class="container-fluid text-center related col-md-10" style="padding:0px !important;">
+				{{# openhouses }}
+					<a href="/openhouses/{{ slug }}" class="thumb col-md-2 col-sm-6">
+						<img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
+						<h6 class="mt-2">{{ title }}</h6>
+					</a>
+				{{/ openhouses }}
+		</div>
+	</section>
+
+	<section class="page-section bg-inverse text-center">
+		<a href="/openhouses" class="text-white"><h4>Return to All Open Houses</a></h4>
+	</section>	
+
+
+
+	<style>
+	.container-fluid.wow.fadeIn.text-center{
+		overflow-x:scroll;
+	}
+	.row.related.col-md-10.col-xs-12 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: left;
+	}
+	</style>
+
+
+{{> footer}}

@@ -1,0 +1,58 @@
+{{> header }}
+
+    <div class="bg-image" style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000,auto=format,enhance&q=60');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+        <!--  -->
+        <div class="overlay"></div>
+            <div class="container h-100" >
+                <div class="row h-100">
+                    <div class="col-12 my-auto text-white page-title text-center">
+                        <h1>{{ page.title }}</h1>
+                        <h4>{{ page.metadata.headline }}</h4>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down col-12">
+            <a class="btn page-scroll" href="#featured">
+                <i class="fa fa-angle-down fa-fw"></i>
+            </a>
+        </div>
+    </header>
+
+<main>
+    
+    <!-- Open Houses -->
+    <section class="page-section transactions bg-faded" id="coming-soon">
+        <div class="container wow fadeIN">
+            <h1 class="text-center">Our Featured Open Houses</h1>
+            <hr class="colored">
+            <div class="row">
+            {{# openhouses }}
+                <div class="col-lg-6 listing {{ metadata.category }}">
+                    <a href="/openhouses/{{ slug }}">
+                    <span class="category"><h6>Open House</h6></span>
+                    </a>
+                    <div class="image-holder" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                        <h4 class="text-center"><a href="/openhouses/{{ slug }}">{{ title }} </a></h4>
+                    </div>
+                    <div class="meta d-flex flex-row justify-content-around mb-3">
+                        <h3 class="col-lg-4 text-center">{{ date }} {{# metadata.time }}{{ metadata.time }}{{/ metadata.time }}</h3>
+                    </div>
+                </div>
+            {{/ openhouses }}
+            {{^ openhouses }}
+                <h4 class="text-center col-md-12">No Open Houses Coming Up, Check Back Soon</h4>
+            {{/ openhouses }}
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+
+
+{{> footer}}

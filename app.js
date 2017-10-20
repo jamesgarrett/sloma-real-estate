@@ -12,6 +12,7 @@ app.use('/', express.static(__dirname + '/'))
 app.use(bodyParser.urlencoded({ extended: false }))
 const Cosmic = require('cosmicjs')
 const helpers = require('./helpers')
+const moment = require('moment')
 const nodemailer = require('nodemailer')
 const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
 const read_key = process.env.COSMIC_READ_KEY
@@ -136,10 +137,15 @@ app.get('/openhouses', (req, res) => {
     const cosmic = response
     res.locals.cosmic = cosmic
     const page = response.object.openhouses
+    const openhouses = response.objects.type.openhouses
+
     res.locals.page = page
-    res.render('open-house.html')
+    res.locals.openhouses = openhouses
+    res.render('openhouse.html', { partials }) 
+
   })
 })
+
 
 app.get('/listings', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
@@ -167,12 +173,37 @@ app.get('/listings', (req, res) => {
 
 // Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
 
+app.get('/openhouses/:slug', (req, res) => {
+  const slug = req.params.slug
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    const openhouses = response.objects.type.openhouses
+    res.locals.openhouses = openhouses
+
+    openhouses.forEach(page => {
+    if (page.slug === slug) 
+      res.locals.page = page
+    })
+
+    if (!res.locals.page) {
+      return res.status(404).render('404.html', { partials })  
+    } else {
+      res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
+      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+      res.locals.date = date
+      return res.render('openhouse-single.html', {partials})
+    }
+  })
+})
+// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
+
 app.get('/listings/:slug', (req, res) => {
   const slug = req.params.slug
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     const listings = response.objects.type.listings
     res.locals.listings = listings
+
     listings.forEach(page => {
     if (page.slug === slug) 
       res.locals.page = page
@@ -193,6 +224,7 @@ app.get('/listings/:slug', (req, res) => {
     // console.log('page.category');
   })
 })
+
 
 // Serve generic template if pages exists but does not have unique template. Serve 404 if it does not exist
 
