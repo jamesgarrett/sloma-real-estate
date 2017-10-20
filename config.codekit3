@@ -1474,6 +1474,12 @@
 		"oAP": "\/views\/home-nav.html",
 		"oF": 0
 		},
+	"\/views\/index-contact-form.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/index-contact-form.html",
+		"oF": 0
+		},
 	"\/views\/index.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1492,10 +1498,16 @@
 		"oAP": "\/views\/listings.html",
 		"oF": 0
 		},
-	"\/views\/open-house.html": {
+	"\/views\/openhouse-single.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/views\/open-house.html",
+		"oAP": "\/views\/openhouse-single.html",
+		"oF": 0
+		},
+	"\/views\/openhouse.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/openhouse.html",
 		"oF": 0
 		},
 	"\/views\/page.html": {

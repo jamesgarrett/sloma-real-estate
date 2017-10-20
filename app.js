@@ -12,6 +12,7 @@ app.use('/', express.static(__dirname + '/'))
 app.use(bodyParser.urlencoded({ extended: false }))
 const Cosmic = require('cosmicjs')
 const helpers = require('./helpers')
+const moment = require('moment')
 const nodemailer = require('nodemailer')
 const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
 const read_key = process.env.COSMIC_READ_KEY
@@ -33,26 +34,10 @@ app.get('/' || '/home', (req, res) => {
     const testimonials = response.objects.type.testimonials.slice(0,5)
     const agents = response.objects.type.authors
     const listings = response.objects.type.listings
-    const sold_listings = []
-    const featured_listings = []
-    const upcoming_listings = []
-    const other_listings = []
-
-    listings.forEach(page => {
-      if (page.metafield.category.value === 'Featured')
-        featured_listings.push(page)
-      if (page.metafield.category.value === 'Coming Soon')
-        upcoming_listings.push(page)
-      if (page.metafield.category.value === 'Sold')
-        sold_listings.push(page)
-      else 
-        other_listings.push(page)
+    const upcoming_listings = listings.filter(function(listing){
+       return listing.metafield.category.value === 'Coming Soon';
     })
-
-    res.locals.listings = listings
-    res.locals.featured_listings = featured_listings
     res.locals.upcoming_listings = upcoming_listings
-    res.locals.sold_listings = sold_listings
     res.locals.agents = agents
     res.locals.testimonials = testimonials
     res.locals.cosmic = cosmic
@@ -147,6 +132,21 @@ app.get('/testimonials', (req, res) => {
   })
 })
 
+app.get('/openhouses', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    res.locals.cosmic = cosmic
+    const page = response.object.openhouses
+    const openhouses = response.objects.type.openhouses
+
+    res.locals.page = page
+    res.locals.openhouses = openhouses
+    res.render('openhouse.html', { partials }) 
+
+  })
+})
+
+
 app.get('/listings', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const page = response.object.listings
@@ -173,12 +173,37 @@ app.get('/listings', (req, res) => {
 
 // Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
 
+app.get('/openhouses/:slug', (req, res) => {
+  const slug = req.params.slug
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    const openhouses = response.objects.type.openhouses
+    res.locals.openhouses = openhouses
+
+    openhouses.forEach(page => {
+    if (page.slug === slug) 
+      res.locals.page = page
+    })
+
+    if (!res.locals.page) {
+      return res.status(404).render('404.html', { partials })  
+    } else {
+      res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
+      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+      res.locals.date = date
+      return res.render('openhouse-single.html', {partials})
+    }
+  })
+})
+// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
+
 app.get('/listings/:slug', (req, res) => {
   const slug = req.params.slug
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     const listings = response.objects.type.listings
     res.locals.listings = listings
+
     listings.forEach(page => {
     if (page.slug === slug) 
       res.locals.page = page
@@ -199,6 +224,7 @@ app.get('/listings/:slug', (req, res) => {
     // console.log('page.category');
   })
 })
+
 
 // Serve generic template if pages exists but does not have unique template. Serve 404 if it does not exist
 
