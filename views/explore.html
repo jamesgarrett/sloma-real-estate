@@ -54,6 +54,33 @@
         </div>
     </section>
 
+     <!-- Featured Open Houses -->
+
+    <section class="page-section bg-inverse text-white wow" id="featured" style="position:relative;">
+        <h2 class="text-center">Featured Open Houses</h2>
+        <hr class="">
+        <!-- Swiper -->
+        <div class="swiper-container swiper-container-4 col-md-9 col-md-10 col-sm-12 fadeIn">
+            <div class="swiper-wrapper no-gutter upcoming-carousel" style="height:50vh;">
+
+            {{# openhouses }}
+                <div class="swiper-slide listing text-center col-xs-12" style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;">
+                    <h6 class="category">{{ metadata.date }}</h6>
+                    <h4><a href="/openhouses/{{ slug }}">{{ title }}</a></h4></div>
+            {{/ openhouses }}
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="col-md-12 swiper-pagination swiper-pagination-4 text-center mx-auto"></div>
+
+        <!-- Add Arrows -->
+        <div class="col-md-12 swiper-navigation swiper-navigation-4 hidden-sm-down">
+            <div class="swiper-button-next swiper-button-next-4"></div>
+            <div class="swiper-button-prev swiper-button-prev-4"></div>
+        </div>
+
+    </section>
+
     <!-- Newsletter Signup Call to Action -->
     <section class="page-section signup-form bg-inverse text-white" id="subscribe">
         <div class="container text-center">

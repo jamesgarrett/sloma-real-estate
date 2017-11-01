@@ -122,7 +122,6 @@
             }
         }
     });
-
     var galleryTop = new Swiper('.gallery-top', {
         nextButton: '.swiper-button-next-3',
         prevButton: '.swiper-button-prev-3',
@@ -135,6 +134,13 @@
         touchRatio: 0.2,
         slideToClickedSlide: true
     });
+    var openHouses = new Swiper('.swiper-container-4', {
+        nextButton: '.swiper-button-next-4',
+        prevButton: '.swiper-button-prev-4',
+        spaceBetween: 10,
+        slidesPerView: 2,
+    });
+    openHouses.params.control = openHouses;
     galleryTop.params.control = galleryThumbs;
     galleryThumbs.params.control = galleryTop;
 

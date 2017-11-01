@@ -12,6 +12,7 @@ app.use('/', express.static(__dirname + '/'))
 app.use(bodyParser.urlencoded({ extended: false }))
 const Cosmic = require('cosmicjs')
 const helpers = require('./helpers')
+const blog = require('./routes/blog')
 const moment = require('moment')
 const nodemailer = require('nodemailer')
 const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
@@ -77,31 +78,6 @@ app.get('/contact', (req, res) => {
   })
 })
 
-app.post('/contact', function (req, res) {
-  const userName = req.body.userName
-  const body = req.body.body
-  var api_key = 'key-e0ee1bf585745f8061349715233f74a1';
-  var domain = 'mail.slomarealestate.com';
-  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-   
-  var data = {
-    from: 'Sloma Real Estate Group <postmaster@mail.slomarealestate.com>',
-    to: 'jgsibinga@gmail.com',
-    // cc: 'mmoran@jamesonsir.com',
-    subject: "Message from: " + req.body.userName,
-    text: req.body.body + "\n" + "\n" + "The easiest way to reach me is: " + "\n" + req.body.email + "\n" +  req.body.phone + "\n" + "\n" +  "This message was sent from a contact form on slomarealestate.com"
-  };
-   
-  mailgun.messages().send(data, function (error, body) {
-    console.log(body);
-    if(!error)
-      res.render("contact-sent.html", { partials })
-    else
-      res.send("Mail Not Sent")
-  });
-
-});
-
 app.get('/search-mls', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
@@ -114,10 +90,10 @@ app.get('/explore', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
     const cosmic = response
     res.locals.cosmic = cosmic
-    const openhouse = response.objects.type.openhouses
-    res.locals.openhouse
     const page = response.object.explore
     res.locals.page = page
+    const openhouses = response.objects.type.openhouses
+    res.locals.openhouses = openhouses
     res.render('explore.html', { partials })
   })
 })
@@ -146,6 +122,30 @@ app.get('/openhouses', (req, res) => {
   })
 })
 
+// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
+
+app.get('/openhouses/:slug', (req, res) => {
+  const slug = req.params.slug
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    const openhouses = response.objects.type.openhouses
+    res.locals.openhouses = openhouses
+
+    openhouses.forEach(page => {
+    if (page.slug === slug) 
+      res.locals.page = page
+    })
+
+    if (!res.locals.page) {
+      return res.status(404).render('404.html', { partials })  
+    } else {
+      res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
+      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+      res.locals.date = date
+      return res.render('openhouse-single.html', {partials})
+    }
+  })
+})
 
 app.get('/listings', (req, res) => {
   Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
@@ -171,30 +171,6 @@ app.get('/listings', (req, res) => {
   })
 })
 
-// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
-
-app.get('/openhouses/:slug', (req, res) => {
-  const slug = req.params.slug
-  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
-    const cosmic = response
-    const openhouses = response.objects.type.openhouses
-    res.locals.openhouses = openhouses
-
-    openhouses.forEach(page => {
-    if (page.slug === slug) 
-      res.locals.page = page
-    })
-
-    if (!res.locals.page) {
-      return res.status(404).render('404.html', { partials })  
-    } else {
-      res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
-      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
-      res.locals.date = date
-      return res.render('openhouse-single.html', {partials})
-    }
-  })
-})
 // Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
 
 app.get('/listings/:slug', (req, res) => {
@@ -225,6 +201,44 @@ app.get('/listings/:slug', (req, res) => {
   })
 })
 
+app.get('/blog', (req, res) => {
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    res.locals.cosmic = cosmic
+    const page = response.object.blog
+    const posts = response.objects.type.posts
+
+    res.locals.page = page
+    res.locals.posts = posts
+    res.render('blog.html', { partials }) 
+
+  })
+})
+
+// Get data for individual listing using slug, if no data exists, serve a 404. If it does display with listings-single template
+
+app.get('/blog/:slug', (req, res) => {
+  const slug = req.params.slug
+  Cosmic.getObjects({ bucket: { slug: bucket_slug, read_key: read_key } }, (err, response) => {
+    const cosmic = response
+    const posts = response.objects.type.posts
+    res.locals.posts = posts
+
+    posts.forEach(page => {
+    if (page.slug === slug) 
+      res.locals.page = page
+    })
+
+    if (!res.locals.page) {
+      return res.status(404).render('404.html', { partials })  
+    } else {
+      res.locals.page.timestamp = new Date(res.locals.page.created).getTime()
+      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+      res.locals.date = date
+      return res.render('post.html', {partials})
+    }
+  })
+})
 
 // Serve generic template if pages exists but does not have unique template. Serve 404 if it does not exist
 
