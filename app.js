@@ -12,7 +12,6 @@ app.use('/', express.static(__dirname + '/'))
 app.use(bodyParser.urlencoded({ extended: false }))
 const Cosmic = require('cosmicjs')
 const helpers = require('./helpers')
-const blog = require('./routes/blog')
 const moment = require('moment')
 const nodemailer = require('nodemailer')
 const bucket_slug = process.env.COSMIC_BUCKET || 'sloma'
