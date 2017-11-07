@@ -1,7 +1,7 @@
 {{> header }}
 
 {{# page.metadata.hero }}
-<div class="bg-image" style="background-image:url('{{ imgix_url }}?w1000');"></div>
+<div class="bg-image" style="background-image:url('{{ imgix_url }}?w=1000');"></div>
 {{/ page.metadata.hero }}
 
 <header class="h-100" style="background:rgba(0,0,0,0.6);">
@@ -20,23 +20,29 @@
 </header>
 
 <section class="page-section bg-faded">
-    <article>
-      {{author.name}}
-
-      {{author.image}}
-
-      {{ content }}
+    <article class="col-md-8 offset-sm-2 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-xs-12">
+      <div class="author"><style>.author{ display:flex;justify-content: space-between; }.author img{border-radius: 200%;height:100px;margin-right:25px;}</style>
+        <div class="text">
+          <p>Contributed by:</p>
+          <h4>{{ page.metadata.author.title }}</h4>
+          <p>{{ date }}</p>
+        </div>
+        <img src="{{page.metadata.author.metadata.image.imgix_url}}?w=200" alt="">
+      </div>
+      <hr class="colored">
+      {{{ page.content }}}
     </article>
+    <hr class="colored">
 </section>
 
        <!-- Other Listings -->
 
   <section class="page-section bg-faded">
-        <h2 class="text-center">All Our Posts</h2>
+        <h2 class="text-center">More Posts</h2>
         <hr class="dark">
     <div class="container-fluid text-center related col-md-10" style="padding:0px !important;">
         {{# posts }}
-          <a href="/posts/{{ slug }}" class="thumb col-md-2 col-sm-6">
+          <a href="/blog/{{ slug }}" class="thumb col-md-2 col-sm-6">
             <img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
             <h6 class="mt-2">{{ title }}</h6>
           </a>
@@ -45,7 +51,7 @@
   </section>
 
   <section class="page-section bg-inverse text-center">
-    <a href="/posts" class="text-white"><h4>Return to All Posts</a></h4>
+    <a href="/blog" class="text-white"><h4>Return to All Posts</a></h4>
   </section>  
 
 
