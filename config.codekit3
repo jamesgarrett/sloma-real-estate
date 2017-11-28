@@ -301,6 +301,15 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/routes\/blog.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/blog-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/scss\/_about.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1438,6 +1447,12 @@
 		"oAP": "\/views\/about.html",
 		"oF": 0
 		},
+	"\/views\/blog.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/blog.html",
+		"oF": 0
+		},
 	"\/views\/construction.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -1472,12 +1487,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/home-nav.html",
-		"oF": 0
-		},
-	"\/views\/index-contact-form.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/views\/index-contact-form.html",
 		"oF": 0
 		},
 	"\/views\/index.html": {
