@@ -18,7 +18,7 @@ module.exports = (app, config, partials) => {
     if (!res.locals.page) {
       return res.status(404).render('404.html', { partials })  
     } else {
-      const date = moment(page.metadata.date).format('MMMM Do YYYY')
+      const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
       res.locals.date = date
       return res.render('openhouse-single.html', {partials})
     }

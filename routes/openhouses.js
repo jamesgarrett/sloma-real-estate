@@ -1,5 +1,6 @@
 // openhouses.js
 const Cosmic = require('cosmicjs')
+const moment = require('moment')
 
 module.exports = (app, config, partials) => {
 	app.get('/openhouses', (req, res) => {
@@ -8,9 +9,12 @@ module.exports = (app, config, partials) => {
 			res.locals.cosmic = cosmic
 			const page = response.object.openhouses
 			const openhouses = response.objects.type.openhouses
-
 			res.locals.page = page
 			res.locals.openhouses = openhouses
+		    openhouses.forEach(page => { 
+				const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+		    })
+		    // res.locals.page.date = date
 			res.render('openhouse.html', { partials }) 
 		})
 	})
