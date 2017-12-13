@@ -1,0 +1,74 @@
+{{> header }}
+
+    <div class="bg-image" data-vide-bg="mp4: {{ page.metadata.hero.imgix_url }}" data-vide-options="posterType: jpg, loop: false, muted: false, position: 0% 0%" style="background-image:url('{{ page.metadata.hero.imgix_url }}?w=1000,auto=format,enhance&q=60');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+        <!-- Masthead -->
+        <div class="overlay"></div>
+            <div class="container h-100" >
+                <div class="row h-100">
+                    <div class="col-12 my-auto text-white page-title text-center">
+                        <h1>{{ page.title }}</h1>
+                        <h4>{{ page.metadata.headline }}</h4>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down col-12">
+            <a class="btn page-scroll" href="#featured">
+                <i class="fa fa-angle-down fa-fw"></i>
+            </a>
+        </div>
+    </header>
+
+<main>
+    
+    <!-- Neighborhoods -->
+    <section class="page-section transactions bg-faded" id="featured">
+        <div class="container wow fadeIN">
+            <div class="row">
+            {{# neighborhoods }}
+                <div class="col-lg-6 listing {{ metadata.category }} mb-5">
+                    <!-- <a href="/neighborhoods/{{ slug }}"> -->
+                    <span class="category"><h6>Neighborhood</h6></span>
+                    <div class="image-holder" alt="{{ title }}" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                    </div>
+                    <!-- </a> -->
+                </div>
+            {{/ neighborhoods }}
+            {{^ neighborhoods }}
+                <h4 class="text-center col-md-12">No Neighborhoods Yet, Check Back Soon</h4>
+            {{/ neighborhoods }}
+                <hr class="colored">
+                <div class="col-md-8 offset-md-2">
+                    {{{ content }}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="page-controller container-fluid bg-faded">
+        <div class="container text-center text-white">
+            <row class="col-md-12">
+                <button type="button" class="mix-button btn-primary" data-filter="all">All Listings</button>
+                {{# neighborhoods }}
+                <button type="button" class="mix-button btn-primary {{ slug }}" data-filter="{{ slug }}">{{ title }}</button>
+                {{/ neighborhoods }}
+            </row>
+        </div>
+    </section> -->
+
+    <div class="container mixer-container wow fadeIN">
+
+    <!-- Mixitup Javascript -->
+    <script src="/node_modules/mixitup/dist/mixitup.min.js"></script>
+    <script>
+        var mixer = mixitup('.mixer-container');
+    </script>
+
+</main>
+
+
+
+
+{{> footer}}

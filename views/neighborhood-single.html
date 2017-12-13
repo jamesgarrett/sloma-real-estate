@@ -1,0 +1,60 @@
+{{> header }}
+
+<div class="bg-image" style="background:#222;"></div>
+<header class="h-50" style="background:#222;">
+
+    <div class="overlay"></div>
+        <div class="container h-100">
+      <div class="row h-100">
+                <div class="col-lg-10 offset-lg-1 col-sm-10 offset-sm-1 col-xs-10 my-auto text-white page-title text-center">
+                  <div class="meta d-flex flex-row justify-content-center mb-5">
+                </div>
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-section bg-faded">
+    <article class="col-md-8 offset-sm-2 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-xs-12">
+      {{{ page.content }}}
+    </article>
+    <hr class="colored">
+</section>
+
+       <!-- Other Neighborhoods -->
+
+  <section class="page-section bg-faded">
+        <h2 class="text-center">More Neighborhoods</h2>
+        <hr class="dark">
+    <div class="container-fluid text-center related col-md-10" style="padding:0px !important;">
+        {{# neighborhoods }}
+          <a href="/blog/{{ slug }}" class="thumb col-md-2 col-sm-6">
+            <img src="{{ metadata.hero.imgix_url }}?w=250" alt="">
+            <h6 class="mt-2">{{ title }}</h6>
+          </a>
+        {{/ neighborhoods }}
+    </div>
+  </section>
+
+  <section class="page-section bg-inverse text-center">
+    <a href="/blog" class="text-white"><h4>Return to All Posts</a></h4>
+  </section>  
+
+
+
+  <style>
+  .container-fluid.wow.fadeIn.text-center{
+    overflow-x:scroll;
+  }
+  .row.related.col-md-10.col-xs-12 {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: left;
+  }
+  </style>
+
+
+{{> footer}}

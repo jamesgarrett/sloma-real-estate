@@ -12,5 +12,7 @@ module.exports = (app, config, partials) => {
 	require('./openhouse')(app, config, partials)
 	require('./listings')(app, config, partials)
 	require('./listing')(app, config, partials)
+	require('./neighborhood')(app, config, partials)
+	require('./neighborhoods')(app, config, partials)
 	require('./page')(app, config, partials)
 }
