@@ -301,11 +301,155 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/routes\/about.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/about-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/routes\/blog.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/routes\/blog-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/contact.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/contact-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/explore.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/explore-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/home.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/home-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/index.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/index-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/listing.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/listing-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/listings.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/listings-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/neighborhood.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/neighborhood-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/neighborhoods.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/neighborhoods-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/openhouse.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/openhouse-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/openhouses.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/openhouses-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/page.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/page-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/post.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/post-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/search.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/search-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/testimonials.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/testimonials-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/routes\/videos.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/routes\/videos-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1505,6 +1649,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/views\/listings.html",
+		"oF": 0
+		},
+	"\/views\/neighborhood-single.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/neighborhood-single.html",
+		"oF": 0
+		},
+	"\/views\/neighborhoods.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/views\/neighborhoods.html",
 		"oF": 0
 		},
 	"\/views\/openhouse-single.html": {

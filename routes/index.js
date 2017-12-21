@@ -14,5 +14,7 @@ module.exports = (app, config, partials) => {
 	require('./listing')(app, config, partials)
 	require('./neighborhood')(app, config, partials)
 	require('./neighborhoods')(app, config, partials)
+	require('./events')(app, config, partials)
+	require('./events-single')(app, config, partials)
 	require('./page')(app, config, partials)
 }

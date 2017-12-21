@@ -29,11 +29,11 @@
             <div class="row">
             {{# neighborhoods }}
                 <div class="col-lg-6 listing {{ metadata.category }} mb-5">
-                    <!-- <a href="/neighborhoods/{{ slug }}"> -->
-                    <span class="category"><h6>Neighborhood</h6></span>
-                    <div class="image-holder" alt="{{ title }}" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
-                    </div>
-                    <!-- </a> -->
+                    <a href="/neighborhoods/{{ slug }}">
+                        <span class="category"><h6>Neighborhood</h6></span>
+                        <div class="image-holder" alt="{{ title }}" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
+                        </div>
+                    </a>
                 </div>
             {{/ neighborhoods }}
             {{^ neighborhoods }}
@@ -57,8 +57,6 @@
             </row>
         </div>
     </section> -->
-
-    <div class="container mixer-container wow fadeIN">
 
     <!-- Mixitup Javascript -->
     <script src="/node_modules/mixitup/dist/mixitup.min.js"></script>
