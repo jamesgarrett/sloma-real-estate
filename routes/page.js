@@ -12,6 +12,8 @@ module.exports = (app, config, partials) => {
 			all_pages.forEach(page => {
 			if (page.slug === slug)
 			  res.locals.page = page
+				const hero = page.metadata.hero.imgix_url
+				res.locals.hero = hero
 			})
 			if(!res.locals.page) {
 			  return res.status(404).render('404.html', { partials })  

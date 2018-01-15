@@ -1,8 +1,15 @@
 {{> header }}
 
-<header class="h-100" style="background:rgba(0,0,0,0.6);">
-<!-- Background Image Section -->
-<div class="bg-image" style="background:#222 cover center; background-image:url('{{ page.metadata.hero.imgix_url }}?w1000');"></div>
+  <!-- Background Image Section -->
+
+  {{# hero }}
+    <div class="bg-image" style="background:#222 cover center; background-image:url('{{ hero }}?w1000');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+  {{/ hero }}
+    <div class="bg-image" style="background:#222;"></div>
+    <header class="h-50" style="background:#222;">
+  {{ ^ hero }}
+
     <!-- Header Section -->
   <div class="overlay"></div>
   <div class="container h-100" >
@@ -28,7 +35,7 @@
   <!-- Main Content Section -->
       <div class="row">
         <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-xs-12">
-          <h1>{{{ page.content }}}</h1>
+          {{{ page.content }}}
         </div>
       </div>
 
