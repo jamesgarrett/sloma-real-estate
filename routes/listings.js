@@ -4,7 +4,10 @@ const Cosmic = require('cosmicjs')
 module.exports = (app, config, partials) => {
 	app.get('/listings', (req, res) => {
 	  Cosmic.getObjects({ bucket: { slug: config.COSMIC_BUCKET, read_key: config.READ_KEY } }, (err, response) => {
+		const cosmic = response
+		res.locals.cosmic = cosmic
 	    const page = response.object.listings
+	    res.locals.page = page
 	    const listings = response.objects.type.listings
 	    const sold_listings = []
 	    const featured_listings = []
@@ -17,8 +20,6 @@ module.exports = (app, config, partials) => {
 	      if (page.metafield.category.value === 'Sold')
 	        sold_listings.push(page)
 	    })
-	    res.locals.page = page
-	    res.locals.listings = listings
 	    res.locals.featured_listings = featured_listings
 	    res.locals.upcoming_listings = upcoming_listings
 	    res.locals.sold_listings = sold_listings
