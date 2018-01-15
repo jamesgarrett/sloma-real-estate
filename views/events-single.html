@@ -1,8 +1,13 @@
 {{> header }}
 
-<div class="bg-image" style="background:#222;"></div>
-<header class="h-50" style="background:#222;">
-
+  {{# hero }}
+    <div class="bg-image" style="background:#222 cover center; background-image:url('{{ hero }}?w1000');"></div>
+    <header class="h-100" style="background:rgba(0,0,0,0.6);">
+  {{/ hero }}
+  {{ ^ hero }}
+    <div class="bg-image" style="background:#222;"></div>
+    <header class="h-50" style="background:#222;">
+      
     <div class="overlay"></div>
         <div class="container h-100">
       <div class="row h-100">
@@ -10,6 +15,7 @@
                   <div class="meta d-flex flex-row justify-content-center mb-5">
                 </div>
                     <h1>{{ page.title }}</h1>
+                    <h4>{{ page.date }} | {{ page.metadata.time }}</h4>
                 </div>
             </div>
     </div>
@@ -39,7 +45,7 @@
   </section>
 
   <section class="page-section bg-inverse text-center">
-    <a href="/blog" class="text-white"><h4>Return to All Events</a></h4>
+    <a href="/events" class="text-white"><h4>Return to All Events</a></h4>
   </section>  
 
 

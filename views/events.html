@@ -27,21 +27,24 @@
     <section class="page-section transactions bg-faded" id="featured">
         <div class="container wow fadeIN">
             <div class="row">
-<!--             {{# events }}
+            {{# events }}
                 <div class="col-lg-6 listing {{ metadata.category }} mb-5">
                     <a href="/events/{{ slug }}">
                         <span class="category"><h6>Event</h6></span>
                         <div class="image-holder" alt="{{ title }}" style="background-image:url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format');">
                         </div>
                     </a>
+                    <div class="meta d-flex flex-row justify-content-around mb-3 text-center">
+                        {{# title}}<span class="title"><strong>{{ title }}</strong>{{/ title}} |
+                        {{# metadata.time}}<span class="time"><strong>{{ metadata.time }}</strong>{{/ metadata.time}} |
+                        {{# date}}<span class="date"><strong>{{ date }}</strong>{{/ date}}
+                    </div>
                 </div>
+
             {{/ events }}
             {{^ events }}
-                <h4 class="text-center col-md-12">No Events Yet, Check Back Soon</h4>
-            {{/ events }}
-                <hr class="colored">
--->             <div class="col-md-8 offset-md-2">
-                    <!-- Begin MailChimp Signup Form -->
+                 <div class="col-md-8 offset-md-2">
+                    <!--  Begin MailChimp Signup Form  -->
                         <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
                         <style type="text/css">
                         #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -69,16 +72,18 @@
                         <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
                         <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        </div>    
+                        <!--  real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a10aaa522ce52c84af182514c_d0bf6918c1" tabindex="-1" value=""></div>
                         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                         </div>
                         </form>
                         </div>
                         <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                        <!--End mc_embed_signup-->
-                    <!-- {{{ content }}} -->
+                        <!-- <!--End mc_embed_signup -->
                 </div>
+            {{/ events }}
+                <hr class="colored">
             </div>
         </div>
     </section>

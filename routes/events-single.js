@@ -1,5 +1,6 @@
 // events-single.js
 const Cosmic = require('cosmicjs')
+const moment = require('moment')
 
 module.exports = (app, config, partials) => {
 	app.get('/events/:slug', (req, res) => {
@@ -13,6 +14,7 @@ module.exports = (app, config, partials) => {
     events.forEach(page => {
     if (page.slug === slug) 
       res.locals.page = page
+      page.date = moment(page.metadata.date).format('MMMM Do YYYY')
     })
 
     if (!res.locals.page) {

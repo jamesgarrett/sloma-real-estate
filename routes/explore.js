@@ -17,4 +17,6 @@ module.exports = (app, config, partials) => {
 			res.render('explore.html', { partials })
 		})
 	})
+
 }
+
