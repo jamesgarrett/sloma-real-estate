@@ -10,6 +10,10 @@ module.exports = (app, config, partials) => {
 			res.locals.page = page
 			const openhouses = response.objects.type.openhouses
 			res.locals.openhouses = openhouses
+		    const neighborhoods = response.objects.type.neighborhoods
+		    res.locals.neighborhoods = neighborhoods
+			const events = response.objects.type.events
+			res.locals.events = events
 			res.render('explore.html', { partials })
 		})
 	})

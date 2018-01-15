@@ -1,0 +1,24 @@
+/* Explore Styles */
+
+.neighborhood{
+	height:50vh;
+	max-height:250px;
+	display:inline-flex;
+	margin-bottom: 1rem;
+}
+
+.neighborhood div{
+	height:50vh;
+	max-height:250px;
+	width:100%;
+}
+
+.explore .btn-primary{
+	padding:15px;
+}
+
+@media (max-width: 768px) {
+   .neighborhood, .neighborhood div{
+   		max-height: 350px;
+   }
+}

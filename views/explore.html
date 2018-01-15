@@ -60,7 +60,7 @@
         <h2 class="text-center">Featured Open Houses</h2>
         <hr class="">
         <!-- Swiper -->
-        <div class="swiper-container swiper-container-4 col-md-9 col-md-10 col-sm-12 fadeIn">
+        <div class="swiper-container swiper-container-4 col-md-10 offset-md-1 col-sm-12 fadeIn">
             <div class="swiper-wrapper no-gutter upcoming-carousel" style="height:50vh;">
 
             {{# openhouses }}
@@ -79,6 +79,26 @@
             <div class="swiper-button-prev swiper-button-prev-4"></div>
         </div>
 
+    </section>
+
+    <!-- Featured Open Houses -->
+
+    <section class="page-section bg-default wow" id="neighborhoods" style="position:relative;">
+        <h2 class="text-center">Neighborhoods</h2>
+        <hr class="colored">
+        <!-- Swiper -->
+        <div class="container-fluid fadeIn no-gutter">
+            <div class="row col-md-10 offset-md-1 col-sm-12" style="margin: 0px auto;">
+                {{# neighborhoods }}
+                    <a class="neighborhood col-xl-3 col-md-4 col-sm-6 col-sm-12" alt="{{ title }}" href="/neighborhoods/{{ slug }}">
+                        <div style="background-image: url('{{ metadata.hero.imgix_url }}?w=600&fit=crop&crop=entropy&auto=format'); background-repeat:no-repeat; background-size:cover; background-position: center;"></div>
+                    </a>
+                {{/ neighborhoods }}
+            </div>
+        </div>
+        <div class="text-center explore">
+            <button class="btn-primary"><a href="/neighborhoods">View All Neighborhoods</a></button>            
+        </div>
     </section>
 
     <!-- Newsletter Signup Call to Action -->
