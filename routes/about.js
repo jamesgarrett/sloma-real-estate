@@ -8,6 +8,8 @@ module.exports = (app, config, partials) => {
 		    res.locals.cosmic = cosmic
 		    const listings = response.objects.type.listings
 		    const sold_listings = []
+		    const recent_transactions = response.object.about.metadata.recent_transactions
+		    res.locals.recent_transactions
 		    listings.forEach(page => {
 		    if (page.metafield.category.value === 'Sold')
 		        sold_listings.push(page)
