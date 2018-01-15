@@ -12,7 +12,7 @@ module.exports = (app, config, partials) => {
 			res.locals.page = page
 			res.locals.openhouses = openhouses
 		    openhouses.forEach(page => { 
-				const date = moment(res.locals.page.metadata.date).format('MMMM Do YYYY')
+				page.date = moment(page.metadata.date).format('MMMM Do YYYY')
 		    })
 		    // res.locals.page.date = date
 			res.render('openhouse.html', { partials }) 
