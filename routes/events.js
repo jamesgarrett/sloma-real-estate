@@ -11,9 +11,7 @@ module.exports = (app, config, partials) => {
 			res.locals.page = page
 			const events = response.objects.type.events
 			res.locals.events = events
-		    events.forEach(page => { 
-				page.date = moment(page.metadata.date).format('MMMM Do YYYY')
-		    })
+			page.date = moment(page.metadata.date).format('MMMM Do YYYY')
 			res.render('events.html', { partials }) 
 		})
 	})
