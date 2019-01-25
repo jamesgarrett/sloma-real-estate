@@ -4,6 +4,9 @@
   "email": "team@jamesgarrett.co",
   "url": "http://www.jamesgarrett.co",
   "license": "MIT",
+    "engines": {
+    "node": "10.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "github.com/jamesgarrett/real-estate-extended"
